@@ -112,6 +112,31 @@ export default function LoginPage() {
   const [msg, setMsg] = useState('')
   const [isError, setIsError] = useState(false)
 
+  // Auto-select portal from URL parameters e.g. /login?portal=student or ?portal=college
+  useEffect(() => {
+    try {
+      const params = new URLSearchParams(window.location.search)
+      const portalKey = params.get('portal')
+      if (portalKey) {
+        const match = PORTALS.find(
+          (p) =>
+            p.key.toLowerCase() === portalKey.toLowerCase() ||
+            p.shortName.toLowerCase() === portalKey.toLowerCase()
+        )
+        if (match) {
+          setSelectedPortal(match)
+          const auto = params.get('auto')
+          if (auto === '1' || auto === 'true') {
+            setUsername(match.demoUser)
+            setPassword(match.demoPass)
+          }
+        }
+      }
+    } catch {
+      // Ignore URL parsing errors
+    }
+  }, [])
+
   const handleSelectPortal = (portal: PortalConfig) => {
     setSelectedPortal(portal)
     setUsername('')
