@@ -24,6 +24,33 @@ _api_token_principals = json.loads(os.getenv("API_TOKEN_PRINCIPALS_JSON", "{}"))
 _backend_demo_db = (_backend_dir / "pramaan_india_demo.db").resolve()
 _backend_protected_db = (_backend_dir / "apaar_sentinel.db").resolve()
 
+# Serverless environment detection (Vercel, AWS Lambda, or read-only deployment directory)
+_is_serverless = bool(
+    os.getenv("VERCEL")
+    or os.getenv("AWS_LAMBDA_FUNCTION_NAME")
+    or "/var/task" in str(_backend_dir)
+)
+
+if _is_serverless:
+    import shutil
+    try:
+        _tmp_demo_db = Path("/tmp/pramaan_india_demo.db")
+        if _backend_demo_db.exists() and (not _tmp_demo_db.exists() or _tmp_demo_db.stat().st_size == 0):
+            shutil.copy2(_backend_demo_db, _tmp_demo_db)
+        if _tmp_demo_db.exists() and _tmp_demo_db.stat().st_size > 0:
+            _backend_demo_db = _tmp_demo_db
+    except Exception:
+        pass
+
+    try:
+        _tmp_prot_db = Path("/tmp/apaar_sentinel.db")
+        if _backend_protected_db.exists() and (not _tmp_prot_db.exists() or _tmp_prot_db.stat().st_size == 0):
+            shutil.copy2(_backend_protected_db, _tmp_prot_db)
+        if _tmp_prot_db.exists() and _tmp_prot_db.stat().st_size > 0:
+            _backend_protected_db = _tmp_prot_db
+    except Exception:
+        pass
+
 _raw_db = os.getenv("DATABASE_URL", "").strip()
 if not _raw_db or "pramaan_india_demo.db" in _raw_db:
     _resolved_db = f"sqlite:///{_backend_demo_db.as_posix()}"
@@ -60,7 +87,7 @@ class Settings(BaseModel):
         origin.strip()
         for origin in os.getenv(
             "ALLOW_ORIGINS",
-            "http://localhost:5173,http://127.0.0.1:5173,http://10.31.9.99:5173,http://10.31.9.62:5173",
+            "http://localhost:5173,http://127.0.0.1:5173,https://pramaan-sage-ten.vercel.app,https://pramaan-ie7p.vercel.app",
         ).split(",")
         if origin.strip()
     ]

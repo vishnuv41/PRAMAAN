@@ -1,6 +1,10 @@
 import axios from 'axios'
 
-const baseURL = import.meta.env.VITE_API_BASE_URL || '/api/v1'
+const envBaseUrl = import.meta.env.VITE_API_BASE_URL
+const isVercel = typeof window !== 'undefined' && window.location.hostname.endsWith('.vercel.app')
+export const baseURL = envBaseUrl && envBaseUrl !== '/api/v1'
+  ? envBaseUrl
+  : (isVercel ? 'https://pramaan-ie7p.vercel.app/api/v1' : (envBaseUrl || '/api/v1'))
 
 export const api = axios.create({
   baseURL,
@@ -27,7 +31,12 @@ export function setAuthToken(token: string | null): void {
 api.interceptors.request.use((config) => {
   const token = getAuthToken()
   if (token) {
-    config.headers.Authorization = `Bearer ${token}`
+    if (config.headers && typeof config.headers.set === 'function') {
+      config.headers.set('Authorization', `Bearer ${token}`)
+    } else {
+      config.headers = config.headers || {}
+      config.headers['Authorization'] = `Bearer ${token}`
+    }
   }
   return config
 })
@@ -35,9 +44,13 @@ api.interceptors.request.use((config) => {
 api.interceptors.response.use(
   (response) => response,
   (error) => {
-    if (error.response?.status === 401) {
-      // Fire event for session expiration listeners if any
-      window.dispatchEvent(new CustomEvent('pramaan:unauthorized'))
+    const isLoginRequest = error.config?.url?.includes('/auth/login')
+    if (error.response?.status === 401 && !isLoginRequest) {
+      const token = getAuthToken()
+      if (token) {
+        // Fire event only when a protected request genuinely receives 401 with a token present
+        window.dispatchEvent(new CustomEvent('pramaan:unauthorized'))
+      }
     }
     return Promise.reject(error)
   }

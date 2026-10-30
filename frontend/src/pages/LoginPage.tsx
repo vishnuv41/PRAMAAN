@@ -11,7 +11,6 @@ interface PortalConfig {
   placeholder: string
   demoUser: string
   demoPass: string
-  demoToken: string
   backendRole: string
   color: string
   bg: string
@@ -29,7 +28,6 @@ export const PORTALS: PortalConfig[] = [
     placeholder: 'e.g. admin_demo',
     demoUser: 'admin_demo',
     demoPass: 'Password@2026',
-    demoToken: 'admin-token-2026',
     backendRole: 'administrator',
     color: '#c2650a',
     bg: '#fff1e0',
@@ -49,7 +47,6 @@ export const PORTALS: PortalConfig[] = [
     placeholder: 'e.g. STU-DEMO-001 or aarav_sharma',
     demoUser: 'aarav_sharma',
     demoPass: 'Password@2026',
-    demoToken: 'student-token-2026',
     backendRole: 'student',
     color: '#4f5fe0',
     bg: '#eef0ff',
@@ -69,7 +66,6 @@ export const PORTALS: PortalConfig[] = [
     placeholder: 'e.g. st_joseph_demo or registrar_sjc',
     demoUser: 'st_joseph_demo',
     demoPass: 'Password@2026',
-    demoToken: 'st-joseph-token-2026',
     backendRole: 'institution_officer',
     color: '#0b7fc4',
     bg: '#e4f3fc',
@@ -89,7 +85,6 @@ export const PORTALS: PortalConfig[] = [
     placeholder: 'e.g. tn_state_officer or state_demo',
     demoUser: 'tn_state_officer',
     demoPass: 'Password@2026',
-    demoToken: 'state-tn-token-2026',
     backendRole: 'state_officer',
     color: '#14804f',
     bg: '#e4f6ec',
@@ -181,9 +176,7 @@ export default function LoginPage() {
       const payload = {
         username: username.trim(),
         password: password.trim(),
-        token: selectedPortal.demoToken,
         requested_role: selectedPortal.backendRole,
-        subject: username.trim(),
       }
 
       const res = await api.post('/auth/login', payload)
@@ -191,6 +184,13 @@ export default function LoginPage() {
       const token = data.access_token || data.token
       const userObj = data.user || {}
       const backendRole = userObj.role || data.role || selectedPortal.backendRole
+
+      if (!token) {
+        setIsError(true)
+        setMsg('Authentication response did not contain an access token.')
+        setLoading(false)
+        return
+      }
 
       // Validate portal matches authorized permissions
       const isAuthorized =
@@ -205,19 +205,22 @@ export default function LoginPage() {
         return
       }
 
-      if (token) {
-        setAuthToken(token)
-      }
+      // Store actual JWT in session
+      setAuthToken(token)
 
       const sessionData = {
+        id: userObj.id,
         subject: userObj.username || data.subject || username.trim(),
+        username: userObj.username || username.trim(),
         role: backendRole,
         title: selectedPortal.name,
         jurisdiction: userObj.institution_id || data.institution_id || selectedPortal.title,
         institution_id: userObj.institution_id || data.institution_id,
-        student_ref: userObj.student_ref || data.student_ref || (backendRole === 'student' ? 'STU-IND-081' : null),
-        apaar_id: userObj.apaar_id || data.apaar_id || (backendRole === 'student' ? '9876-2026-0081' : null),
-        is_demo: data.is_demo ?? true,
+        student_ref: userObj.student_ref || (backendRole === 'student' ? 'STU-IND-081' : null),
+        apaar_id: userObj.apaar_id || (backendRole === 'student' ? '9876-2026-0081' : null),
+        email: userObj.email,
+        full_name: userObj.full_name,
+        is_demo: false,
       }
 
       sessionStorage.setItem('pramaan_session_user', JSON.stringify(sessionData))
@@ -235,56 +238,7 @@ export default function LoginPage() {
 
       navigate(destination)
     } catch (err: unknown) {
-      // Evaluation & demo fallback: If backend returns 401, is offline, or external API fails,
-      // allow instant, seamless sign-in for prototype demonstration without blocking evaluators
-      const u = username.trim().toLowerCase()
-      const isKnownDemoUser =
-        !u ||
-        u === selectedPortal.demoUser.toLowerCase() ||
-        u === 'aarav_sharma' ||
-        u === 'student_aarav' ||
-        u === 'admin_demo' ||
-        u === 'admin' ||
-        u === 'st_joseph_demo' ||
-        u === 'sjce_registrar' ||
-        u === 'tn_state_officer' ||
-        u === 'state_demo'
-
-      const isDemoPass =
-        !password.trim() ||
-        password.trim() === selectedPortal.demoPass ||
-        password.trim() === 'Password@2026' ||
-        password.trim() === 'StudentAarav@2026!'
-
-      if (isKnownDemoUser || isDemoPass) {
-        const backendRole = selectedPortal.backendRole
-        setAuthToken(selectedPortal.demoToken)
-        const sessionData = {
-          subject: username.trim() || selectedPortal.demoUser,
-          role: backendRole,
-          title: selectedPortal.name,
-          jurisdiction: selectedPortal.title,
-          institution_id: backendRole === 'institution_officer' ? 'INST-CHENNAI-SJCE' : (backendRole === 'student' ? 'INST-DELHI-DTU' : null),
-          student_ref: backendRole === 'student' ? 'STU-IND-081' : null,
-          apaar_id: backendRole === 'student' ? '9876-2026-0081' : null,
-          is_demo: true,
-        }
-        sessionStorage.setItem('pramaan_session_user', JSON.stringify(sessionData))
-        window.dispatchEvent(new Event('pramaan:auth_changed'))
-
-        const destination =
-          backendRole === 'student'
-            ? '/student-dashboard'
-            : backendRole === 'institution_officer'
-            ? '/institution-dashboard'
-            : backendRole === 'state_officer'
-            ? '/state-dashboard'
-            : '/admin-dashboard'
-
-        navigate(destination)
-        return
-      }
-
+      // Display actual backend error and never navigate on failed authentication
       setIsError(true)
       setMsg(getErrorMessage(err))
     } finally {

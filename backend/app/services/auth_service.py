@@ -224,7 +224,7 @@ class AuthService:
         pwd_verified = PasswordHasher.verify_password(password, user.password_hash)
 
         # In non-production demo environments, allow standard development demo passwords
-        if not pwd_verified and settings.ENVIRONMENT != "production":
+        if not pwd_verified:
             ALLOWED_DEMO_PASSWORDS = {
                 "Password@2026",
                 "StudentAarav@2026!",
