@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '')
-  const target = env.VITE_BACKEND_PROXY_TARGET || 'http://10.31.11.118:8000'
+  const target = env.VITE_BACKEND_PROXY_TARGET || 'http://10.133.131.100:8000'
 
   return {
     plugins: [react()],

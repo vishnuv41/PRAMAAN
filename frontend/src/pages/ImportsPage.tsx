@@ -667,7 +667,7 @@ export default function ImportsPage() {
               </div>
               <a
                 className="button-secondary"
-                href="http://127.0.0.1:8000/api/v1/validation/export-errors-csv"
+                href="/api/v1/validation/export-errors-csv"
                 target="_blank"
                 rel="noreferrer"
               >
