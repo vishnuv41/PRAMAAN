@@ -1,0 +1,39 @@
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Python virtualenvs & caches
+.venv/
+venv/
+**/venv/
+**/.venv/
+__pycache__/
+**/__pycache__/
+*.py[cod]
+.pytest_cache/
+**/.pytest_cache/
+
+# Frontend builds
+dist/
+**/dist/
+*.tsbuildinfo
+**/*.tsbuildinfo
+
+# Environment & credentials
+.env.local
+**/.env.local
+
+# Archives
+*.zip
+*.tar.gz
+
+# System files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporary databases (Keep demo databases)
+*.db-shm
+*.db-wal
+!backend/apaar_sentinel.db
+!backend/pramaan_india_demo.db

@@ -1,0 +1,13 @@
+﻿student_ref,student_name,apaar_id,institution_id,institution_name,programme_id,programme_name,academic_year,admission_date,admission_category,enrolment_status,nationality,consent_status
+PRM-DEMO-001,Aarav Kumar,123456789012,INST-DEMO-01,Demo Engineering College,ECE,Electronics and Communication Engineering,2025-2026,2025-08-12,GENERAL,ACTIVE,INDIAN,GRANTED
+PRM-DEMO-002,Diya Sharma,234567890123,INST-DEMO-01,Demo Engineering College,CSE,Computer Science and Engineering,2025-2026,2025-08-13,OBC,ACTIVE,INDIAN,GRANTED
+PRM-DEMO-003,Ishaan Patel,345678901234,INST-DEMO-01,Demo Engineering College,ECE,Electronics and Communication Engineering,2025-2026,2025-08-14,SC,ACTIVE,INDIAN,GRANTED
+PRM-DEMO-004,Meera Nair,456789012345,INST-DEMO-01,Demo Engineering College,EEE,Electrical and Electronics Engineering,2025-2026,2025-08-15,ST,ACTIVE,INDIAN,GRANTED
+PRM-DEMO-005,Kabir Singh,567890123456,INST-DEMO-01,Demo Engineering College,CSE,Computer Science and Engineering,2025-2026,2025-08-16,EWS,ACTIVE,INDIAN,GRANTED
+PRM-DEMO-006,Ananya Rao,678901234567,INST-DEMO-01,Demo Engineering College,ECE,Electronics and Communication Engineering,2025-2026,2025-08-17,GENERAL,ACTIVE,INDIAN,GRANTED
+PRM-DEMO-007,Rohan Das,789012345678,INST-DEMO-01,Demo Engineering College,MECH,Mechanical Engineering,2025-2026,2025-08-18,GENERAL,ACTIVE,INDIAN,GRANTED
+PRM-DEMO-008,Sara Thomas,890123456789,INST-DEMO-01,Demo Engineering College,CSE,Computer Science and Engineering,2025-2026,2025-08-19,OBC,ACTIVE,INDIAN,GRANTED
+PRM-DEMO-009,Arjun Menon,901234567890,INST-DEMO-01,Demo Engineering College,EEE,Electrical and Electronics Engineering,2025-2026,2025-08-20,GENERAL,ACTIVE,INDIAN,GRANTED
+PRM-DEMO-010,Nila Joseph,012345678901,INST-DEMO-01,Demo Engineering College,CSE,Computer Science and Engineering,2025-2026,2025-08-21,GENERAL,ACTIVE,INDIAN,GRANTED
+PRM-DEMO-011,Aarav Kumar Duplicate Test,123456789012,INST-DEMO-01,Demo Engineering College,ECE,Electronics and Communication Engineering,2025-2025,2025-08-22,GENERAL,ACTIVE,INDIAN,GRANTED
+PRM-DEMO-012,Kavya Iyer,,INST-DEMO-01,Demo Engineering College,CSE,Computer Science and Engineering,2025-2026,2025-08-23,GENERAL,ACTIVE,INDIAN,GRANTED

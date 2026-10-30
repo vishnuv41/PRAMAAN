@@ -1,0 +1,1001 @@
+﻿student_ref,apaar_id,institution_id,programme_id,academic_year,admission_cycle,enrolment_start,status,full_name,institution_name,programme_name
+PRM-DEMO-0001,100000000001,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Aarav Nair,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0002,100000000002,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Diya Das,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0003,100000000003,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Ishaan Krishnan,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0004,100000000004,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Meera Reddy,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0005,100000000005,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Arjun Gupta,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0006,100000000006,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Kavya Thomas,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0007,100000000007,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Rohan Chandran,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0008,100000000008,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Ananya Kapoor,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0009,100000000009,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Vikram Patel,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0010,100000000010,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Nila Iyer,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0011,100000000011,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Aditya Singh,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0012,100000000012,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Sana Fathima,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0013,100000000013,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Rahul Raj,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0014,100000000014,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Priya Joseph,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0015,100000000015,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Karthik Subramanian,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0016,100000000016,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Aadhya Shah,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0017,100000000017,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Dev Sharma,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0018,100000000018,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Isha Menon,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0019,100000000019,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Varun Rao,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0020,100000000020,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Keerthana Varma,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0021,100000000021,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Nikhil Pillai,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0022,100000000022,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Pooja Mishra,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0023,100000000023,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Sanjay Bose,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0024,100000000024,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Mithra Balan,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0025,100000000025,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Harish Kumar,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0026,100000000026,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Lavanya Nair,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0027,100000000027,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Manoj Das,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0028,100000000028,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Divya Krishnan,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0029,100000000029,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Akash Reddy,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0030,100000000030,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Sowmya Gupta,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0031,100000000031,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Pranav Thomas,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0032,100000000032,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Janani Chandran,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0033,100000000033,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Surya Kapoor,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0034,100000000034,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Anjali Patel,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0035,100000000035,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Rithik Iyer,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0036,100000000036,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Shreya Singh,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0037,100000000037,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Vignesh Fathima,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0038,100000000038,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Aishwarya Raj,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0039,100000000039,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Gokul Joseph,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0040,100000000040,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Nandhini Subramanian,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0041,100000000041,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Aarav Kapoor,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0042,100000000042,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Diya Patel,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0043,100000000043,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Ishaan Iyer,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0044,100000000044,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Meera Singh,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0045,100000000045,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Arjun Fathima,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0046,100000000046,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Kavya Raj,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0047,100000000047,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Rohan Joseph,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0048,100000000048,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Ananya Subramanian,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0049,100000000049,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Vikram Shah,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0050,100000000050,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Nila Sharma,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0051,100000000051,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Aditya Menon,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0052,100000000052,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Sana Rao,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0053,100000000053,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Rahul Varma,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0054,100000000054,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Priya Pillai,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0055,100000000055,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Karthik Mishra,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0056,100000000056,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Aadhya Bose,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0057,100000000057,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Dev Balan,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0058,100000000058,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Isha Kumar,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0059,100000000059,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Varun Nair,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0060,100000000060,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Keerthana Das,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0061,100000000061,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Nikhil Krishnan,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0062,100000000062,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Pooja Reddy,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0063,100000000063,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Sanjay Gupta,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0064,100000000064,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Mithra Thomas,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0065,100000000065,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Harish Chandran,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0066,100000000066,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Lavanya Kapoor,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0067,100000000067,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Manoj Patel,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0068,100000000068,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Divya Iyer,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0069,100000000069,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Akash Singh,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0070,100000000070,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Sowmya Fathima,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0071,100000000071,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Pranav Raj,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0072,100000000072,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Janani Joseph,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0073,100000000073,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Surya Subramanian,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0074,100000000074,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Anjali Shah,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0075,100000000075,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Rithik Sharma,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0076,100000000076,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Shreya Menon,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0077,100000000077,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Vignesh Rao,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0078,100000000078,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Aishwarya Varma,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0079,100000000079,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Gokul Pillai,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0080,100000000080,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Nandhini Mishra,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0081,100000000081,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Aarav Subramanian,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0082,100000000082,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Diya Shah,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0083,100000000083,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Ishaan Sharma,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0084,100000000084,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Meera Menon,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0085,100000000085,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Arjun Rao,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0086,100000000086,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Kavya Varma,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0087,100000000087,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Rohan Pillai,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0088,100000000088,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Ananya Mishra,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0089,100000000089,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Vikram Bose,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0090,100000000090,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Nila Balan,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0091,100000000091,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Aditya Kumar,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0092,100000000092,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Sana Nair,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0093,100000000093,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Rahul Das,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0094,100000000094,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Priya Krishnan,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0095,100000000095,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Karthik Reddy,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0096,100000000096,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Aadhya Gupta,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0097,100000000097,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Dev Thomas,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0098,100000000098,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Isha Chandran,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0099,100000000099,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Varun Kapoor,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0100,100000000100,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Keerthana Patel,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0101,100000000101,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Nikhil Iyer,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0102,100000000102,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Pooja Singh,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0103,100000000103,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Sanjay Fathima,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0104,100000000104,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Mithra Raj,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0105,100000000105,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Harish Joseph,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0106,100000000106,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Lavanya Subramanian,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0107,100000000107,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Manoj Shah,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0108,100000000108,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Divya Sharma,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0109,100000000109,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Akash Menon,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0110,100000000110,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Sowmya Rao,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0111,100000000111,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Pranav Varma,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0112,100000000112,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Janani Pillai,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0113,100000000113,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Surya Mishra,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0114,100000000114,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Anjali Bose,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0115,100000000115,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Rithik Balan,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0116,100000000116,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Shreya Kumar,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0117,100000000117,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Vignesh Nair,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0118,100000000118,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Aishwarya Das,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0119,100000000119,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Gokul Krishnan,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0120,100000000120,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Nandhini Reddy,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0121,100000000121,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Aarav Mishra,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0122,100000000122,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Diya Bose,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0123,100000000123,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Ishaan Balan,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0124,100000000124,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Meera Kumar,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0125,100000000125,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Arjun Nair,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0126,100000000126,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Kavya Das,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0127,100000000127,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Rohan Krishnan,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0128,100000000128,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Ananya Reddy,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0129,100000000129,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Vikram Gupta,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0130,100000000130,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Nila Thomas,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0131,100000000131,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Aditya Chandran,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0132,100000000132,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Sana Kapoor,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0133,100000000133,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Rahul Patel,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0134,100000000134,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Priya Iyer,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0135,100000000135,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Karthik Singh,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0136,100000000136,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Aadhya Fathima,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0137,100000000137,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Dev Raj,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0138,100000000138,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Isha Joseph,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0139,100000000139,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Varun Subramanian,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0140,100000000140,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Keerthana Shah,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0141,100000000141,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Nikhil Sharma,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0142,100000000142,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Pooja Menon,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0143,100000000143,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Sanjay Rao,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0144,100000000144,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Mithra Varma,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0145,100000000145,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Harish Pillai,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0146,100000000146,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Lavanya Mishra,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0147,100000000147,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Manoj Bose,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0148,100000000148,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Divya Balan,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0149,100000000149,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Akash Kumar,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0150,100000000150,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Sowmya Nair,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0151,100000000151,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Pranav Das,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0152,100000000152,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Janani Krishnan,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0153,100000000153,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Surya Reddy,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0154,100000000154,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Anjali Gupta,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0155,100000000155,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Rithik Thomas,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0156,100000000156,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Shreya Chandran,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0157,100000000157,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Vignesh Kapoor,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0158,100000000158,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Aishwarya Patel,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0159,100000000159,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Gokul Iyer,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0160,100000000160,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Nandhini Singh,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0161,100000000161,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Aarav Reddy,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0162,100000000162,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Diya Gupta,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0163,100000000163,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Ishaan Thomas,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0164,100000000164,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Meera Chandran,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0165,100000000165,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Arjun Kapoor,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0166,100000000166,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Kavya Patel,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0167,100000000167,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Rohan Iyer,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0168,100000000168,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Ananya Singh,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0169,100000000169,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Vikram Fathima,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0170,100000000170,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Nila Raj,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0171,100000000171,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Aditya Joseph,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0172,100000000172,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Sana Subramanian,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0173,100000000173,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Rahul Shah,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0174,100000000174,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Priya Sharma,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0175,100000000175,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Karthik Menon,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0176,100000000176,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Aadhya Rao,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0177,100000000177,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Dev Varma,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0178,100000000178,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Isha Pillai,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0179,100000000179,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Varun Mishra,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0180,100000000180,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Keerthana Bose,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0181,100000000181,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Nikhil Balan,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0182,100000000182,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Pooja Kumar,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0183,100000000183,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Sanjay Nair,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0184,100000000184,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Mithra Das,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0185,100000000185,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Harish Krishnan,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0186,100000000186,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Lavanya Reddy,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0187,100000000187,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Manoj Gupta,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0188,100000000188,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Divya Thomas,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0189,100000000189,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Akash Chandran,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0190,100000000190,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Sowmya Kapoor,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0191,100000000191,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Pranav Patel,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0192,100000000192,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Janani Iyer,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0193,100000000193,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Surya Singh,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0194,100000000194,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Anjali Fathima,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0195,100000000195,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Rithik Raj,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0196,100000000196,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Shreya Joseph,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0197,100000000197,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Vignesh Subramanian,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0198,100000000198,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Aishwarya Shah,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0199,100000000199,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Gokul Sharma,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0200,100000000200,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Nandhini Menon,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0201,100000000201,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Aarav Singh,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0202,100000000202,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Diya Fathima,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0203,100000000203,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Ishaan Raj,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0204,100000000204,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Meera Joseph,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0205,100000000205,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Arjun Subramanian,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0206,100000000206,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Kavya Shah,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0207,100000000207,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Rohan Sharma,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0208,100000000208,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Ananya Menon,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0209,100000000209,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Vikram Rao,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0210,100000000210,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Nila Varma,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0211,100000000211,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Aditya Pillai,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0212,100000000212,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Sana Mishra,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0213,100000000213,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Rahul Bose,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0214,100000000214,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Priya Balan,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0215,100000000215,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Karthik Kumar,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0216,100000000216,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Aadhya Nair,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0217,100000000217,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Dev Das,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0218,100000000218,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Isha Krishnan,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0219,100000000219,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Varun Reddy,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0220,100000000220,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Keerthana Gupta,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0221,100000000221,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Nikhil Thomas,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0222,100000000222,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Pooja Chandran,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0223,100000000223,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Sanjay Kapoor,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0224,100000000224,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Mithra Patel,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0225,100000000225,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Harish Iyer,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0226,100000000226,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Lavanya Singh,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0227,100000000227,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Manoj Fathima,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0228,100000000228,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Divya Raj,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0229,100000000229,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Akash Joseph,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0230,100000000230,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Sowmya Subramanian,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0231,100000000231,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Pranav Shah,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0232,100000000232,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Janani Sharma,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0233,100000000233,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Surya Menon,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0234,100000000234,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Anjali Rao,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0235,100000000235,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Rithik Varma,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0236,100000000236,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Shreya Pillai,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0237,100000000237,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Vignesh Mishra,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0238,100000000238,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Aishwarya Bose,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0239,100000000239,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Gokul Balan,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0240,100000000240,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Nandhini Kumar,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0241,100000000241,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Aarav Menon,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0242,100000000242,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Diya Rao,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0243,100000000243,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Ishaan Varma,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0244,100000000244,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Meera Pillai,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0245,100000000245,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Arjun Mishra,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0246,100000000246,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Kavya Bose,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0247,100000000247,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Rohan Balan,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0248,100000000248,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Ananya Kumar,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0249,100000000249,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Vikram Nair,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0250,100000000250,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Nila Das,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0251,100000000251,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Aditya Krishnan,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0252,100000000252,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Sana Reddy,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0253,100000000253,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Rahul Gupta,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0254,100000000254,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Priya Thomas,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0255,100000000255,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Karthik Chandran,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0256,100000000256,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Aadhya Kapoor,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0257,100000000257,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Dev Patel,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0258,100000000258,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Isha Iyer,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0259,100000000259,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Varun Singh,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0260,100000000260,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Keerthana Fathima,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0261,100000000261,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Nikhil Raj,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0262,100000000262,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Pooja Joseph,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0263,100000000263,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Sanjay Subramanian,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0264,100000000264,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Mithra Shah,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0265,100000000265,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Harish Sharma,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0266,100000000266,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Lavanya Menon,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0267,100000000267,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Manoj Rao,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0268,100000000268,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Divya Varma,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0269,100000000269,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Akash Pillai,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0270,100000000270,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Sowmya Mishra,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0271,100000000271,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Pranav Bose,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0272,100000000272,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Janani Balan,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0273,100000000273,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Surya Kumar,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0274,100000000274,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Anjali Nair,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0275,100000000275,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Rithik Das,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0276,100000000276,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Shreya Krishnan,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0277,100000000277,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Vignesh Reddy,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0278,100000000278,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Aishwarya Gupta,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0279,100000000279,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Gokul Thomas,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0280,100000000280,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Nandhini Chandran,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0281,100000000281,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Aarav Kumar,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0282,100000000282,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Diya Nair,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0283,100000000283,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Ishaan Das,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0284,100000000284,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Meera Krishnan,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0285,100000000285,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Arjun Reddy,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0286,100000000286,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Kavya Gupta,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0287,100000000287,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Rohan Thomas,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0288,100000000288,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Ananya Chandran,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0289,100000000289,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Vikram Kapoor,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0290,100000000290,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Nila Patel,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0291,100000000291,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Aditya Iyer,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0292,100000000292,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Sana Singh,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0293,100000000293,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Rahul Fathima,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0294,100000000294,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Priya Raj,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0295,100000000295,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Karthik Joseph,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0296,100000000296,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Aadhya Subramanian,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0297,100000000297,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Dev Shah,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0298,100000000298,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Isha Sharma,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0299,100000000299,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Varun Menon,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0300,100000000300,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Keerthana Rao,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0301,100000000301,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Nikhil Varma,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0302,100000000302,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Pooja Pillai,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0303,100000000303,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Sanjay Mishra,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0304,100000000304,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Mithra Bose,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0305,100000000305,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Harish Balan,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0306,100000000306,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Lavanya Kumar,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0307,100000000307,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Manoj Nair,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0308,100000000308,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Divya Das,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0309,100000000309,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Akash Krishnan,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0310,100000000310,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Sowmya Reddy,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0311,100000000311,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Pranav Gupta,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0312,100000000312,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Janani Thomas,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0313,100000000313,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Surya Chandran,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0314,100000000314,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Anjali Kapoor,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0315,100000000315,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Rithik Patel,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0316,100000000316,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Shreya Iyer,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0317,100000000317,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Vignesh Singh,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0318,100000000318,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Aishwarya Fathima,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0319,100000000319,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Gokul Raj,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0320,100000000320,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Nandhini Joseph,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0321,100000000321,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Aarav Chandran,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0322,100000000322,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Diya Kapoor,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0323,100000000323,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Ishaan Patel,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0324,100000000324,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Meera Iyer,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0325,100000000325,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Arjun Singh,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0326,100000000326,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Kavya Fathima,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0327,100000000327,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Rohan Raj,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0328,100000000328,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Ananya Joseph,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0329,100000000329,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Vikram Subramanian,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0330,100000000330,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Nila Shah,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0331,100000000331,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Aditya Sharma,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0332,100000000332,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Sana Menon,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0333,100000000333,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Rahul Rao,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0334,100000000334,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Priya Varma,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0335,100000000335,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Karthik Pillai,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0336,100000000336,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Aadhya Mishra,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0337,100000000337,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Dev Bose,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0338,100000000338,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Isha Balan,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0339,100000000339,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Varun Kumar,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0340,100000000340,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Keerthana Nair,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0341,100000000341,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Nikhil Das,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0342,100000000342,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Pooja Krishnan,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0343,100000000343,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Sanjay Reddy,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0344,100000000344,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Mithra Gupta,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0345,100000000345,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Harish Thomas,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0346,100000000346,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Lavanya Chandran,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0347,100000000347,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Manoj Kapoor,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0348,100000000348,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Divya Patel,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0349,100000000349,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Akash Iyer,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0350,100000000350,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Sowmya Singh,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0351,100000000351,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Pranav Fathima,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0352,100000000352,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Janani Raj,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0353,100000000353,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Surya Joseph,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0354,100000000354,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Anjali Subramanian,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0355,100000000355,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Rithik Shah,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0356,100000000356,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Shreya Sharma,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0357,100000000357,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Vignesh Menon,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0358,100000000358,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Aishwarya Rao,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0359,100000000359,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Gokul Varma,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0360,100000000360,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Nandhini Pillai,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0361,100000000361,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Aarav Joseph,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0362,100000000362,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Diya Subramanian,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0363,100000000363,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Ishaan Shah,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0364,100000000364,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Meera Sharma,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0365,100000000365,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Arjun Menon,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0366,100000000366,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Kavya Rao,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0367,100000000367,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Rohan Varma,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0368,100000000368,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Ananya Pillai,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0369,100000000369,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Vikram Mishra,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0370,100000000370,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Nila Bose,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0371,100000000371,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Aditya Balan,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0372,100000000372,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Sana Kumar,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0373,100000000373,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Rahul Nair,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0374,100000000374,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Priya Das,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0375,100000000375,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Karthik Krishnan,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0376,100000000376,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Aadhya Reddy,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0377,100000000377,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Dev Gupta,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0378,100000000378,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Isha Thomas,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0379,100000000379,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Varun Chandran,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0380,100000000380,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Keerthana Kapoor,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0381,100000000381,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Nikhil Patel,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0382,100000000382,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Pooja Iyer,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0383,100000000383,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Sanjay Singh,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0384,100000000384,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Mithra Fathima,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0385,100000000385,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Harish Raj,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0386,100000000386,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Lavanya Joseph,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0387,100000000387,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Manoj Subramanian,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0388,100000000388,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Divya Shah,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0389,100000000389,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Akash Sharma,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0390,100000000390,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Sowmya Menon,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0391,100000000391,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Pranav Rao,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0392,100000000392,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Janani Varma,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0393,100000000393,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Surya Pillai,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0394,100000000394,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Anjali Mishra,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0395,100000000395,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Rithik Bose,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0396,100000000396,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Shreya Balan,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0397,100000000397,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Vignesh Kumar,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0398,100000000398,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Aishwarya Nair,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0399,100000000399,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Gokul Das,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0400,100000000400,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Nandhini Krishnan,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0401,100000000401,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Aarav Pillai,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0402,100000000402,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Diya Mishra,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0403,100000000403,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Ishaan Bose,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0404,100000000404,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Meera Balan,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0405,100000000405,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Arjun Kumar,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0406,100000000406,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Kavya Nair,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0407,100000000407,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Rohan Das,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0408,100000000408,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Ananya Krishnan,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0409,100000000409,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Vikram Reddy,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0410,100000000410,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Nila Gupta,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0411,100000000411,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Aditya Thomas,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0412,100000000412,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Sana Chandran,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0413,100000000413,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Rahul Kapoor,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0414,100000000414,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Priya Patel,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0415,100000000415,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Karthik Iyer,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0416,100000000416,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Aadhya Singh,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0417,100000000417,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Dev Fathima,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0418,100000000418,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Isha Raj,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0419,100000000419,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Varun Joseph,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0420,100000000420,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Keerthana Subramanian,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0421,100000000421,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Nikhil Shah,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0422,100000000422,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Pooja Sharma,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0423,100000000423,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Sanjay Menon,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0424,100000000424,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Mithra Rao,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0425,100000000425,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Harish Varma,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0426,100000000426,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Lavanya Pillai,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0427,100000000427,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Manoj Mishra,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0428,100000000428,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Divya Bose,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0429,100000000429,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Akash Balan,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0430,100000000430,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Sowmya Kumar,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0431,100000000431,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Pranav Nair,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0432,100000000432,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Janani Das,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0433,100000000433,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Surya Krishnan,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0434,100000000434,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Anjali Reddy,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0435,100000000435,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Rithik Gupta,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0436,100000000436,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Shreya Thomas,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0437,100000000437,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Vignesh Chandran,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0438,100000000438,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Aishwarya Kapoor,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0439,100000000439,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Gokul Patel,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0440,100000000440,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Nandhini Iyer,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0441,100000000441,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Aarav Krishnan,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0442,100000000442,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Diya Reddy,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0443,100000000443,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Ishaan Gupta,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0444,100000000444,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Meera Thomas,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0445,100000000445,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Arjun Chandran,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0446,100000000446,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Kavya Kapoor,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0447,100000000447,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Rohan Patel,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0448,100000000448,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Ananya Iyer,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0449,100000000449,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Vikram Singh,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0450,100000000450,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Nila Fathima,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0451,100000000451,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Aditya Raj,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0452,100000000452,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Sana Joseph,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0453,100000000453,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Rahul Subramanian,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0454,100000000454,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Priya Shah,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0455,100000000455,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Karthik Sharma,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0456,100000000456,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Aadhya Menon,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0457,100000000457,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Dev Rao,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0458,100000000458,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Isha Varma,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0459,100000000459,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Varun Pillai,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0460,100000000460,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Keerthana Mishra,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0461,100000000461,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Nikhil Bose,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0462,100000000462,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Pooja Balan,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0463,100000000463,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Sanjay Kumar,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0464,100000000464,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Mithra Nair,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0465,100000000465,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Harish Das,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0466,100000000466,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Lavanya Krishnan,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0467,100000000467,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Manoj Reddy,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0468,100000000468,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Divya Gupta,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0469,100000000469,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Akash Thomas,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0470,100000000470,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Sowmya Chandran,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0471,100000000471,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Pranav Kapoor,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0472,100000000472,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Janani Patel,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0473,100000000473,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Surya Iyer,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0474,100000000474,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Anjali Singh,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0475,100000000475,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Rithik Fathima,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0476,100000000476,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Shreya Raj,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0477,100000000477,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Vignesh Joseph,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0478,100000000478,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Aishwarya Subramanian,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0479,100000000479,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Gokul Shah,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0480,100000000480,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Nandhini Sharma,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0481,100000000481,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Aarav Iyer,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0482,100000000482,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Diya Singh,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0483,100000000483,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Ishaan Fathima,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0484,100000000484,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Meera Raj,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0485,100000000485,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Arjun Joseph,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0486,100000000486,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Kavya Subramanian,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0487,100000000487,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Rohan Shah,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0488,100000000488,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Ananya Sharma,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0489,100000000489,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Vikram Menon,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0490,100000000490,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Nila Rao,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0491,100000000491,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Aditya Varma,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0492,100000000492,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Sana Pillai,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0493,100000000493,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Rahul Mishra,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0494,100000000494,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Priya Bose,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0495,100000000495,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Karthik Balan,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0496,100000000496,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Aadhya Kumar,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0497,100000000497,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Dev Nair,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0498,100000000498,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Isha Das,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0499,100000000499,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Varun Krishnan,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0500,100000000500,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Keerthana Reddy,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0501,100000000501,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Nikhil Gupta,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0502,100000000502,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Pooja Thomas,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0503,100000000503,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Sanjay Chandran,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0504,100000000504,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Mithra Kapoor,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0505,100000000505,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Harish Patel,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0506,100000000506,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Lavanya Iyer,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0507,100000000507,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Manoj Singh,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0508,100000000508,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Divya Fathima,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0509,100000000509,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Akash Raj,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0510,100000000510,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Sowmya Joseph,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0511,100000000511,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Pranav Subramanian,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0512,100000000512,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Janani Shah,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0513,100000000513,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Surya Sharma,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0514,100000000514,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Anjali Menon,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0515,100000000515,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Rithik Rao,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0516,100000000516,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Shreya Varma,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0517,100000000517,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Vignesh Pillai,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0518,100000000518,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Aishwarya Mishra,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0519,100000000519,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Gokul Bose,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0520,100000000520,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Nandhini Balan,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0521,100000000521,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Aarav Sharma,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0522,100000000522,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Diya Menon,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0523,100000000523,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Ishaan Rao,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0524,100000000524,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Meera Varma,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0525,100000000525,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Arjun Pillai,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0526,100000000526,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Kavya Mishra,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0527,100000000527,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Rohan Bose,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0528,100000000528,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Ananya Balan,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0529,100000000529,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Vikram Kumar,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0530,100000000530,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Nila Nair,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0531,100000000531,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Aditya Das,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0532,100000000532,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Sana Krishnan,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0533,100000000533,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Rahul Reddy,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0534,100000000534,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Priya Gupta,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0535,100000000535,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Karthik Thomas,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0536,100000000536,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Aadhya Chandran,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0537,100000000537,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Dev Kapoor,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0538,100000000538,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Isha Patel,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0539,100000000539,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Varun Iyer,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0540,100000000540,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Keerthana Singh,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0541,100000000541,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Nikhil Fathima,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0542,100000000542,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Pooja Raj,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0543,100000000543,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Sanjay Joseph,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0544,100000000544,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Mithra Subramanian,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0545,100000000545,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Harish Shah,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0546,100000000546,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Lavanya Sharma,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0547,100000000547,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Manoj Menon,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0548,100000000548,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Divya Rao,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0549,100000000549,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Akash Varma,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0550,100000000550,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Sowmya Pillai,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0551,100000000551,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Pranav Mishra,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0552,100000000552,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Janani Bose,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0553,100000000553,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Surya Balan,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0554,100000000554,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Anjali Kumar,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0555,100000000555,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Rithik Nair,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0556,100000000556,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Shreya Das,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0557,100000000557,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Vignesh Krishnan,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0558,100000000558,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Aishwarya Reddy,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0559,100000000559,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Gokul Gupta,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0560,100000000560,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Nandhini Thomas,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0561,100000000561,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Aarav Balan,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0562,100000000562,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Diya Kumar,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0563,100000000563,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Ishaan Nair,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0564,100000000564,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Meera Das,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0565,100000000565,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Arjun Krishnan,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0566,100000000566,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Kavya Reddy,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0567,100000000567,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Rohan Gupta,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0568,100000000568,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Ananya Thomas,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0569,100000000569,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Vikram Chandran,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0570,100000000570,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Nila Kapoor,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0571,100000000571,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Aditya Patel,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0572,100000000572,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Sana Iyer,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0573,100000000573,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Rahul Singh,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0574,100000000574,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Priya Fathima,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0575,100000000575,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Karthik Raj,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0576,100000000576,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Aadhya Joseph,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0577,100000000577,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Dev Subramanian,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0578,100000000578,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Isha Shah,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0579,100000000579,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Varun Sharma,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0580,100000000580,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Keerthana Menon,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0581,100000000581,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Nikhil Rao,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0582,100000000582,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Pooja Varma,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0583,100000000583,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Sanjay Pillai,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0584,100000000584,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Mithra Mishra,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0585,100000000585,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Harish Bose,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0586,100000000586,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Lavanya Balan,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0587,100000000587,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Manoj Kumar,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0588,100000000588,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Divya Nair,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0589,100000000589,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Akash Das,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0590,100000000590,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Sowmya Krishnan,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0591,100000000591,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Pranav Reddy,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0592,100000000592,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Janani Gupta,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0593,100000000593,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Surya Thomas,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0594,100000000594,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Anjali Chandran,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0595,100000000595,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Rithik Kapoor,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0596,100000000596,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Shreya Patel,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0597,100000000597,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Vignesh Iyer,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0598,100000000598,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Aishwarya Singh,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0599,100000000599,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Gokul Fathima,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0600,100000000600,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Nandhini Raj,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0601,100000000601,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Aarav Thomas,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0602,100000000602,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Diya Chandran,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0603,100000000603,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Ishaan Kapoor,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0604,100000000604,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Meera Patel,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0605,100000000605,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Arjun Iyer,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0606,100000000606,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Kavya Singh,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0607,100000000607,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Rohan Fathima,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0608,100000000608,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Ananya Raj,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0609,100000000609,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Vikram Joseph,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0610,100000000610,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Nila Subramanian,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0611,100000000611,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Aditya Shah,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0612,100000000612,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Sana Sharma,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0613,100000000613,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Rahul Menon,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0614,100000000614,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Priya Rao,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0615,100000000615,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Karthik Varma,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0616,100000000616,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Aadhya Pillai,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0617,100000000617,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Dev Mishra,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0618,100000000618,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Isha Bose,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0619,100000000619,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Varun Balan,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0620,100000000620,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Keerthana Kumar,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0621,100000000621,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Nikhil Nair,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0622,100000000622,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Pooja Das,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0623,100000000623,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Sanjay Krishnan,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0624,100000000624,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Mithra Reddy,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0625,100000000625,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Harish Gupta,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0626,100000000626,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Lavanya Thomas,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0627,100000000627,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Manoj Chandran,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0628,100000000628,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Divya Kapoor,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0629,100000000629,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Akash Patel,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0630,100000000630,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Sowmya Iyer,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0631,100000000631,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Pranav Singh,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0632,100000000632,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Janani Fathima,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0633,100000000633,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Surya Raj,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0634,100000000634,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Anjali Joseph,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0635,100000000635,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Rithik Subramanian,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0636,100000000636,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Shreya Shah,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0637,100000000637,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Vignesh Sharma,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0638,100000000638,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Aishwarya Menon,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0639,100000000639,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Gokul Rao,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0640,100000000640,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Nandhini Varma,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0641,100000000641,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Aarav Raj,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0642,100000000642,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Diya Joseph,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0643,100000000643,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Ishaan Subramanian,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0644,100000000644,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Meera Shah,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0645,100000000645,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Arjun Sharma,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0646,100000000646,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Kavya Menon,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0647,100000000647,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Rohan Rao,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0648,100000000648,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Ananya Varma,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0649,100000000649,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Vikram Pillai,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0650,100000000650,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Nila Mishra,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0651,100000000651,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Aditya Bose,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0652,100000000652,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Sana Balan,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0653,100000000653,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Rahul Kumar,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0654,100000000654,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Priya Nair,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0655,100000000655,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Karthik Das,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0656,100000000656,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Aadhya Krishnan,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0657,100000000657,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Dev Reddy,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0658,100000000658,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Isha Gupta,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0659,100000000659,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Varun Thomas,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0660,100000000660,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Keerthana Chandran,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0661,100000000661,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Nikhil Kapoor,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0662,100000000662,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Pooja Patel,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0663,100000000663,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Sanjay Iyer,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0664,100000000664,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Mithra Singh,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0665,100000000665,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Harish Fathima,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0666,100000000666,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Lavanya Raj,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0667,100000000667,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Manoj Joseph,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0668,100000000668,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Divya Subramanian,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0669,100000000669,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Akash Shah,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0670,100000000670,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Sowmya Sharma,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0671,100000000671,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Pranav Menon,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0672,100000000672,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Janani Rao,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0673,100000000673,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Surya Varma,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0674,100000000674,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Anjali Pillai,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0675,100000000675,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Rithik Mishra,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0676,100000000676,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Shreya Bose,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0677,100000000677,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Vignesh Balan,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0678,100000000678,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Aishwarya Kumar,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0679,100000000679,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Gokul Nair,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0680,100000000680,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Nandhini Das,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0681,100000000681,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Aarav Varma,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0682,100000000682,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Diya Pillai,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0683,100000000683,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Ishaan Mishra,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0684,100000000684,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Meera Bose,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0685,100000000685,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Arjun Balan,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0686,100000000686,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Kavya Kumar,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0687,100000000687,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Rohan Nair,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0688,100000000688,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Ananya Das,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0689,100000000689,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Vikram Krishnan,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0690,100000000690,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Nila Reddy,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0691,100000000691,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Aditya Gupta,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0692,100000000692,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Sana Thomas,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0693,100000000693,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Rahul Chandran,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0694,100000000694,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Priya Kapoor,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0695,100000000695,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Karthik Patel,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0696,100000000696,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Aadhya Iyer,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0697,100000000697,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Dev Singh,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0698,100000000698,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Isha Fathima,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0699,100000000699,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Varun Raj,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0700,100000000700,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Keerthana Joseph,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0701,100000000701,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Nikhil Subramanian,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0702,100000000702,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Pooja Shah,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0703,100000000703,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Sanjay Sharma,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0704,100000000704,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Mithra Menon,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0705,100000000705,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Harish Rao,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0706,100000000706,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Lavanya Varma,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0707,100000000707,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Manoj Pillai,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0708,100000000708,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Divya Mishra,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0709,100000000709,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Akash Bose,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0710,100000000710,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Sowmya Balan,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0711,100000000711,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Pranav Kumar,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0712,100000000712,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Janani Nair,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0713,100000000713,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Surya Das,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0714,100000000714,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Anjali Krishnan,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0715,100000000715,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Rithik Reddy,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0716,100000000716,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Shreya Gupta,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0717,100000000717,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Vignesh Thomas,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0718,100000000718,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Aishwarya Chandran,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0719,100000000719,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Gokul Kapoor,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0720,100000000720,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Nandhini Patel,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0721,100000000721,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Aarav Das,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0722,100000000722,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Diya Krishnan,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0723,100000000723,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Ishaan Reddy,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0724,100000000724,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Meera Gupta,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0725,100000000725,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Arjun Thomas,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0726,100000000726,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Kavya Chandran,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0727,100000000727,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Rohan Kapoor,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0728,100000000728,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Ananya Patel,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0729,100000000729,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Vikram Iyer,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0730,100000000730,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Nila Singh,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0731,100000000731,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Aditya Fathima,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0732,100000000732,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Sana Raj,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0733,100000000733,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Rahul Joseph,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0734,100000000734,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Priya Subramanian,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0735,100000000735,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Karthik Shah,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0736,100000000736,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Aadhya Sharma,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0737,100000000737,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Dev Menon,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0738,100000000738,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Isha Rao,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0739,100000000739,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Varun Varma,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0740,100000000740,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Keerthana Pillai,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0741,100000000741,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Nikhil Mishra,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0742,100000000742,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Pooja Bose,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0743,100000000743,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Sanjay Balan,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0744,100000000744,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Mithra Kumar,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0745,100000000745,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Harish Nair,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0746,100000000746,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Lavanya Das,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0747,100000000747,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Manoj Krishnan,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0748,100000000748,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Divya Reddy,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0749,100000000749,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Akash Gupta,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0750,100000000750,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Sowmya Thomas,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0751,100000000751,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Pranav Chandran,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0752,100000000752,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Janani Kapoor,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0753,100000000753,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Surya Patel,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0754,100000000754,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Anjali Iyer,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0755,100000000755,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Rithik Singh,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0756,100000000756,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Shreya Fathima,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0757,100000000757,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Vignesh Raj,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0758,100000000758,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Aishwarya Joseph,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0759,100000000759,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Gokul Subramanian,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0760,100000000760,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Nandhini Shah,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0761,100000000761,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Aarav Patel,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0762,100000000762,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Diya Iyer,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0763,100000000763,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Ishaan Singh,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0764,100000000764,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Meera Fathima,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0765,100000000765,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Arjun Raj,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0766,100000000766,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Kavya Joseph,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0767,100000000767,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Rohan Subramanian,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0768,100000000768,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Ananya Shah,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0769,100000000769,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Vikram Sharma,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0770,100000000770,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Nila Menon,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0771,100000000771,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Aditya Rao,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0772,100000000772,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Sana Varma,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0773,100000000773,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Rahul Pillai,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0774,100000000774,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Priya Mishra,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0775,100000000775,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Karthik Bose,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0776,100000000776,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Aadhya Balan,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0777,100000000777,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Dev Kumar,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0778,100000000778,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Isha Nair,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0779,100000000779,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Varun Das,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0780,100000000780,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Keerthana Krishnan,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0781,100000000781,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Nikhil Reddy,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0782,100000000782,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Pooja Gupta,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0783,100000000783,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Sanjay Thomas,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0784,100000000784,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Mithra Chandran,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0785,100000000785,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Harish Kapoor,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0786,100000000786,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Lavanya Patel,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0787,100000000787,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Manoj Iyer,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0788,100000000788,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Divya Singh,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0789,100000000789,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Akash Fathima,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0790,100000000790,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Sowmya Raj,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0791,100000000791,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Pranav Joseph,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0792,100000000792,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Janani Subramanian,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0793,100000000793,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Surya Shah,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0794,100000000794,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Anjali Sharma,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0795,100000000795,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Rithik Menon,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0796,100000000796,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Shreya Rao,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0797,100000000797,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Vignesh Varma,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0798,100000000798,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Aishwarya Pillai,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0799,100000000799,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Gokul Mishra,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0800,100000000800,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Nandhini Bose,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0801,100000000801,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Aarav Shah,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0802,100000000802,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Diya Sharma,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0803,100000000803,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Ishaan Menon,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0804,100000000804,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Meera Rao,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0805,100000000805,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Arjun Varma,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0806,100000000806,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Kavya Pillai,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0807,100000000807,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Rohan Mishra,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0808,100000000808,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Ananya Bose,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0809,100000000809,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Vikram Balan,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0810,100000000810,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Nila Kumar,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0811,100000000811,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Aditya Nair,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0812,100000000812,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Sana Das,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0813,100000000813,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Rahul Krishnan,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0814,100000000814,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Priya Reddy,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0815,100000000815,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Karthik Gupta,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0816,100000000816,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Aadhya Thomas,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0817,100000000817,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Dev Chandran,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0818,100000000818,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Isha Kapoor,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0819,100000000819,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Varun Patel,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0820,100000000820,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Keerthana Iyer,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0821,100000000821,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Nikhil Singh,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0822,100000000822,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Pooja Fathima,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0823,100000000823,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Sanjay Raj,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0824,100000000824,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Mithra Joseph,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0825,100000000825,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Harish Subramanian,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0826,100000000826,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Lavanya Shah,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0827,100000000827,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Manoj Sharma,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0828,100000000828,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Divya Menon,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0829,100000000829,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Akash Rao,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0830,100000000830,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Sowmya Varma,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0831,100000000831,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Pranav Pillai,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0832,100000000832,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Janani Mishra,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0833,100000000833,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Surya Bose,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0834,100000000834,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Anjali Balan,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0835,100000000835,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Rithik Kumar,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0836,100000000836,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Shreya Nair,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0837,100000000837,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Vignesh Das,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0838,100000000838,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Aishwarya Krishnan,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0839,100000000839,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Gokul Reddy,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0840,100000000840,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Nandhini Gupta,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0841,100000000841,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Aarav Bose,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0842,100000000842,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Diya Balan,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0843,100000000843,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Ishaan Kumar,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0844,100000000844,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Meera Nair,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0845,100000000845,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Arjun Das,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0846,100000000846,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Kavya Krishnan,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0847,100000000847,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Rohan Reddy,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0848,100000000848,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Ananya Gupta,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0849,100000000849,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Vikram Thomas,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0850,100000000850,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Nila Chandran,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0851,100000000851,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Aditya Kapoor,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0852,100000000852,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Sana Patel,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0853,100000000853,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Rahul Iyer,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0854,100000000854,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Priya Singh,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0855,100000000855,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Karthik Fathima,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0856,100000000856,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Aadhya Raj,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0857,100000000857,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Dev Joseph,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0858,100000000858,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Isha Subramanian,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0859,100000000859,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Varun Shah,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0860,100000000860,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Keerthana Sharma,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0861,100000000861,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Nikhil Menon,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0862,100000000862,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Pooja Rao,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0863,100000000863,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Sanjay Varma,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0864,100000000864,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Mithra Pillai,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0865,100000000865,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Harish Mishra,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0866,100000000866,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Lavanya Bose,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0867,100000000867,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Manoj Balan,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0868,100000000868,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Divya Kumar,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0869,100000000869,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Akash Nair,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0870,100000000870,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Sowmya Das,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0871,100000000871,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Pranav Krishnan,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0872,100000000872,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Janani Reddy,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0873,100000000873,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Surya Gupta,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0874,100000000874,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Anjali Thomas,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0875,100000000875,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Rithik Chandran,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0876,100000000876,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Shreya Kapoor,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0877,100000000877,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Vignesh Patel,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0878,100000000878,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Aishwarya Iyer,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0879,100000000879,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Gokul Singh,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0880,100000000880,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Nandhini Fathima,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0881,100000000881,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Aarav Gupta,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0882,100000000882,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Diya Thomas,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0883,100000000883,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Ishaan Chandran,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0884,100000000884,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Meera Kapoor,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0885,100000000885,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Arjun Patel,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0886,100000000886,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Kavya Iyer,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0887,100000000887,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Rohan Singh,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0888,100000000888,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Ananya Fathima,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0889,100000000889,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Vikram Raj,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0890,100000000890,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Nila Joseph,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0891,100000000891,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Aditya Subramanian,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0892,100000000892,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Sana Shah,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0893,100000000893,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Rahul Sharma,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0894,100000000894,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Priya Menon,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0895,100000000895,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Karthik Rao,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0896,100000000896,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Aadhya Varma,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0897,100000000897,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Dev Pillai,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0898,100000000898,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Isha Mishra,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0899,100000000899,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Varun Bose,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0900,100000000900,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Keerthana Balan,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0901,100000000901,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Nikhil Kumar,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0902,100000000902,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Pooja Nair,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0903,100000000903,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Sanjay Das,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0904,100000000904,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Mithra Krishnan,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0905,100000000905,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Harish Reddy,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0906,100000000906,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Lavanya Gupta,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0907,100000000907,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Manoj Thomas,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0908,100000000908,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Divya Chandran,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0909,100000000909,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Akash Kapoor,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0910,100000000910,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Sowmya Patel,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0911,100000000911,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Pranav Iyer,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0912,100000000912,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Janani Singh,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0913,100000000913,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Surya Fathima,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0914,100000000914,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Anjali Raj,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0915,100000000915,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Rithik Joseph,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0916,100000000916,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Shreya Subramanian,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0917,100000000917,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Vignesh Shah,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0918,100000000918,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Aishwarya Sharma,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0919,100000000919,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Gokul Menon,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0920,100000000920,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Nandhini Rao,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0921,100000000921,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Aarav Fathima,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0922,100000000922,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Diya Raj,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0923,100000000923,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Ishaan Joseph,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0924,100000000924,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Meera Subramanian,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0925,100000000925,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Arjun Shah,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0926,100000000926,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Kavya Sharma,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0927,100000000927,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Rohan Menon,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0928,100000000928,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Ananya Rao,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0929,100000000929,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Vikram Varma,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0930,100000000930,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Nila Pillai,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0931,100000000931,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Aditya Mishra,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0932,100000000932,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Sana Bose,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0933,100000000933,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Rahul Balan,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0934,100000000934,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Priya Kumar,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0935,100000000935,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Karthik Nair,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0936,100000000936,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Aadhya Das,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0937,100000000937,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Dev Krishnan,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0938,100000000938,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Isha Reddy,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0939,100000000939,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Varun Gupta,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0940,100000000940,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Keerthana Thomas,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0941,100000000941,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Nikhil Chandran,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0942,100000000942,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Pooja Kapoor,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0943,100000000943,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Sanjay Patel,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0944,100000000944,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Mithra Iyer,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0945,100000000945,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Harish Singh,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0946,100000000946,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Lavanya Fathima,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0947,100000000947,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Manoj Raj,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0948,100000000948,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Divya Joseph,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0949,100000000949,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Akash Subramanian,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0950,100000000950,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Sowmya Shah,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0951,100000000951,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Pranav Sharma,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0952,100000000952,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Janani Menon,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0953,100000000953,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Surya Rao,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0954,100000000954,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Anjali Varma,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0955,100000000955,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Rithik Pillai,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0956,100000000956,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Shreya Mishra,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0957,100000000957,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Vignesh Bose,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0958,100000000958,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Aishwarya Balan,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0959,100000000959,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Gokul Kumar,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0960,100000000960,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Nandhini Nair,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0961,100000000961,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Aarav Rao,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0962,100000000962,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Diya Varma,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0963,100000000963,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Ishaan Pillai,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0964,100000000964,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Meera Mishra,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0965,100000000965,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Arjun Bose,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0966,100000000966,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Kavya Balan,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0967,100000000967,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Rohan Kumar,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0968,100000000968,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Ananya Nair,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0969,100000000969,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Vikram Das,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0970,100000000970,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Nila Krishnan,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0971,100000000971,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Aditya Reddy,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0972,100000000972,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Sana Gupta,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0973,100000000973,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Rahul Thomas,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0974,100000000974,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Priya Chandran,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0975,100000000975,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Karthik Kapoor,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0976,100000000976,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Aadhya Patel,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0977,100000000977,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Dev Iyer,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0978,100000000978,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Isha Singh,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0979,100000000979,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Varun Fathima,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0980,100000000980,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Keerthana Raj,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0981,100000000981,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Nikhil Joseph,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0982,100000000982,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Pooja Subramanian,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0983,100000000983,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Sanjay Shah,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0984,100000000984,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Mithra Sharma,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0985,100000000985,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Harish Menon,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0986,100000000986,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Lavanya Rao,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0987,100000000987,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Manoj Varma,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0988,100000000988,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Divya Pillai,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0989,100000000989,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Akash Mishra,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0990,100000000990,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Sowmya Bose,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0991,100000000991,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Pranav Balan,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0992,100000000992,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Janani Kumar,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-0993,100000000993,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Surya Nair,St. Joseph's College of Engineering,B.Tech Information Technology
+PRM-DEMO-0994,100000000994,INST-DEMO-01,PROG-DEMO-AIDS,2025-2026,2025,2025-08-01,ACTIVE,Anjali Das,St. Joseph's College of Engineering,B.Tech Artificial Intelligence and Data Science
+PRM-DEMO-0995,100000000995,INST-DEMO-01,PROG-DEMO-CSE,2025-2026,2025,2025-08-01,ACTIVE,Rithik Krishnan,St. Joseph's College of Engineering,B.E. Computer Science and Engineering
+PRM-DEMO-0996,100000000996,INST-DEMO-01,PROG-DEMO-ECE,2025-2026,2025,2025-08-01,ACTIVE,Shreya Reddy,St. Joseph's College of Engineering,B.E. Electronics and Communication Engineering
+PRM-DEMO-0997,100000000997,INST-DEMO-01,PROG-DEMO-EEE,2025-2026,2025,2025-08-01,ACTIVE,Vignesh Gupta,St. Joseph's College of Engineering,B.E. Electrical and Electronics Engineering
+PRM-DEMO-0998,100000000998,INST-DEMO-01,PROG-DEMO-MECH,2025-2026,2025,2025-08-01,ACTIVE,Aishwarya Thomas,St. Joseph's College of Engineering,B.E. Mechanical Engineering
+PRM-DEMO-0999,100000000999,INST-DEMO-01,PROG-DEMO-CIVIL,2025-2026,2025,2025-08-01,ACTIVE,Gokul Chandran,St. Joseph's College of Engineering,B.E. Civil Engineering
+PRM-DEMO-1000,100000001000,INST-DEMO-01,PROG-DEMO-IT,2025-2026,2025,2025-08-01,ACTIVE,Nandhini Kapoor,St. Joseph's College of Engineering,B.Tech Information Technology

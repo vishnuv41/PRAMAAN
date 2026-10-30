@@ -1,0 +1,16 @@
+.env
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.db
+*.db-shm
+*.db-wal
+!apaar_sentinel.db
+!pramaan_india_demo.db
+uploads/
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+frontend/.env.local
