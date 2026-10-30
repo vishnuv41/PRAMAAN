@@ -1,0 +1,1555 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PRAMAAN: every enrolment, verified once</title>
+<meta name="description" content="PRAMAAN cross-checks student enrolments across institutions, flags overlaps for human review and keeps an audit trail.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0f1830;--ink2:#17234a;--g:#0b8773;--g2:#12a58e;--gl:#e4f6f1;--am:#f0a53a;--rd:#d64545;--bg:#f5f7fb;--line:#e1e6f0;--mut:#59647f;--d:'Bricolage Grotesque','Figtree',sans-serif}
+*{box-sizing:border-box}html{font-size:16px;scroll-behavior:smooth}
+body{margin:0;font:1rem/1.65 'Figtree',system-ui,sans-serif;color:var(--ink);background:#fff;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}.w{max-width:1180px;margin:0 auto;padding:0 28px}
+h1,h2,h3{font-family:var(--d);margin:0;letter-spacing:-.03em;line-height:1.05}
+.top{background:var(--ink);color:#c9d3ea;font-size:.8rem}.top .w{display:flex;justify-content:space-between;align-items:center;min-height:36px;gap:16px;flex-wrap:wrap}
+.top button{background:none;border:1px solid #3a4a78;color:#fff;border-radius:6px;padding:0 8px;margin-left:4px;cursor:pointer;font:inherit}
+.tri{height:4px;background:linear-gradient(90deg,#ff9933 33.3%,#fff 33.3% 66.6%,#138808 66.6%)}
+header.nav{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+header .w{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{display:flex;align-items:center;gap:11px;font:800 1.35rem var(--d)}.mk{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;color:#fff;background:linear-gradient(135deg,var(--g2),var(--g))}
+.nl{display:flex;align-items:center;gap:28px;font-size:.95rem;color:var(--mut)}.nl a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;gap:8px;min-height:46px;padding:0 22px;border-radius:12px;font-weight:600;border:1px solid transparent}
+.bp{color:#fff;background:linear-gradient(180deg,var(--g2),var(--g));box-shadow:0 8px 18px -8px rgba(11,135,115,.8)}.bo{border-color:var(--line);background:#fff}
+.hero{position:relative;overflow:hidden;background:radial-gradient(800px 480px at 90% 0,#d9f3ec,transparent 70%),radial-gradient(600px 400px at 0 100%,#e3e9ff,transparent 70%),#fff}
+.hero .w{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;min-height:calc(100vh - 112px);padding-top:40px;padding-bottom:60px}
+h1{font-size:clamp(2.6rem,6vw,4.6rem);font-weight:700}.lead{max-width:30rem;font-size:1.15rem;color:var(--mut);margin:22px 0 30px}
+.stat{display:flex;gap:36px;margin-top:40px}.stat b{display:block;font:700 2.2rem var(--d);letter-spacing:-.04em}.stat span{font-size:.85rem;color:var(--mut)}
+.stage{position:relative;height:460px}.hc{position:absolute;inset:30px 10px auto 30px;background:#fff;border:1px solid var(--line);border-radius:22px;padding:22px;box-shadow:0 40px 70px -30px rgba(15,24,48,.35)}
+.hc h3{font-size:1rem;margin-bottom:14px;color:var(--mut)}.rw{display:flex;justify-content:space-between;align-items:center;padding:13px 14px;margin-bottom:10px;border:1px solid var(--line);border-radius:12px;font-size:.92rem}
+.rw small{display:block;color:var(--mut);font-size:.78rem}.tg{padding:3px 11px;border-radius:99px;font-size:.78rem;font-weight:700}.ok{background:#e3f6ec;color:#17794a}.fl{background:#fde8e8;color:#b32d2d}.rv{background:#fff1d9;color:#9a5f06}
+.chip{position:absolute;background:var(--ink);color:#fff;border-radius:14px;padding:12px 16px;font-size:.85rem;box-shadow:0 20px 40px -16px rgba(15,24,48,.5)}.chip b{display:block;font:700 1.4rem var(--d)}
+section{padding:110px 0}.sub{max-width:36rem;color:var(--mut);font-size:1.1rem;margin-top:16px}h2{font-size:clamp(2rem,4.2vw,3.3rem)}
+.prob{background:var(--bg)}.pv{position:relative;height:300px;margin-top:50px;display:flex;justify-content:center;align-items:center}
+.pc{position:absolute;width:290px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px;box-shadow:0 24px 50px -24px rgba(15,24,48,.35)}.pc small{color:var(--mut)}.pc b{display:block;font:700 1.15rem var(--d);margin:4px 0}
+.badge{position:absolute;top:8px;left:50%;margin-left:-70px;padding:10px 18px;border-radius:99px;background:var(--rd);color:#fff;font-weight:700;box-shadow:0 14px 30px -10px rgba(214,69,69,.7)}
+#story{background:var(--ink);color:#fff;padding:0;height:100vh;overflow:hidden}#story .w{height:100%;display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
+#story h2{margin-bottom:34px}.steps{position:relative;padding-left:12px}.ln{position:absolute;left:36px;top:24px;bottom:24px;width:2px;background:#2a3963}.lf{position:absolute;inset:0;background:var(--g2);transform-origin:top;transform:scaleY(0)}
+.st{position:relative;display:flex;gap:20px;padding:14px 0;opacity:.4;transition:opacity .4s}.st.on{opacity:1}.st i{flex:0 0 50px;height:50px;border-radius:50%;display:grid;place-items:center;font:700 1.1rem var(--d);font-style:normal;background:#26345f;transition:.4s;z-index:1}.st.on i{background:var(--g2);box-shadow:0 0 0 7px rgba(18,165,142,.22)}
+.st h3{font-size:1.3rem;margin-bottom:4px}.st p{margin:0;color:#aebbdc;font-size:.95rem}
+.sg{position:relative;height:430px}.pn{position:absolute;inset:0;background:#fff;color:var(--ink);border-radius:24px;padding:28px;opacity:0;transform:translateY(30px) scale(.97);transition:.5s cubic-bezier(.2,.8,.2,1);pointer-events:none;box-shadow:0 50px 80px -30px #000}.pn.on{opacity:1;transform:none}
+.pn h3{font-size:1.15rem;color:var(--mut);margin-bottom:18px}.dz{border:2px dashed #b9c5e3;border-radius:16px;padding:34px;text-align:center;color:var(--mut)}.dz b{display:block;color:var(--ink);font-size:1.05rem}
+.ck{display:flex;gap:12px;align-items:center;padding:14px;border:1px solid var(--line);border-radius:12px;margin-bottom:10px}.ck u{width:24px;height:24px;border-radius:50%;background:#e3f6ec;color:#17794a;display:grid;place-items:center;text-decoration:none;font-size:.8rem;font-weight:700}
+.rules{display:grid;grid-template-columns:1fr 1fr;gap:12px}.rules div{border:1px solid var(--line);border-radius:14px;padding:16px}.rules small{display:block;color:var(--mut)}
+.feat{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:54px}.fc{padding:26px;border:1px solid var(--line);border-radius:20px;background:#fff;box-shadow:0 18px 36px -24px rgba(15,24,48,.25)}
+.fc .ic{width:46px;height:46px;border-radius:13px;background:var(--gl);display:grid;place-items:center;font-size:1.3rem;margin-bottom:18px}.fc h3{font-size:1.2rem;margin-bottom:8px}.fc p{margin:0;color:var(--mut);font-size:.93rem}
+.tl{position:relative;margin-top:50px;padding-left:44px;max-width:640px}.tl::before{content:'';position:absolute;left:10px;top:6px;bottom:6px;width:2px;background:var(--line)}.tl .fill{position:absolute;left:10px;top:6px;bottom:6px;width:2px;background:var(--g);transform-origin:top;transform:scaleY(0)}
+.ev{position:relative;padding:0 0 30px}.ev::before{content:'';position:absolute;left:-42px;top:5px;width:14px;height:14px;border-radius:50%;background:#fff;border:3px solid var(--g)}.ev b{font-family:var(--d);font-size:1.1rem}.ev p{margin:2px 0 0;color:var(--mut);font-size:.93rem}.ev code{font-size:.8rem;background:var(--bg);padding:2px 8px;border-radius:6px;color:var(--mut)}
+.nums{background:var(--bg);padding:80px 0}.nums .w{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}.nums b{display:block;font:700 3.2rem var(--d);letter-spacing:-.05em;color:var(--g)}.nums span{color:var(--mut)}
+.faq{max-width:760px;margin-top:40px}.q{border-bottom:1px solid var(--line)}.q button{all:unset;box-sizing:border-box;width:100%;display:flex;justify-content:space-between;gap:16px;padding:22px 0;font:600 1.12rem var(--d);cursor:pointer}.q button::after{content:'+';font-size:1.5rem;line-height:1;transition:.3s;color:var(--g)}.q.o button::after{transform:rotate(45deg)}
+.q .a{max-height:0;overflow:hidden;transition:max-height .45s ease;color:var(--mut)}.q .a p{margin:0 0 22px}
+.cta{margin:0 28px 28px;border-radius:32px;background:linear-gradient(135deg,var(--ink),var(--ink2));color:#fff;text-align:center;padding:96px 24px;position:relative;overflow:hidden}.cta::before{content:'';position:absolute;width:520px;height:520px;right:-140px;top:-240px;border-radius:50%;background:radial-gradient(circle,rgba(18,165,142,.5),transparent 70%)}
+.cta h2{max-width:34rem;margin:0 auto 18px;position:relative}.cta p{color:#aebbdc;margin:0 auto 30px;max-width:30rem;position:relative}.cta .btn{position:relative}
+footer{padding:26px 0 40px;color:var(--mut);font-size:.88rem}footer .w{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+@media(max-width:900px){.hero .w,#story .w{grid-template-columns:1fr}.stage{height:400px}.feat,.nums .w{grid-template-columns:1fr 1fr}.nl a:not(.btn){display:none}#story{height:auto;overflow:visible;padding:80px 0}.sg{height:380px;margin-top:30px}section{padding:76px 0}}
+@media(max-width:560px){.feat,.nums .w{grid-template-columns:1fr}.pc{width:240px}.w{padding:0 18px}.stat{gap:22px}}
+
+.prog{position:fixed;top:0;left:0;right:0;height:3px;z-index:60;background:linear-gradient(90deg,#ff9933,var(--g2),#138808);transform-origin:left;transform:scaleX(0)}
+.roles{background:var(--bg)}.rl{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:50px}
+.rc,.im{padding:32px;border-radius:22px;background:#fff;border:1px solid var(--line);position:relative;overflow:hidden;box-shadow:0 20px 40px -26px rgba(15,24,48,.3)}
+.rc::after,.im::after{content:'';position:absolute;left:0;right:0;top:0;height:5px;background:var(--c,var(--g))}
+.rc h3,.im h3{font-size:1.4rem;margin:6px 0 10px}.rc p,.im p{margin:0 0 16px;color:var(--mut)}.rc ul,.im ul{margin:0;padding:0;list-style:none;font-size:.93rem}.rc li,.im li{padding:7px 0;border-top:1px solid var(--line)}.rc li::before,.im li::before{content:'✓ ';color:var(--g);font-weight:700}
+.int{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:44px;max-width:860px}.it{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:18px 20px;border:1px solid var(--line);border-radius:16px;background:#fff}
+.it small{display:block;color:var(--mut);font-size:.82rem}.it b{font-family:var(--d)}
+@media(max-width:900px){.rl,.int{grid-template-columns:1fr}}
+
+.idc{position:absolute;right:-22px;top:-46px;width:230px;z-index:3;filter:drop-shadow(0 26px 30px rgba(15,24,48,.35));transform:rotate(7deg)}
+.idc .sh{animation:sh 4.5s ease-in-out infinite}@keyframes sh{0%,55%{transform:translateX(-260px)}100%{transform:translateX(300px)}}
+.sp{position:absolute;color:var(--g2);animation:tw 3s ease-in-out infinite}@keyframes tw{50%{transform:scale(.4) rotate(45deg);opacity:.3}}
+.ben{background:#fff}.bg3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:50px}
+.bc{border:1px solid var(--line);border-radius:24px;overflow:hidden;background:#fff;box-shadow:0 22px 44px -28px rgba(15,24,48,.35)}
+.bc svg{display:block;width:100%;height:190px;background:linear-gradient(160deg,#eaf7f3,#eef1ff)}.bc div{padding:22px 24px 26px}.bc h3{font-size:1.3rem;margin-bottom:8px}.bc p{margin:0;color:var(--mut)}
+.a1{animation:m1 5s ease-in-out infinite}.a2{animation:m2 5s ease-in-out infinite}@keyframes m1{0%,15%{transform:translateX(-50px)}45%,85%{transform:translateX(0)}100%{transform:translateX(-50px)}}@keyframes m2{0%,15%{transform:translateX(50px)}45%,85%{transform:translateX(0)}100%{transform:translateX(50px)}}
+.ov{animation:ov 5s ease-in-out infinite}@keyframes ov{0%,20%{transform:translateX(120px)}50%,85%{transform:translateX(0)}100%{transform:translateX(120px)}}
+.hz{animation:hz 5s ease-in-out infinite}@keyframes hz{0%,40%{opacity:0}55%,85%{opacity:1}100%{opacity:0}}
+.tk{stroke-dasharray:30;stroke-dashoffset:30;animation:tk 5s ease-in-out infinite}.tk:nth-of-type(2){animation-delay:.5s}.tk:nth-of-type(3){animation-delay:1s}@keyframes tk{0%{stroke-dashoffset:30}25%,85%{stroke-dashoffset:0}100%{stroke-dashoffset:30}}
+@media(max-width:900px){.bg3{grid-template-columns:1fr}.idc{width:170px;right:-6px}}
+@media(prefers-reduced-motion:reduce){.idc .sh,.sp,.a1,.a2,.ov,.hz,.tk{animation:none}.tk{stroke-dashoffset:0}.a1,.a2,.ov{transform:none}.hz{opacity:1}}
+
+/* ===== What Makes PRAMAAN Unique ===== */
+.uq{background:var(--ink);color:#fff;position:relative;overflow:hidden}
+.uq::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:44px 44px;-webkit-mask-image:radial-gradient(ellipse at 50% 30%,#000 20%,transparent 75%);mask-image:radial-gradient(ellipse at 50% 30%,#000 20%,transparent 75%);pointer-events:none}
+.uq::after{content:'';position:absolute;width:560px;height:560px;right:-180px;top:-260px;border-radius:50%;background:radial-gradient(circle,rgba(18,165,142,.4),transparent 70%);pointer-events:none}
+.uq .w{position:relative;z-index:1}
+.uq .eb{display:inline-flex;align-items:center;gap:8px;font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--g2);margin-bottom:16px}
+.uq .eb::before{content:'';width:26px;height:2px;background:var(--g2)}
+.uq h2 em,.uq .sub em,.uqc p em{font-style:normal;color:var(--g2);font-weight:600}
+.uq .tagl{font:600 clamp(1.15rem,2.2vw,1.55rem) var(--d);letter-spacing:-.02em;margin-top:14px;color:#dbe4fa;max-width:40rem;line-height:1.25}
+.uq .sub{color:#aebbdc}
+.uqg{position:relative;z-index:1;display:grid;grid-template-columns:repeat(6,1fr);gap:20px;margin-top:56px}
+.uqc{grid-column:span 2;position:relative;padding:30px 28px 28px;border-radius:22px;background:linear-gradient(160deg,rgba(255,255,255,.08),rgba(255,255,255,.03));border:1px solid rgba(255,255,255,.12);overflow:hidden;transition:transform .35s cubic-bezier(.2,.8,.2,1),border-color .35s,box-shadow .35s,background .35s}
+.uqc:nth-child(n+4){grid-column:span 3}
+.uqc::before{content:'';position:absolute;left:0;right:0;top:0;height:3px;background:linear-gradient(90deg,var(--g2),transparent);transform:scaleX(.25);transform-origin:left;transition:transform .5s ease}
+.uqc:hover,.uqc:focus-within{border-color:rgba(18,165,142,.7);box-shadow:0 30px 50px -26px rgba(0,0,0,.7),0 0 0 1px rgba(18,165,142,.25);background:linear-gradient(160deg,rgba(18,165,142,.16),rgba(255,255,255,.04))}
+.uqc:hover::before,.uqc:focus-within::before{transform:scaleX(1)}
+.uqn{position:absolute;right:22px;top:16px;font:700 2.6rem var(--d);letter-spacing:-.05em;color:rgba(255,255,255,.07);transition:color .35s}
+.uqc:hover .uqn{color:rgba(18,165,142,.35)}
+.uqi{width:54px;height:54px;border-radius:15px;display:grid;place-items:center;margin-bottom:22px;color:#fff;background:linear-gradient(135deg,var(--g2),var(--g));box-shadow:0 12px 24px -10px rgba(18,165,142,.8);transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.uqc:hover .uqi{transform:rotate(-6deg) scale(1.08)}
+.uqi svg{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.uqc h3{font-size:1.28rem;margin-bottom:10px;line-height:1.15}
+.uqc p{margin:0;color:#aebbdc;font-size:.95rem}
+.uqf{position:relative;z-index:2;clear:both;margin-top:56px;display:flex;align-items:center;justify-content:center;text-align:center;gap:18px;flex-wrap:wrap;padding:30px 28px;border-radius:24px;border:1px solid rgba(18,165,142,.45);background:linear-gradient(135deg,rgba(18,165,142,.22),rgba(23,35,74,.6))}
+.uqf .mk{flex:0 0 auto}
+.uqf p{margin:0;font:700 clamp(1.1rem,2.4vw,1.6rem) var(--d);letter-spacing:-.02em;line-height:1.3}
+.uqf p span{color:var(--g2)}
+@media(hover:hover){.uqc:hover{transform:translateY(-8px)}}
+@media(max-width:900px){.uqg{grid-template-columns:1fr 1fr}.uqc,.uqc:nth-child(n+4){grid-column:span 1}.uqc:last-child{grid-column:1/-1}}
+@media(max-width:560px){.uqg{grid-template-columns:1fr;gap:16px;margin-top:40px}.uqc:last-child{grid-column:auto}.uqc{padding:26px 22px}.uqf{margin-top:40px;padding:24px 18px}}
+@media(prefers-reduced-motion:reduce){.uqc,.uqc::before,.uqi{transition:none}.uqc:hover{transform:none!important}}
+
+/* remove doubled gaps between adjacent sections that share the same background */
+.roles{padding-bottom:0}
+.roles+.prob{padding-bottom:20px}
+@media(max-width:900px){.roles{padding-bottom:0}.roles+.prob{padding-bottom:10px}}
+
+/* ===== merged PRAMAAN content ===== */
+.hero .scene{position:absolute;left:0;right:0;bottom:0;height:230px;z-index:0;pointer-events:none;-webkit-mask-image:linear-gradient(transparent,#000 45%);mask-image:linear-gradient(transparent,#000 45%)}.scene svg{width:100%;height:100%;display:block}.hero>.w{position:relative;z-index:1}
+.fig{margin:44px 0 8px;border:1px solid var(--line);border-radius:24px;background:linear-gradient(180deg,#fff,#f1f7f6);padding:26px 18px 14px;box-shadow:0 26px 50px -34px rgba(15,24,48,.35)}.fig svg{width:100%;height:auto;display:block;overflow:visible}.fig figcaption{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:6px;font-size:.88rem;color:var(--mut)}.fig figcaption b{color:var(--g)}
+.nlab{font:600 13px 'Figtree',sans-serif;fill:#17234a;text-anchor:middle}.fgb{stroke:#c5cde0;stroke-width:3;stroke-dasharray:3 9;stroke-linecap:round;fill:none}.fgl{stroke:#0b8773;stroke-width:4;stroke-linecap:round;fill:none}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}.chips span{padding:8px 16px;border:1px solid var(--line);border-radius:99px;background:#fff;font-size:.88rem;font-weight:600;color:var(--ink2)}
+.pl2{list-style:none;margin:40px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.pl2 li{display:flex;gap:12px;align-items:flex-start;padding:16px 18px;border:1px solid var(--line);border-radius:16px;background:#fff;font-size:.96rem;transition:transform .25s,border-color .25s}.pl2 li:hover{transform:translateY(-3px);border-color:var(--rd)}.pl2 li::before{content:'!';flex:0 0 24px;height:24px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:.8rem;color:#fff;background:var(--rd)}
+.ans{margin:26px 0 0;font:700 1.25rem var(--d);color:var(--g)}
+.bar{height:10px;border-radius:6px;background:#e1e6f0;margin:6px 0 14px;overflow:hidden}.bar i{display:block;height:100%;border-radius:6px;background:var(--g2)}.bar i.w2{background:var(--am)}.row2{display:flex;justify-content:space-between;font-size:.92rem}.row2 small{color:var(--mut)}
+.cps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:50px}.cp{padding:24px;border:1px solid var(--line);border-radius:20px;background:#fff;box-shadow:0 18px 36px -26px rgba(15,24,48,.3)}.cp b{display:block;font:700 1.08rem var(--d);margin:12px 0 6px}.cp p{margin:0;color:var(--mut);font-size:.92rem}.cp .n{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;background:var(--gl);color:var(--g);font:700 .95rem var(--d)}
+.pts4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:50px}.pt{display:block;padding:26px;border-radius:22px;background:#fff;border:1px solid var(--line);position:relative;overflow:hidden;transition:transform .3s,box-shadow .3s}.pt::after{content:'';position:absolute;left:0;right:0;top:0;height:5px;background:var(--c)}.pt:hover{transform:translateY(-8px);box-shadow:0 30px 50px -28px var(--c)}
+.pt svg{width:84px;height:84px;color:var(--c);margin:6px 0 10px;transition:transform .4s}.pt:hover svg{transform:scale(1.1) translateY(-4px)}.pt h3{font-size:1.2rem;margin-bottom:6px}.pt p{margin:0 0 16px;color:var(--mut);font-size:.92rem}.pt em{font-style:normal;font-weight:700;color:var(--c);font-size:.92rem}
+.rl4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:50px}
+.tcs{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:50px}.tc{padding:22px 24px;border:1px solid var(--line);border-radius:18px;background:#fff;border-left:5px solid var(--g2);transition:transform .3s,border-color .3s}.tc:hover{transform:translateX(8px);border-color:var(--g)}.tc small{display:block;color:var(--g);font-weight:700;letter-spacing:.06em;text-transform:uppercase;font-size:.74rem}.tc b{font:700 1.02rem var(--d)}
+#vision{background:#fff}#vision .vq{font:700 clamp(1.5rem,2.8vw,2.3rem)/1.25 var(--d);letter-spacing:-.02em;max-width:46rem;margin:22px 0 0}
+.st{padding:9px 0}.st h3{font-size:1.15rem}.st p{font-size:.9rem}
+@media(max-width:1000px){.cps,.pts4,.rl4{grid-template-columns:1fr 1fr}.pl2,.tcs{grid-template-columns:1fr 1fr}}@media(max-width:600px){.cps,.pts4,.rl4,.pl2,.tcs{grid-template-columns:1fr}}
+</style></head><body><svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="b-col" viewBox="0 0 100 100"><path d="M8 40L50 12l42 28z" fill="currentColor"/><rect x="14" y="44" width="72" height="6" fill="currentColor" opacity=".75"/><g fill="currentColor" opacity=".5"><rect x="21" y="54" width="9" height="30"/><rect x="37" y="54" width="9" height="30"/><rect x="54" y="54" width="9" height="30"/><rect x="70" y="54" width="9" height="30"/></g><rect x="8" y="86" width="84" height="7" rx="2" fill="currentColor"/></symbol>
+<symbol id="b-uni" viewBox="0 0 100 100"><path d="M28 46a22 22 0 0144 0z" fill="currentColor"/><rect x="48.5" y="12" width="3" height="12" fill="currentColor"/><circle cx="50" cy="11" r="3.5" fill="currentColor"/><rect x="20" y="46" width="60" height="7" fill="currentColor" opacity=".8"/><g fill="currentColor" opacity=".5"><rect x="24" y="56" width="8" height="28"/><rect x="40" y="56" width="8" height="28"/><rect x="56" y="56" width="8" height="28"/><rect x="72" y="56" width="6" height="28"/></g><rect x="12" y="86" width="76" height="7" rx="2" fill="currentColor"/></symbol>
+<symbol id="b-off" viewBox="0 0 100 100"><rect x="49" y="6" width="2.5" height="28" fill="currentColor"/><rect x="51.5" y="7" width="16" height="4" fill="#ff9933"/><rect x="51.5" y="11" width="16" height="4" fill="#fff" stroke="currentColor" stroke-width=".4"/><rect x="51.5" y="15" width="16" height="4" fill="#138808"/><rect x="14" y="34" width="72" height="54" rx="4" fill="currentColor"/><g fill="#fff" opacity=".85"><rect x="22" y="44" width="10" height="9" rx="1"/><rect x="45" y="44" width="10" height="9" rx="1"/><rect x="68" y="44" width="10" height="9" rx="1"/><rect x="22" y="62" width="10" height="9" rx="1"/><rect x="68" y="62" width="10" height="9" rx="1"/><rect x="43" y="64" width="14" height="24" rx="2"/></g></symbol>
+<symbol id="b-ai" viewBox="0 0 100 100"><path d="M50 4l24 9v16c0 14-10 24-24 29-14-5-24-15-24-29V13z" fill="currentColor"/><path d="M39 28l8 8 14-16" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><rect x="22" y="62" width="56" height="24" rx="3" fill="currentColor" opacity=".6"/><rect x="14" y="86" width="72" height="7" rx="2" fill="currentColor"/></symbol>
+<symbol id="b-stu" viewBox="0 0 100 100"><path d="M18 34L50 20l32 14-32 14z" fill="currentColor"/><path d="M30 42v14c10 8 30 8 40 0V42L50 52z" fill="currentColor" opacity=".7"/><circle cx="50" cy="64" r="11" fill="currentColor" opacity=".9"/><path d="M26 92c2-16 46-16 48 0z" fill="currentColor"/></symbol>
+</defs></svg><div class="prog"></div>
+<div class="top"><div class="w"><span>Helpline: 1800-000-0000 (sample)</span><span>Text size <button data-fs="-1" aria-label="Smaller text">A-</button><button data-fs="0" aria-label="Normal text">A</button><button data-fs="1" aria-label="Larger text">A+</button> &nbsp; English</span></div></div><div class="tri"></div>
+<header class="nav"><div class="w"><a class="logo" href="#"><span class="mk"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M8.5 12l2.5 2.5L16 9.5"/></svg></span>PRAMAAN</a>
+<nav class="nl"><a href="#benefits">Benefits</a><a href="#problem">The problem</a><a href="#story">How it works</a><a href="#unique">Unique</a><a href="#portals">Portals</a><a href="#faq">FAQs</a><a class="btn bp" href="#prototype" onclick="openPrototype('student'); return false;">Open dashboard</a></nav></div></header>
+<main>
+<div class="hero"><div class="w"><div>
+<h1 class="hl">Every student enrolled once, in one place only.</h1>
+<p class="lead hl">PRAMAAN checks enrolment records across institutions, flags duplicates and overlaps, and sends every doubtful case to a person to decide.</p>
+<div class="hl"><a class="btn bp" href="#prototype" onclick="openPrototype('student'); return false;">Open the dashboard →</a> <a class="btn bo" href="#story">See how it works</a></div>
+<div class="stat hl"><div><b data-n="12480">0</b><span>records checked</span></div><div><b data-n="142">0</b><span>institutions</span></div><div><b data-n="38">0</b><span>cases flagged</span></div></div></div>
+<div class="stage" aria-hidden="true"><div class="hc"><h3>Verification result</h3>
+<div class="rw"><div>Aarav Menon<small>B.E. Computer Science · 2026-27</small></div><span class="tg ok">Valid</span></div>
+<div class="rw"><div>Diya Raman<small>Overlaps with another full-time course</small></div><span class="tg fl">Flagged</span></div>
+<div class="rw"><div>Meera Iyer<small>MBA intake above approved seats</small></div><span class="tg rv">Needs review</span></div>
+<div class="rw"><div>Karthik Subramani<small>B.E. Mechanical · 2026-27</small></div><span class="tg ok">Valid</span></div></div>
+<svg class="sp" style="left:2%;top:6%;animation-delay:0s" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c1 7 5 11 12 12-7 1-11 5-12 12-1-7-5-11-12-12 7-1 11-5 12-12z"/></svg><svg class="sp" style="right:44%;top:-4%;animation-delay:.8s" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c1 7 5 11 12 12-7 1-11 5-12 12-1-7-5-11-12-12 7-1 11-5 12-12z"/></svg><svg class="sp" style="right:-2%;bottom:34%;animation-delay:1.6s" width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c1 7 5 11 12 12-7 1-11 5-12 12-1-7-5-11-12-12 7-1 11-5 12-12z"/></svg><svg class="sp" style="left:40%;bottom:-2%;animation-delay:2.2s" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c1 7 5 11 12 12-7 1-11 5-12 12-1-7-5-11-12-12 7-1 11-5 12-12z"/></svg><svg class="idc" viewBox="0 0 230 144"><defs><linearGradient id="ig" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#17234a"/><stop offset="1" stop-color="#0b8773"/></linearGradient><linearGradient id="sg" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".45"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient><clipPath id="cc"><rect width="230" height="144" rx="14"/></clipPath></defs>
+<rect width="230" height="144" rx="14" fill="url(#ig)"/><g clip-path="url(#cc)"><rect width="230" height="5" fill="#ff9933"/><rect y="5" width="230" height="3" fill="#fff"/><rect y="8" width="230" height="5" fill="#138808"/>
+<circle cx="52" cy="72" r="26" fill="#cfe9e3"/><circle cx="52" cy="64" r="10" fill="#17234a"/><path d="M32 94c4-14 36-14 40 0z" fill="#17234a"/>
+<text x="92" y="46" fill="#9fb0d6" font-size="9" font-family="Figtree,sans-serif">SAMPLE STUDENT ID</text><text x="92" y="66" fill="#fff" font-size="15" font-weight="700" font-family="Bricolage Grotesque,sans-serif">Aarav Menon</text>
+<text x="92" y="84" fill="#c9d3ea" font-size="10" font-family="Figtree,sans-serif">XXXX XXXX 4521</text><rect x="92" y="94" width="58" height="16" rx="8" fill="#12a58e"/><text x="121" y="105" fill="#fff" font-size="9" font-weight="700" text-anchor="middle" font-family="Figtree,sans-serif">VALID</text>
+<rect class="sh" x="0" y="0" width="90" height="144" fill="url(#sg)" transform="skewX(-18)"/></g></svg><div class="chip c1" style="left:-6px;bottom:70px"><b>94.3%</b>pass rate</div><div class="chip c2" style="right:0;bottom:20px;background:var(--g)"><b>0</b>auto-accusations</div></div></div></div>
+
+<section class="ben" id="benefits"><div class="w"><h2>What PRAMAAN gives you.</h2><p class="sub">Three things every institution and regulator needs, working quietly in the background.</p><div class="bg3">
+<div class="bc"><svg viewBox="0 0 320 190" aria-hidden="true"><g class="a1"><rect x="40" y="48" width="120" height="78" rx="12" fill="#fff" stroke="#c7d2ea"/><rect x="54" y="64" width="50" height="8" rx="4" fill="#0b8773"/><rect x="54" y="82" width="80" height="6" rx="3" fill="#d4dbec"/></g><g class="a2"><rect x="160" y="64" width="120" height="78" rx="12" fill="#fff" stroke="#c7d2ea"/><rect x="174" y="80" width="50" height="8" rx="4" fill="#4f5fe0"/><rect x="174" y="98" width="80" height="6" rx="3" fill="#d4dbec"/></g></svg><div><h3>One student, one record</h3><p>Duplicate IDs are caught before they split a student across two files.</p></div></div>
+<div class="bc"><svg viewBox="0 0 320 190" aria-hidden="true"><rect x="30" y="60" width="150" height="26" rx="13" fill="#0b8773"/><g class="ov"><rect x="120" y="104" width="170" height="26" rx="13" fill="#4f5fe0"/></g><rect class="hz" x="120" y="52" width="60" height="86" rx="10" fill="#d64545" fill-opacity=".18" stroke="#d64545" stroke-dasharray="5 4"/><text class="hz" x="150" y="44" text-anchor="middle" font-size="12" font-weight="700" fill="#d64545" font-family="Figtree,sans-serif">Overlap</text></svg><div><h3>Overlaps found early</h3><p>Parallel full-time courses show up on the timeline with the dates that clash.</p></div></div>
+<div class="bc"><svg viewBox="0 0 320 190" aria-hidden="true"><g fill="none" stroke="#0b8773" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><rect x="50" y="36" width="220" height="34" rx="10" fill="#fff" stroke="#c7d2ea" stroke-width="1.5"/><rect x="50" y="78" width="220" height="34" rx="10" fill="#fff" stroke="#c7d2ea" stroke-width="1.5"/><rect x="50" y="120" width="220" height="34" rx="10" fill="#fff" stroke="#c7d2ea" stroke-width="1.5"/><path class="tk" d="M64 53l7 7 13-14"/><path class="tk" d="M64 95l7 7 13-14"/><path class="tk" d="M64 137l7 7 13-14"/></g><g fill="#d4dbec"><rect x="98" y="49" width="110" height="8" rx="4"/><rect x="98" y="91" width="90" height="8" rx="4"/><rect x="98" y="133" width="130" height="8" rx="4"/></g></svg><div><h3>Every decision on record</h3><p>Who reviewed what, and when, is kept in a tamper-evident audit trail.</p></div></div></div></div></section>
+<section class="prob" id="problem"><div class="w"><h2>One student, two full-time seats.</h2><p class="sub">When two institutions admit the same APAAR ID for overlapping dates, nobody notices until it is too late. Scroll to watch PRAMAAN catch it.</p>
+<div class="pv"><div class="pc pa"><small>Institution A · 2026-27</small><b>B.E. Computer Science</b><small>APAAR ID ending 4521</small></div><div class="pc pb"><small>Institution B · 2026-27</small><b>B.Sc. Data Science</b><small>APAAR ID ending 4521</small></div><div class="badge">Overlap flagged</div></div><ul class="pl2"><li>Duplicate student records across institutions</li><li>Missing or inconsistent student information</li><li>Difficulty verifying student identities</li><li>No view of actual enrolment against approved intake</li><li>Conflicting enrolments that go unnoticed</li><li>Delays in record verification when students transfer</li><li>Limited coordination between institutions and regulators</li></ul><p class="ans">PRAMAAN answers these with one verification and monitoring ecosystem.</p><figure class="fig" aria-label="Disconnected institutions becoming connected"><svg viewBox="0 0 960 200" role="img" aria-label="Student, college, university, State Directorate and AICTE shown first disconnected, then linked by PRAMAAN"><g class="bks"><path class="fgb" d="M140 90H255"/><path class="fgb" d="M345 90H450"/><path class="fgb" d="M540 90H645"/><path class="fgb" d="M735 90H820"/></g><g class="cls"><path class="fgl" pathLength="1" d="M140 90H255"/><path class="fgl" pathLength="1" d="M345 90H450"/><path class="fgl" pathLength="1" d="M540 90H645"/><path class="fgl" pathLength="1" d="M735 90H820"/></g>
+<g class="nd" style="color:#4f5fe0"><use href="#b-stu" x="50" y="44" width="90" height="90"/><text class="nlab" x="95" y="160">Student</text></g><g class="nd" style="color:#0b7fc4"><use href="#b-col" x="255" y="44" width="90" height="90"/><text class="nlab" x="300" y="160">College</text></g><g class="nd" style="color:#17234a"><use href="#b-uni" x="450" y="44" width="90" height="90"/><text class="nlab" x="495" y="160">University</text></g><g class="nd" style="color:#14804f"><use href="#b-off" x="645" y="44" width="90" height="90"/><text class="nlab" x="690" y="160">State Directorate</text></g><g class="nd" style="color:#c2650a"><use href="#b-ai" x="820" y="44" width="90" height="90"/><text class="nlab" x="865" y="160">AICTE</text></g></svg><figcaption><span>Today: records sit in separate systems.</span><span><b>With PRAMAAN:</b> one APAAR-based ecosystem.</span></figcaption></figure></div></section>
+
+<section id="story"><div class="w"><div><h2>How PRAMAAN works.</h2><div class="steps"><div class="ln"><div class="lf"></div></div><div class="st on"><i>1</i><div><h3>Collect</h3><p>Institutions submit student records through structured entry or bulk CSV upload.</p></div></div><div class="st"><i>2</i><div><h3>Validate</h3><p>Required fields, formats, missing information and possible duplicates are checked.</p></div></div><div class="st"><i>3</i><div><h3>Verify</h3><p>Identity and enrolment records are examined for inconsistencies and conflicts.</p></div></div><div class="st"><i>4</i><div><h3>Monitor compliance</h3><p>Enrolment is compared with applicable intake and admission rules.</p></div></div><div class="st"><i>5</i><div><h3>Review</h3><p>Flagged records go to authorised officers for inspection and review.</p></div></div><div class="st"><i>6</i><div><h3>Gain insight</h3><p>Verified data and review outcomes feed institutional and administrative dashboards.</p></div></div></div></div>
+<div class="sg" aria-hidden="true">
+<div class="pn on"><h3>Upload records</h3><div class="dz"><b>enrolments_2026.csv</b>1,248 rows · 14 columns<br><br><span class="tg ok">Received</span></div></div>
+<div class="pn"><h3>Validation</h3><div class="ck"><u>✓</u>Schema matches template</div><div class="ck"><u>✓</u>All required fields present</div><div class="ck"><u>✓</u>Dates and IDs correctly formatted</div><div class="ck"><u>✓</u>1,248 of 1,248 rows accepted</div></div>
+<div class="pn"><h3>Rule engine</h3><div class="rules"><div><b>Duplicate ID</b><small>None found</small></div><div><b>Date overlap</b><small style="color:var(--rd)">1 case flagged</small></div><div><b>Intake limits</b><small style="color:#9a5f06">1 needs review</small></div><div><b>Anomalies</b><small>None found</small></div></div></div>
+<div class="pn"><h3>Intake compliance</h3><div class="row2"><b>B.E. Computer Science · approved 60</b><small>58 enrolled</small></div><div class="bar"><i style="width:97%"></i></div><div class="row2"><b>MBA · General · approved 60</b><small style="color:#9a5f06">66 enrolled</small></div><div class="bar"><i class="w2" style="width:100%"></i></div><div class="row2"><b>MBA · NRI (supernumerary)</b><small>4 of 6</small></div><div class="bar"><i style="width:66%"></i></div><span class="tg rv">1 programme needs review</span></div><div class="pn"><h3>Review case DR-2041</h3><div class="rw"><div>Diya Raman<small>Overlapping full-time enrolment</small></div><span class="tg fl">Flagged</span></div><div class="ck"><div style="flex:1">Reviewer note recorded: <b>Confirmed conflict</b></div></div><div class="ck"><div style="flex:1">Logged at 10:42 AM by reviewer · tamper-evident</div></div><div style="display:flex;gap:10px"><span class="btn bp">Confirm</span><span class="btn bo">Dismiss</span></div></div><div class="pn"><h3>Dashboards</h3><div class="rules"><div><b>Student view</b><small>Records and transfers</small></div><div><b>Institution view</b><small>Imports and compliance</small></div><div><b>State view</b><small>Institutional monitoring</small></div><div><b>National view</b><small>Oversight and insights</small></div></div></div></div></div></section>
+
+<section><div class="w"><h2>Four checks, one clear answer.</h2><p class="sub">The engine explains every flag. It never decides on its own.</p>
+<div class="feat"><div class="fc"><div class="ic">🪪</div><h3>Duplicate IDs</h3><p>Repeated APAAR IDs across institutions are caught on upload.</p></div><div class="fc"><div class="ic">📅</div><h3>Date overlaps</h3><p>Parallel full-time courses are found by comparing timelines.</p></div><div class="fc"><div class="ic">📊</div><h3>Intake limits</h3><p>Admissions are checked against approved seats, category by category.</p></div><div class="fc"><div class="ic">📈</div><h3>Anomalies</h3><p>Unusual spikes are compared with the programme's own history.</p></div></div></div></section><section id="caps"><div class="w"><h2>Core platform capabilities.</h2><p class="sub">Eight building blocks that work together behind every record.</p><div class="cps"><div class="cp"><span class="n">1</span><b>Smart data ingestion</b><p>Import student records in bulk from CSV instead of entering each one.</p></div><div class="cp"><span class="n">2</span><b>Automated validation</b><p>Validate mandatory fields and catch missing or badly formatted data.</p></div><div class="cp"><span class="n">3</span><b>Duplicate detection</b><p>Spot possible duplicate student identities and enrolment records.</p></div><div class="cp"><span class="n">4</span><b>Enrolment intelligence</b><p>Compare enrolment with approved intake and admission categories.</p></div><div class="cp"><span class="n">5</span><b>Compliance alerts</b><p>Highlight inconsistencies that need administrative attention.</p></div><div class="cp"><span class="n">6</span><b>Secure verification</b><p>A structured workflow for authorised users and institutions.</p></div><div class="cp"><span class="n">7</span><b>Academic transfer support</b><p>Support record verification when students move between institutions.</p></div><div class="cp"><span class="n">8</span><b>Centralised dashboards</b><p>Student, institution, state and national views in dedicated dashboards.</p></div></div></div></section>
+
+<section class="uq" id="unique"><div class="w">
+<div class="eb">What Makes PRAMAAN Unique?</div>
+<h2>Beyond Student Records.</h2>
+<p class="tagl">Building a <em>Connected Academic Identity.</em></p>
+<p class="sub">PRAMAAN is more than a student data management platform. It connects students, institutions, State Directorates and AICTE through a unified <em>APAAR-based ecosystem</em> with <em>transparent verification</em> and <em>academic mobility</em>.</p>
+<div class="uqg">
+<article class="uqc" tabindex="0"><span class="uqn">01</span><div class="uqi"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/><path d="M8 11l2.2 2.2L14.5 9"/></svg></div><h3>Explainable Student Verification</h3><p>Identify <em>duplicate records</em>, missing information, <em>identity mismatches</em> and enrolment conflicts. Show the <em>exact reasons</em> behind every flagged record.</p></article>
+<article class="uqc" tabindex="0"><span class="uqn">02</span><div class="uqi"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h14l-3-3"/><path d="M20 16H6l3 3"/><circle cx="12" cy="12" r="0.8"/></svg></div><h3>Cross-State Academic Mobility</h3><p>Support smoother student transfers between institutions and states through structured <em>academic record verification</em>, with a planned integration pathway for <em>Tamil Nadu UMS and EMIS</em>.</p></article>
+<article class="uqc" tabindex="0"><span class="uqn">03</span><div class="uqi"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="5" r="2.5"/><circle cx="5" cy="19" r="2.5"/><circle cx="19" cy="19" r="2.5"/><path d="M12 7.5v4M12 11.5L6 17M12 11.5l6 5.5"/></svg></div><h3>Multi-Level Institutional Connectivity</h3><p>Connect students, colleges, State Directorates and AICTE through separate <em>role-based portals</em> and dashboards.</p></article>
+<article class="uqc" tabindex="0"><span class="uqn">04</span><div class="uqi"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.2 8-8 9-4.8-1-8-4.5-8-9V6l8-3z"/><path d="M8.5 12.5l2.5 2.5 4.5-5"/></svg></div><h3>Intelligent Compliance Monitoring</h3><p>Validate <em>approved intake</em>, actual enrolment, <em>supernumerary seats</em>, NRI, OCI and foreign national categories against applicable rules.</p></article>
+<article class="uqc" tabindex="0"><span class="uqn">05</span><div class="uqi"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6"/><path d="M16 11l2 2 4-4"/></svg></div><h3>Transparent Human Review</h3><p>Provide officers with <em>flagged records</em>, review actions and <em>audit trails</em> to support accountable decision-making.</p></article>
+</div>
+<div class="uqf"><div class="mk" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg></div><p><span>PRAMAAN</span> – One Platform. Connected Institutions. Verified Student Identities.</p></div>
+</div></section><section id="portals" class="prob"><div class="w"><h2>Four portals, one connected ecosystem.</h2><p class="sub">Each portal gives role-specific access to the information that role needs. The backend decides permissions, not the screen.</p><div class="pts4"><a class="pt" href="#prototype" style="--c:#4f5fe0" onclick="openPrototype('student'); return false;"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#b-stu"/></svg><h3>Student portal</h3><p>Profile, records and transfer services.</p><em>Access portal →</em></a><a class="pt" href="#prototype" style="--c:#0b7fc4" onclick="openPrototype('college'); return false;"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#b-col"/></svg><h3>College portal</h3><p>Records, imports and compliance.</p><em>Access portal →</em></a><a class="pt" href="#prototype" style="--c:#14804f" onclick="openPrototype('state'); return false;"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#b-off"/></svg><h3>State Directorate portal</h3><p>State-level institutional monitoring.</p><em>Access portal →</em></a><a class="pt" href="#prototype" style="--c:#c2650a" onclick="openPrototype('aicte'); return false;"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#b-ai"/></svg><h3>AICTE national portal</h3><p>National visibility and oversight.</p><em>Access portal →</em></a></div></div></section>
+<section class="roles"><div class="w"><h2>Built for the people who verify.</h2><p class="sub">Three roles, each with access limited to what they need. The backend decides permissions, not the screen.</p>
+<div class="rl"><div class="rc"><h3>Institution admin</h3><p>Keeps records clean at the source.</p><ul><li>Uploads CSV or Excel records</li><li>Sees field-level errors with fixes</li><li>Tracks import history</li></ul></div>
+<div class="rc" style="--c:var(--am)"><h3>Verifier</h3><p>Checks identity and enrolment.</p><ul><li>Reviews flagged and ambiguous cases</li><li>Sees evidence and the rule behind each flag</li><li>Confirms, dismisses or asks for more information</li></ul></div>
+<div class="rc" style="--c:var(--ink2)"><h3>Regulatory authority</h3><p>Monitors compliance across institutions.</p><ul><li>Intake compliance by category</li><li>Anomaly and conflict dashboards</li><li>Reports and a full audit trail</li></ul></div></div></div></section><section id="impact"><div class="w"><h2>What changes for each stakeholder.</h2><p class="sub">PRAMAAN aims for measurable improvements in academic administration.</p><div class="rl4"><div class="im" style="--c:#4f5fe0"><h3>Students</h3><ul><li>Better visibility of academic records</li><li>Easier access to student services</li><li>Improved academic transfer support</li><li>More transparent identity verification</li></ul></div><div class="im" style="--c:#0b7fc4"><h3>Colleges</h3><ul><li>Reduced manual data entry</li><li>Faster identification of duplicate records</li><li>Better enrolment monitoring</li><li>Simplified compliance tracking</li></ul></div><div class="im" style="--c:#14804f"><h3>State Directorates</h3><ul><li>Centralised institutional visibility</li><li>Improved monitoring of enrolment patterns</li><li>Better identification of discrepancies</li></ul></div><div class="im" style="--c:#c2650a"><h3>AICTE</h3><ul><li>Consolidated institutional insights</li><li>Improved regulatory oversight</li><li>More transparent student data verification</li></ul></div></div></div></section><section id="tech" class="prob"><div class="w"><h2>Our technology approach.</h2><p class="sub">Modern web technology and structured data processing, built to scale.</p><div class="tcs"><div class="tc"><small>Frontend</small><b>HTML, CSS, JavaScript / React</b></div><div class="tc"><small>Backend</small><b>Python FastAPI</b></div><div class="tc"><small>Database</small><b>SQLite for the prototype, with a pathway to a production-grade database</b></div><div class="tc"><small>Data processing</small><b>Structured validation and duplicate detection</b></div><div class="tc"><small>Security</small><b>Role-based access and controlled verification workflows</b></div><div class="tc"><small>Integration</small><b>API-based architecture for external academic data systems</b></div></div></div></section>
+<section class="prob"><div class="w"><h2>Every decision leaves a trail.</h2><p class="sub">Role-based access, masked IDs and a timestamped record of each action.</p>
+<div class="tl"><div class="fill"></div>
+<div class="ev"><b>Records uploaded</b><p>1,248 rows accepted <code>10:15 AM</code></p></div><div class="ev"><b>Overlap flagged by the system</b><p>Case DR-2041 created with an explanation <code>10:16 AM</code></p></div><div class="ev"><b>Reviewer opens the case</b><p>Evidence and both enrolment records shown <code>10:40 AM</code></p></div><div class="ev"><b>Decision recorded</b><p>Confirmed conflict, with reviewer note <code>10:42 AM</code></p></div><div class="ev"><b>Report exported</b><p>Compliance summary for the regulatory authority <code>11:05 AM</code></p></div></div></div></section>
+
+<div class="nums"><div class="w"><div><b data-n="12480">0</b><span>records verified</span></div><div><b data-n="4">0</b><span>automated rule checks</span></div><div><b data-n="38">0</b><span>cases sent to people</span></div><div><b data-n="100" data-s="%">0</b><span>actions logged</span></div></div></div>
+
+<section id="vision"><div class="w"><h2>Our vision.</h2><p class="vq">An education ecosystem where a student's academic identity stays consistent, verifiable and accessible throughout their educational journey.</p><p class="sub">PRAMAAN bridges the gap between disconnected institutional databases and builds a connected academic identity that supports transparency, accountability and seamless academic mobility.</p><figure class="fig"><svg viewBox="0 0 1000 270" role="img" aria-label="Institutions linked by a connected academic identity"><path id="arc" class="fgl" pathLength="1" style="stroke-width:3" d="M80 150Q290 10 500 70T920 150" /><circle r="7" fill="#12a58e" class="dot"><animateMotion dur="6s" repeatCount="indefinite" path="M80 150Q290 10 500 70T920 150"/></circle><g class="bld"><g style="color:#4f5fe0"><use href="#b-stu" x="30" y="150" width="100" height="100"/></g><g style="color:#0b7fc4"><use href="#b-col" x="170" y="140" width="110" height="110"/></g><g style="color:#17234a"><use href="#b-uni" x="320" y="110" width="150" height="150"/></g><g style="color:#14804f"><use href="#b-off" x="500" y="130" width="120" height="120"/></g><g style="color:#0b8773"><use href="#b-uni" x="650" y="130" width="120" height="120"/></g><g style="color:#c2650a"><use href="#b-ai" x="800" y="120" width="140" height="140"/></g></g><rect x="10" y="250" width="980" height="6" rx="3" fill="#0b8773" opacity=".25"/></svg><figcaption><span>One academic identity that follows the student.</span><span>Illustration only. No real institution is shown.</span></figcaption></figure><div class="chips"><span>APAAR ID</span><span>National Education Policy 2020</span><span>Academic Bank of Credits</span><span>DPDP Act 2023</span><span>AICTE oversight</span></div></div></section><section id="faq"><div class="w"><h2>Have questions?</h2><div class="faq">
+<div class="q"><button>Does PRAMAAN accuse students of fraud?</button><div class="a"><p>No. Every alert is a prompt for a reviewer. Only a person can confirm or dismiss a case.</p></div></div>
+<div class="q"><button>What file formats can institutions upload?</button><div class="a"><p>CSV or Excel files that follow the sample template. Missing columns are reported before anything is imported.</p></div></div>
+<div class="q"><button>How are APAAR IDs protected?</button><div class="a"><p>IDs are masked by default, access is role-based, and every action is stored with a timestamp.</p></div></div>
+<div class="q"><button>Is this connected to the real APAAR system?</button><div class="a"><p>Not yet. This is a hackathon prototype that uses a mock adapter until access is approved.</p></div></div></div></div></section>
+<div class="cta"><h2>See the dashboard with your own eyes.</h2><p>Open the live prototype to explore records, alerts and the review queue.</p><a class="btn bp" href="#prototype" onclick="openPrototype('student'); return false;">Open the dashboard →</a></div>
+</main>
+<footer><div class="w"><span>© 2026 PRAMAAN by Team Anvaya · Smart India Hackathon prototype. Not an official government website.</span><span>Alerts are review prompts, not fraud findings.</span></div></footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+(function(){
+var fs=0,root=document.documentElement;
+document.querySelectorAll('[data-fs]').forEach(function(b){b.onclick=function(){var v=+b.dataset.fs;fs=v===0?0:Math.max(-1,Math.min(2,fs+v));root.style.fontSize=(16+fs*2)+'px'}});
+document.querySelectorAll('.q').forEach(function(q){q.querySelector('button').onclick=function(){var o=q.classList.toggle('o'),a=q.querySelector('.a');a.style.maxHeight=o?a.scrollHeight+'px':0}});
+var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+function fmt(el,v){el.textContent=Math.round(v).toLocaleString('en-IN')+(el.dataset.s||'')}
+if(reduce||!window.gsap||!window.ScrollTrigger){document.querySelectorAll('[data-n]').forEach(function(e){fmt(e,+e.dataset.n)});document.querySelectorAll('.st').forEach(function(s){s.classList.add('on')});return}
+gsap.registerPlugin(ScrollTrigger);
+gsap.from('.hl',{y:36,opacity:0,duration:.9,stagger:.12,ease:'power3.out'});
+gsap.from('.hc',{y:80,rotate:4,opacity:0,duration:1.1,ease:'power3.out',delay:.2});
+gsap.from('.chip',{scale:.6,opacity:0,duration:.8,stagger:.15,delay:.9,ease:'back.out(2)'});
+document.querySelectorAll('[data-n]').forEach(function(e){var o={v:0},n=+e.dataset.n;ScrollTrigger.create({trigger:e,start:'top 92%',once:true,onEnter:function(){gsap.to(o,{v:n,duration:1.8,ease:'power2.out',onUpdate:function(){fmt(e,o.v)}})}})});
+gsap.to('.hc',{y:-70,scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
+gsap.to('.c1',{y:-130,scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
+gsap.to('.c2',{y:-30,scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
+var st=document.querySelector('.stage');st&&addEventListener('mousemove',function(e){var x=(e.clientX/innerWidth-.5)*14,y=(e.clientY/innerHeight-.5)*10;gsap.to('.hc',{rotationY:x,rotationX:-y,transformPerspective:900,duration:.6,overwrite:'auto'})});
+var p=gsap.timeline({scrollTrigger:{trigger:'.prob .pv',start:'top 75%',end:'center 45%',scrub:1}});
+p.fromTo('.pa',{x:-260,rotate:-8},{x:-40,rotate:-3,y:-14},0).fromTo('.pb',{x:260,rotate:8},{x:40,rotate:3,y:14},0).fromTo('.badge',{scale:0,opacity:0},{scale:1,opacity:1,ease:'back.out(3)'},.7);
+var steps=document.querySelectorAll('.st'),panels=document.querySelectorAll('.pn');
+function setStep(i){steps.forEach(function(s,k){s.classList.toggle('on',k<=i)});panels.forEach(function(s,k){s.classList.toggle('on',k===i)})}
+ScrollTrigger.matchMedia({'(min-width:901px)':function(){ScrollTrigger.create({trigger:'#story',start:'top top',end:'+=3400',pin:true,scrub:true,onUpdate:function(s){gsap.set('.lf',{scaleY:Math.min(1,s.progress*1.15)});setStep(Math.min(5,Math.floor(s.progress*6)))}})},
+'(max-width:900px)':function(){steps.forEach(function(s){s.classList.add('on')});setStep(0);var i=0;var t=setInterval(function(){i=(i+1)%6;setStep(i)},2600);return function(){clearInterval(t)}}});
+gsap.from('.fc',{y:70,opacity:0,rotate:3,stagger:.12,duration:.9,ease:'power3.out',scrollTrigger:{trigger:'.feat',start:'top 82%'}});
+gsap.to('.tl .fill',{scaleY:1,ease:'none',scrollTrigger:{trigger:'.tl',start:'top 70%',end:'bottom 70%',scrub:true}});
+gsap.from('.ev',{x:-24,opacity:0,stagger:.2,scrollTrigger:{trigger:'.tl',start:'top 72%',end:'bottom 75%',scrub:true}});
+gsap.to('.prog',{scaleX:1,ease:'none',scrollTrigger:{start:0,end:'max',scrub:true}});
+gsap.from('.rc',{y:60,opacity:0,stagger:.15,duration:.9,ease:'power3.out',scrollTrigger:{trigger:'.rl',start:'top 82%'}});
+gsap.from('.bc',{y:70,opacity:0,stagger:.16,duration:.9,ease:'power3.out',scrollTrigger:{trigger:'.bg3',start:'top 82%'}});
+gsap.from('.uqc',{opacity:0,stagger:.1,duration:.7,ease:'power2.out',clearProps:'all',scrollTrigger:{trigger:'.uqg',start:'top 88%',once:true}});
+gsap.from('.uqf',{opacity:0,duration:.7,ease:'power2.out',clearProps:'all',scrollTrigger:{trigger:'.uqf',start:'top 95%',once:true}});
+gsap.to('.idc',{y:-14,rotate:4,duration:2.6,yoyo:true,repeat:-1,ease:'sine.inOut'});
+gsap.from('.cta',{scale:.92,borderRadius:90,scrollTrigger:{trigger:'.cta',start:'top 95%',end:'top 50%',scrub:true}});
+})();
+</script><script>
+(function(){if(matchMedia('(prefers-reduced-motion:reduce)').matches||!window.gsap||!window.ScrollTrigger)return;var q=function(x){return document.querySelectorAll(x)};
+gsap.to('.scene .l1',{y:-40,scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});gsap.to('.scene .l2',{y:-90,scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
+var pf=q('#problem .fig')[0];if(pf){gsap.timeline({scrollTrigger:{trigger:pf,start:'top 80%',end:'bottom 55%',scrub:1}}).from('#problem .nd',{y:30,opacity:0,scale:.7,transformOrigin:'50% 100%',stagger:.12,duration:.5},0).fromTo('#problem .fgl',{strokeDasharray:1,strokeDashoffset:1},{strokeDashoffset:0,stagger:.25,duration:.6},.5)}
+gsap.from('.pl2 li',{x:-26,opacity:0,stagger:.08,duration:.7,ease:'power3.out',scrollTrigger:{trigger:'.pl2',start:'top 88%'}});
+var vf=q('#vision .fig')[0];if(vf){gsap.timeline({scrollTrigger:{trigger:vf,start:'top 80%',end:'bottom 60%',scrub:1}}).from('#vision .bld>g',{scaleY:0,transformOrigin:'50% 100%',opacity:0,stagger:.12,duration:.5},0).fromTo('#arc',{strokeDasharray:1,strokeDashoffset:1},{strokeDashoffset:0,duration:1.2,ease:'none'},.4).from('#vision .dot',{opacity:0,duration:.2},1.5)}
+gsap.from('#vision .chips span',{y:20,opacity:0,stagger:.08,duration:.6,scrollTrigger:{trigger:'#vision .chips',start:'top 92%'}});
+[['.cp','.cps'],['.pt','.pts4'],['.im','.rl4'],['.tc','.tcs']].forEach(function(p){gsap.from(p[0],{y:60,opacity:0,stagger:.1,duration:.8,ease:'power3.out',scrollTrigger:{trigger:p[1],start:'top 85%'}})});
+['#caps','#portals','#impact','#tech','#vision','#problem'].forEach(function(id){var h=document.querySelector(id+' h2');h&&gsap.from(h,{y:44,opacity:0,clipPath:'inset(0 0 100% 0)',duration:1,ease:'power3.out',scrollTrigger:{trigger:h,start:'top 88%'}})});
+})();
+</script>
+
+<!-- ========================================================================= -->
+<!-- PRAMAAN 100% OFFLINE FULL REACT-EQUIVALENT DASHBOARD PROTOTYPE            -->
+<!-- Exact same UI, styling, layout, icons, sub-tabs, and features.            -->
+<!-- ========================================================================= -->
+<style>
+/* CSS Variables directly from frontend/src/styles.css */
+:root {
+  --ink-950: #0a1020;
+  --ink-900: #0f1830;
+  --ink-800: #17234a;
+  --ink-700: #223260;
+  --teal-50: #e8f8f5;
+  --teal-100: #c8efe8;
+  --teal-400: #2dc4aa;
+  --teal-500: #12a58e;
+  --teal-600: #0b8773;
+  --teal-700: #0a6a5b;
+  --indigo-50: #eef1ff;
+  --indigo-100: #dde3ff;
+  --indigo-500: #4f5fe0;
+  --indigo-600: #3f4cc4;
+  --amber-50: #fff6e5;
+  --amber-100: #fde9c0;
+  --amber-500: #f0a53a;
+  --amber-600: #b8730a;
+  --red-50: #fdecec;
+  --red-100: #f9d3d3;
+  --red-500: #e5484d;
+  --red-600: #c23b3b;
+  --green-50: #e7f7ee;
+  --green-600: #1b8a55;
+  --primary: #0b8773;
+  --text: #121a2e;
+  --text-2: #46506a;
+  --muted: #7a859e;
+  --line: #e4e8f1;
+  --surface: #ffffff;
+  --workspace: #f4f6fb;
+  --shadow-sm: 0 1px 2px rgba(15,24,48,.06);
+  --shadow-md: 0 4px 12px rgba(15,24,48,.08);
+  --shadow-lg: 0 12px 32px rgba(15,24,48,.12);
+}
+
+#pramaan-prototype-root {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+  background: var(--workspace);
+  font-family: 'Figtree', system-ui, -apple-system, sans-serif;
+  color: var(--text);
+  overflow: hidden;
+}
+
+/* React App Shell Layout */
+.proto-app-shell {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Sidebar exactly from styles.css */
+.proto-sidebar {
+  width: 268px;
+  min-width: 268px;
+  background:
+    radial-gradient(420px 260px at 0% 0%, rgba(45, 196, 170, .18), transparent 70%),
+    radial-gradient(360px 300px at 100% 100%, rgba(79, 95, 224, .22), transparent 70%),
+    linear-gradient(180deg, var(--ink-900), var(--ink-950));
+  border-right: 1px solid rgba(255, 255, 255, .05);
+  display: flex;
+  flex-direction: column;
+  color: #dbe3f5;
+  user-select: none;
+  z-index: 20;
+}
+
+.proto-brand {
+  min-height: 84px;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 0 22px;
+}
+.proto-brand-mark {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  color: #04251f;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--teal-400), #7ee8d3);
+  box-shadow: 0 6px 18px -4px rgba(45, 196, 170, .55), inset 0 1px 0 rgba(255,255,255,.5);
+  flex: 0 0 42px;
+}
+.proto-brand-text strong {
+  display: block;
+  font: 800 18px 'Bricolage Grotesque', sans-serif;
+  letter-spacing: -.2px;
+  color: #fff;
+}
+.proto-brand-text strong span {
+  color: var(--teal-400);
+}
+.proto-brand-text small {
+  display: block;
+  margin-top: 2px;
+  color: #8e9bbd;
+  font-size: 11.5px;
+}
+
+.proto-role-badge {
+  padding: 6px 18px 10px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--teal-400);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.proto-role-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--teal-400);
+  display: inline-block;
+}
+
+.proto-nav-caption {
+  padding: 16px 22px 8px;
+  color: #6b7aa3;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+}
+
+.proto-side-nav {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 0 14px;
+}
+
+.proto-nav-link {
+  height: 42px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 14px;
+  border-radius: 10px;
+  color: #a9b6d6;
+  font-size: 13.5px;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all .18s ease;
+  position: relative;
+  background: transparent;
+  border: none;
+  width: 100%;
+  text-align: left;
+}
+.proto-nav-link:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, .06);
+}
+.proto-nav-link.active {
+  color: #fff;
+  font-weight: 600;
+  background: linear-gradient(90deg, rgba(45, 196, 170, .22), rgba(45, 196, 170, .05));
+  box-shadow: inset 0 0 0 1px rgba(45, 196, 170, .22);
+}
+.proto-nav-link.active::before {
+  content: '';
+  position: absolute;
+  left: -14px;
+  top: 10px;
+  bottom: 10px;
+  width: 4px;
+  border-radius: 0 4px 4px 0;
+  background: var(--teal-400);
+}
+.proto-nav-link.active svg {
+  color: var(--teal-400);
+}
+.proto-nav-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #3dd8be;
+  margin-left: auto;
+  box-shadow: 0 0 0 4px rgba(61, 216, 190, .18);
+}
+
+.proto-sidebar-bottom {
+  margin-top: auto;
+  padding: 16px 14px;
+}
+.proto-environment {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, .05);
+  border: 1px solid rgba(255, 255, 255, .08);
+  border-radius: 12px;
+}
+.proto-live-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--teal-400);
+  box-shadow: 0 0 0 0 rgba(45, 196, 170, .6);
+  animation: protoPulse 2s infinite;
+}
+@keyframes protoPulse {
+  70% { box-shadow: 0 0 0 7px rgba(45, 196, 170, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(45, 196, 170, 0); }
+}
+
+/* Workspace & Topbar */
+.proto-workspace {
+  flex: 1;
+  height: 100vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  background: var(--workspace);
+}
+
+.proto-topbar {
+  height: 70px;
+  position: sticky;
+  top: 0;
+  z-index: 15;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  background: rgba(244, 246, 251, .85);
+  backdrop-filter: blur(14px) saturate(1.4);
+  border-bottom: 1px solid rgba(228, 232, 241, .9);
+}
+
+.proto-topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--muted);
+  font-size: 13.5px;
+}
+.proto-topbar-left strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.proto-topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* 4 Portal Quick Switcher in Topbar */
+.proto-portal-switcher {
+  display: flex;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 3px;
+  gap: 3px;
+  box-shadow: var(--shadow-sm);
+}
+.proto-portal-btn {
+  border: none;
+  background: transparent;
+  padding: 6px 12px;
+  border-radius: 7px;
+  font: 600 12.5px 'Figtree', sans-serif;
+  color: var(--text-2);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all .15s ease;
+}
+.proto-portal-btn:hover {
+  color: var(--text);
+  background: #f1f5f9;
+}
+.proto-portal-btn.active {
+  background: var(--ink-950);
+  color: #fff;
+  box-shadow: 0 2px 6px rgba(10,16,32,0.25);
+}
+
+.proto-global-search {
+  display: flex;
+  width: 240px;
+  height: 38px;
+  align-items: center;
+  gap: 8px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: var(--shadow-sm);
+}
+.proto-global-search input {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 13px;
+  color: var(--text);
+}
+.proto-global-search input::placeholder {
+  color: #94a3c6;
+}
+.proto-global-search kbd {
+  font: 500 10.5px monospace;
+  color: var(--muted);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 1px 5px;
+  background: var(--workspace);
+}
+
+.proto-exit-btn {
+  background: #dc2626;
+  border: none;
+  color: #fff;
+  padding: 7px 14px;
+  border-radius: 9px;
+  font: 700 12.5px 'Figtree', sans-serif;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 2px 8px rgba(220, 38, 38, 0.3);
+  transition: opacity .18s;
+}
+.proto-exit-btn:hover {
+  opacity: 0.92;
+}
+
+/* Main Content Area */
+.proto-page-area {
+  flex: 1;
+  padding: 28px 36px 48px;
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* Page Header */
+.proto-page-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+.proto-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+  color: var(--teal-600);
+  font-size: 11.5px;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.proto-eyebrow::before {
+  content: '';
+  width: 16px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--teal-500);
+}
+.proto-page-header h1 {
+  margin: 0;
+  color: var(--text);
+  font: 700 30px 'Bricolage Grotesque', sans-serif;
+  letter-spacing: -.6px;
+}
+.proto-page-header p {
+  margin: 6px 0 0;
+  color: var(--text-2);
+  font-size: 14.5px;
+}
+
+/* Metric Cards Grid */
+.proto-metric-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.proto-metric-card {
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 20px 22px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+.proto-metric-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--card-accent, var(--teal-500));
+}
+.proto-metric-label {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.proto-metric-val {
+  font: 700 28px 'Bricolage Grotesque', sans-serif;
+  color: var(--text);
+  line-height: 1.1;
+  margin-bottom: 6px;
+}
+.proto-metric-sub {
+  font-size: 12.5px;
+  color: var(--text-2);
+}
+
+/* White Panel Cards */
+.proto-panel {
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 22px;
+}
+.proto-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+.proto-panel-header h2 {
+  margin: 0;
+  font: 700 19px 'Bricolage Grotesque', sans-serif;
+  color: var(--text);
+}
+.proto-panel-header p {
+  margin: 4px 0 0;
+  font-size: 13.5px;
+  color: var(--muted);
+}
+
+/* Tables */
+.proto-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+}
+.proto-table th {
+  text-align: left;
+  padding: 12px 14px;
+  background: #f8fafc;
+  color: var(--muted);
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  border-bottom: 1px solid var(--line);
+}
+.proto-table td {
+  padding: 14px;
+  border-bottom: 1px solid #f1f5f9;
+  color: var(--text);
+  vertical-align: middle;
+}
+.proto-table tr:hover td {
+  background: #f8fafc;
+}
+.proto-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 9px;
+  border-radius: 999px;
+  font-size: 11.5px;
+  font-weight: 700;
+}
+.proto-tag.green {
+  background: var(--green-50);
+  color: var(--green-600);
+  border: 1px solid rgba(27,138,85,0.25);
+}
+.proto-tag.amber {
+  background: var(--amber-50);
+  color: var(--amber-600);
+  border: 1px solid rgba(184,115,10,0.25);
+}
+.proto-tag.red {
+  background: var(--red-50);
+  color: var(--red-600);
+  border: 1px solid rgba(194,59,59,0.25);
+}
+.proto-tag.blue {
+  background: var(--indigo-50);
+  color: var(--indigo-600);
+  border: 1px solid rgba(79,95,224,0.25);
+}
+.proto-mono {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+}
+
+/* Student Portal Sub-Tabs Pill Navigation */
+.proto-student-subtabs {
+  display: flex;
+  justify-content: flex-start;
+  margin: 6px 0 20px;
+  overflow-x: auto;
+}
+.proto-pill-bar {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 999px;
+  padding: 5px 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+.proto-subtab-btn {
+  border: none;
+  cursor: pointer;
+  border-radius: 999px;
+  padding: 8px 18px;
+  font-size: 13px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.15s ease;
+  background: transparent;
+  color: #64748b;
+  font-family: inherit;
+}
+.proto-subtab-btn:hover {
+  color: var(--text);
+  background: #f8fafc;
+}
+.proto-subtab-btn.active {
+  background: #0f172a;
+  color: #ffffff;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(15,23,42,0.25);
+}
+.proto-subtab-btn.active svg {
+  color: #38bdf8;
+}
+.proto-subtab-badge {
+  font-size: 10.5px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 999px;
+  background: #f1f5f9;
+  color: #64748b;
+}
+.proto-subtab-btn.active .proto-subtab-badge {
+  background: rgba(56, 189, 248, 0.2);
+  color: #38bdf8;
+}
+</style>
+
+<!-- Full Prototype HTML Structure -->
+<div id="pramaan-prototype-root">
+  <div class="proto-app-shell">
+    <!-- Sidebar -->
+    <aside class="proto-sidebar">
+      <div class="proto-brand">
+        <div class="proto-brand-mark">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2a10 10 0 0 0-10 10c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/>
+          </svg>
+        </div>
+        <div class="proto-brand-text">
+          <strong>PRA<span>MAAN</span></strong>
+          <small>AICTE Sentinel Console</small>
+        </div>
+      </div>
+
+      <div class="proto-role-badge" id="proto-sidebar-role-badge">
+        <span class="proto-role-dot"></span>
+        <span id="proto-role-text">Student Portal</span>
+      </div>
+
+      <div class="proto-nav-caption" id="proto-sidebar-nav-caption">
+        STUDENT WORKSPACE
+      </div>
+
+      <nav class="proto-side-nav" id="proto-sidebar-nav-list">
+        <!-- Rendered dynamically -->
+      </nav>
+
+      <div class="proto-sidebar-bottom">
+        <div class="proto-environment">
+          <div class="proto-live-indicator"></div>
+          <div>
+            <div style="font-size:12.5px; font-weight:600; color:#eef2fb;">PRAMAAN Live Grid</div>
+            <div style="font-size:11px; color:#8e9bbd;">Tamper-evident verification</div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Workspace Main -->
+    <div class="proto-workspace">
+      <!-- Topbar -->
+      <header class="proto-topbar">
+        <div class="proto-topbar-left">
+          <span>PRAMAAN</span>
+          <span>/</span>
+          <strong id="proto-crumb-portal">Student Portal</strong>
+          <span>/</span>
+          <span id="proto-crumb-page">Academic Ledger</span>
+        </div>
+
+        <div class="proto-topbar-actions">
+          <!-- 4 Portal Switcher -->
+          <div class="proto-portal-switcher">
+            <button class="proto-portal-btn active" id="btn-p-student" onclick="protoSwitchPortal('student')">
+              🎓 Student
+            </button>
+            <button class="proto-portal-btn" id="btn-p-college" onclick="protoSwitchPortal('college')">
+              🏛️ College
+            </button>
+            <button class="proto-portal-btn" id="btn-p-aicte" onclick="protoSwitchPortal('aicte')">
+              🇮🇳 AICTE Apex
+            </button>
+            <button class="proto-portal-btn" id="btn-p-state" onclick="protoSwitchPortal('state')">
+              📍 State DoTE
+            </button>
+          </div>
+
+          <!-- Search -->
+          <div class="proto-global-search">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#94a3c6" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+            <input type="text" placeholder="Search APAAR or roll..." oninput="protoGlobalSearch(this.value)">
+            <kbd>Ctrl K</kbd>
+          </div>
+
+          <!-- Exit Presentation Button -->
+          <button class="proto-exit-btn" onclick="closePrototype()">
+            ✕ Return to PPT
+          </button>
+        </div>
+      </header>
+
+      <!-- Dynamic Page Workspace -->
+      <main class="proto-page-area" id="proto-main-container">
+        <!-- Rendered by JS -->
+      </main>
+    </div>
+  </div>
+</div>
+
+<script>
+// ============================================================================
+// PRAMAAN OFFLINE PROTOTYPE INTERACTIVE ENGINE
+// ============================================================================
+
+var PROTO_CURRENT_PORTAL = 'student';
+var PROTO_STUDENT_TAB = 'aicte';
+
+// Navigation configurations matching App.tsx
+var PROTO_NAV_ITEMS = {
+  student: [
+    { id: 'student-profile', label: 'Student Profile & ERP', icon: 'gauge' }
+  ],
+  college: [
+    { id: 'college-overview', label: 'Campus Overview', icon: 'gauge' },
+    { id: 'college-students', label: 'Enrolled Students', icon: 'users' },
+    { id: 'college-intake', label: 'Approved Intake', icon: 'book' },
+    { id: 'college-imports', label: 'Batch CSV Upload', icon: 'upload' },
+    { id: 'college-transfers', label: 'Transfers & Mobility', icon: 'transfer' }
+  ],
+  aicte: [
+    { id: 'aicte-overview', label: 'National Dashboard', icon: 'gauge' },
+    { id: 'aicte-enrolments', label: 'Enrolment Ledger', icon: 'shield' },
+    { id: 'aicte-overlaps', label: 'Overlap Queue', icon: 'activity', dot: true },
+    { id: 'aicte-intake', label: 'Intake Compliance', icon: 'book' },
+    { id: 'aicte-audit', label: 'Audit Trail', icon: 'file' }
+  ],
+  state: [
+    { id: 'state-overview', label: 'State Overview', icon: 'gauge' },
+    { id: 'state-institutions', label: 'Institutions in State', icon: 'building' },
+    { id: 'state-transfers', label: 'Interstate Transfers', icon: 'transfer' },
+    { id: 'state-reports', label: 'State Reports', icon: 'file' }
+  ]
+};
+
+var PROTO_ICONS = {
+  gauge: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m14 14-4-4"/></svg>',
+  users: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>',
+  shield: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>',
+  book: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6 6h10M6 10h10"/></svg>',
+  upload: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"/><path d="M12 12v9"/><path d="m16 16-4-4-4 4"/></svg>',
+  transfer: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 3 4 4-4 4"/><path d="M20 7H4"/><path d="m8 21-4-4 4-4"/><path d="M4 17h16"/></svg>',
+  activity: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>',
+  file: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/></svg>',
+  building: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M8 10h.01"/><path d="M16 10h.01"/><path d="M8 14h.01"/><path d="M16 14h.01"/></svg>'
+};
+
+// Open & Close Prototype
+function openPrototype(portal) {
+  var root = document.getElementById('pramaan-prototype-root');
+  if (!root) return;
+  root.style.display = 'block';
+  document.body.style.overflow = 'hidden';
+  protoSwitchPortal(portal || 'student');
+}
+
+function closePrototype() {
+  var root = document.getElementById('pramaan-prototype-root');
+  if (root) root.style.display = 'none';
+  document.body.style.overflow = '';
+}
+
+// Switch between the 4 main portals
+function protoSwitchPortal(portal) {
+  PROTO_CURRENT_PORTAL = portal;
+  
+  // Update Topbar switcher buttons
+  ['student', 'college', 'aicte', 'state'].forEach(function(p) {
+    var btn = document.getElementById('btn-p-' + p);
+    if (btn) {
+      if (p === portal) btn.classList.add('active');
+      else btn.classList.remove('active');
+    }
+  });
+
+  // Update Breadcrumbs
+  var crumbPortal = document.getElementById('proto-crumb-portal');
+  var crumbPage = document.getElementById('proto-crumb-page');
+  var roleText = document.getElementById('proto-role-text');
+  var navCaption = document.getElementById('proto-sidebar-nav-caption');
+
+  if (portal === 'student') {
+    crumbPortal.textContent = 'Student Portal';
+    crumbPage.textContent = 'Academic Ledger & ERP';
+    roleText.textContent = 'Student Portal';
+    navCaption.textContent = 'STUDENT WORKSPACE';
+  } else if (portal === 'college') {
+    crumbPortal.textContent = 'College Portal';
+    crumbPage.textContent = "St. Joseph's College of Engineering";
+    roleText.textContent = 'Institution Registrar';
+    navCaption.textContent = 'INSTITUTION WORKSPACE';
+  } else if (portal === 'aicte') {
+    crumbPortal.textContent = 'AICTE National Portal';
+    crumbPage.textContent = 'Apex Enrolment Integrity Console';
+    roleText.textContent = 'National Administrator';
+    navCaption.textContent = 'REGULATORY WORKSPACE';
+  } else if (portal === 'state') {
+    crumbPortal.textContent = 'State Directorate';
+    crumbPage.textContent = 'Tamil Nadu DOTE Oversight';
+    roleText.textContent = 'State Education Official';
+    navCaption.textContent = 'STATE WORKSPACE';
+  }
+
+  protoRenderSidebarNav();
+  protoRenderWorkspace();
+}
+
+// Render Sidebar Navigation Links
+function protoRenderSidebarNav() {
+  var container = document.getElementById('proto-sidebar-nav-list');
+  var items = PROTO_NAV_ITEMS[PROTO_CURRENT_PORTAL] || [];
+  var html = '';
+
+  items.forEach(function(item, idx) {
+    var isActive = idx === 0;
+    var iconSvg = PROTO_ICONS[item.icon] || PROTO_ICONS.gauge;
+    html += '<button class="proto-nav-link ' + (isActive ? 'active' : '') + '">';
+    html += iconSvg;
+    html += '<span>' + item.label + '</span>';
+    if (item.dot) {
+      html += '<span class="proto-nav-dot"></span>';
+    }
+    html += '</button>';
+  });
+
+  container.innerHTML = html;
+}
+
+// Switch Student Sub-Tabs
+function protoSwitchStudentTab(tab) {
+  PROTO_STUDENT_TAB = tab;
+  protoRenderWorkspace();
+}
+
+// Render Active Workspace
+function protoRenderWorkspace() {
+  var container = document.getElementById('proto-main-container');
+  if (PROTO_CURRENT_PORTAL === 'student') {
+    protoRenderStudentDashboard(container);
+  } else if (PROTO_CURRENT_PORTAL === 'college') {
+    protoRenderCollegeDashboard(container);
+  } else if (PROTO_CURRENT_PORTAL === 'aicte') {
+    protoRenderAicteDashboard(container);
+  } else if (PROTO_CURRENT_PORTAL === 'state') {
+    protoRenderStateDashboard(container);
+  }
+}
+
+// ============================================================================
+// 1. STUDENT DASHBOARD (Identical to StudentDashboardPage.tsx)
+// ============================================================================
+function protoRenderStudentDashboard(container) {
+  var html = '';
+
+  // ERP Header Banner
+  html += '<div style="background:linear-gradient(135deg, #1e3a8a 0%, #0d9488 100%); border-radius:16px; padding:24px 30px; color:#ffffff; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:20px; box-shadow:0 10px 25px -5px rgba(13, 148, 136, 0.25); margin-bottom:20px;">';
+  html += '  <div style="display:flex; align-items:center; gap:18px;">';
+  html += '    <div style="width:64px; height:64px; border-radius:50%; background:rgba(255,255,255,0.2); border:2px solid rgba(255,255,255,0.4); display:flex; align-items:center; justify-content:center; font-size:26px; font-weight:800;">A</div>';
+  html += '    <div>';
+  html += '      <div style="display:flex; align-items:center; gap:10px; margin-bottom:4px;">';
+  html += '        <h1 style="margin:0; font-size:22px; font-weight:800; letter-spacing:-0.02em;">Aarav Sharma</h1>';
+  html += '        <span style="background:#10b981; color:#fff; font-size:11px; font-weight:700; padding:2px 8px; border-radius:999px; display:inline-flex; align-items:center; gap:4px;">✓ APAAR VERIFIED</span>';
+  html += '      </div>';
+  html += '      <div style="font-size:13px; opacity:0.92; display:flex; flex-wrap:wrap; gap:14px;">';
+  html += '        <span>ID: <b>STU-IND-081</b></span><span>•</span>';
+  html += '        <span>Institution: <b>Delhi Technological University</b></span><span>•</span>';
+  html += '        <span>B.Tech CSE (2022–2026)</span>';
+  html += '      </div>';
+  html += '    </div>';
+  html += '  </div>';
+  html += '  <div style="background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.25); border-radius:12px; padding:10px 16px; display:flex; align-items:center; gap:12px;">';
+  html += '    <div>';
+  html += '      <div style="font-size:10px; text-transform:uppercase; letter-spacing:0.06em; opacity:0.85;">Official APAAR Identifier</div>';
+  html += '      <div style="font-size:15px; font-weight:700; font-family:monospace; letter-spacing:0.05em;">9876-2026-0081</div>';
+  html += '    </div>';
+  html += '    <button onclick="navigator.clipboard.writeText(\'9876-2026-0081\'); alert(\'APAAR ID copied to clipboard!\')" style="background:rgba(255,255,255,0.2); border:none; border-radius:8px; padding:7px; color:#fff; cursor:pointer;" title="Copy APAAR">📋</button>';
+  html += '  </div>';
+  html += '</div>';
+
+  // 5 Top-Level Navigation Sub-tabs (Exact same pill bar as React app)
+  html += '<div class="proto-student-subtabs">';
+  html += '  <div class="proto-pill-bar">';
+  html += '    <button type="button" class="proto-subtab-btn ' + (PROTO_STUDENT_TAB === 'aicte' ? 'active' : '') + '" onclick="protoSwitchStudentTab(\'aicte\')">';
+  html += '      <span>🛡️ AICTE</span><span class="proto-subtab-badge">Accreditation</span>';
+  html += '    </button>';
+  html += '    <button type="button" class="proto-subtab-btn ' + (PROTO_STUDENT_TAB === 'student-info' ? 'active' : '') + '" onclick="protoSwitchStudentTab(\'student-info\')">';
+  html += '      <span>👤 Student Info</span>';
+  html += '    </button>';
+  html += '    <button type="button" class="proto-subtab-btn ' + (PROTO_STUDENT_TAB === 'academics' ? 'active' : '') + '" onclick="protoSwitchStudentTab(\'academics\')">';
+  html += '      <span>📚 Academics</span>';
+  html += '    </button>';
+  html += '    <button type="button" class="proto-subtab-btn ' + (PROTO_STUDENT_TAB === 'student-services' ? 'active' : '') + '" onclick="protoSwitchStudentTab(\'student-services\')">';
+  html += '      <span>💼 Student Services</span>';
+  html += '    </button>';
+  html += '    <button type="button" class="proto-subtab-btn ' + (PROTO_STUDENT_TAB === 'apaar-transfers' ? 'active' : '') + '" onclick="protoSwitchStudentTab(\'apaar-transfers\')">';
+  html += '      <span>🔄 APAAR & Transfers</span><span class="proto-subtab-badge">Stage 6</span>';
+  html += '    </button>';
+  html += '  </div>';
+  html += '</div>';
+
+  // SUB-TAB 1: AICTE ACCREDITATION & VERIFICATION
+  if (PROTO_STUDENT_TAB === 'aicte') {
+    html += '<div style="display:flex; flex-direction:column; gap:20px;">';
+    html += '  <div style="background:#f8fafc; border:1px solid #e2e8f0; border-left:4px solid #0284c7; border-radius:8px; padding:14px 18px; font-size:13px; color:#334155; line-height:1.5;">';
+    html += '    <strong>AICTE Regulatory Sentinel Verification Context</strong><br>';
+    html += '    Under AICTE Guidelines (Gazette Notification 2026), your academic record is anchored to your 12-digit APAAR identifier. This record acts as the canonical single-identity source preventing double enrolment and enabling frictionless inter-institutional mobility.';
+    html += '  </div>';
+
+    html += '  <div class="proto-metric-grid" style="grid-template-columns:repeat(3, 1fr);">';
+    html += '    <div class="proto-metric-card" style="--card-accent:#10b981;">';
+    html += '      <div class="proto-metric-label">National Verification Status <span>✅</span></div>';
+    html += '      <div class="proto-metric-val" style="color:#059669; font-size:22px;">AICTE Validated</div>';
+    html += '      <div class="proto-metric-sub">Zero timeline conflicts flagged across all 142 AICTE-accredited universities nationwide.</div>';
+    html += '    </div>';
+
+    html += '    <div class="proto-metric-card" style="--card-accent:#3b82f6;">';
+    html += '      <div class="proto-metric-label">Academic Bank of Credits (ABC) <span>💳</span></div>';
+    html += '      <div class="proto-metric-val" style="color:#2563eb; font-size:22px;">86 Credits Earned</div>';
+    html += '      <div class="proto-metric-sub">ABC ID: <b>ABC-2024-8841-9012</b> · Synced with DigiLocker on 29 Oct 2026.</div>';
+    html += '    </div>';
+
+    html += '    <div class="proto-metric-card" style="--card-accent:#8b5cf6;">';
+    html += '      <div class="proto-metric-label">DPDP Privacy & Consent Ledger <span>🔒</span></div>';
+    html += '      <div class="proto-metric-val" style="color:#7c3aed; font-size:22px;">Active & Granted</div>';
+    html += '      <div class="proto-metric-sub">Consent for employer background verification and academic mobility valid until 2029.</div>';
+    html += '    </div>';
+    html += '  </div>';
+
+    html += '  <div class="proto-panel">';
+    html += '    <div class="proto-panel-header"><div><h2>Enrolment Validity & Regulatory Audit Timeline</h2><p>Cryptographically validated records registered in the National Student Ledger</p></div></div>';
+    html += '    <table class="proto-table">';
+    html += '      <thead><tr><th>Enrolment Reference</th><th>Institution</th><th>Programme</th><th>Academic Session</th><th>Verification SHA-256</th><th>Status</th></tr></thead>';
+    html += '      <tbody>';
+    html += '        <tr><td class="proto-mono font-semibold">ENR-DTU-2022-081</td><td>Delhi Technological University (DTU)</td><td>B.Tech Computer Science & Engg</td><td>2022 - 2026 (Full-Time)</td><td class="proto-mono">sha256:7f8a9e22...b401</td><td><span class="proto-tag green">● Active Validated</span></td></tr>';
+    html += '        <tr><td class="proto-mono font-semibold">TRF-PES-2025-0042</td><td>PES University, Bengaluru</td><td>B.Tech CSE (Lateral Mobility)</td><td>2025 - 2026</td><td class="proto-mono">sha256:4c2a1189...99fe</td><td><span class="proto-tag blue">● Approved NOC Issued</span></td></tr>';
+    html += '      </tbody>';
+    html += '    </table>';
+    html += '  </div>';
+    html += '</div>';
+  }
+
+  // SUB-TAB 2: STUDENT INFO
+  else if (PROTO_STUDENT_TAB === 'student-info') {
+    html += '<div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">';
+    html += '  <div class="proto-panel">';
+    html += '    <div class="proto-panel-header"><div><h2>Personal & Demographic Profile</h2><p>Official verified records from DTU Academic Registry</p></div></div>';
+    html += '    <table class="proto-table">';
+    html += '      <tr><td style="width:140px; color:var(--muted); font-weight:600;">Full Name</td><td><b>Aarav Sharma</b></td></tr>';
+    html += '      <tr><td style="color:var(--muted); font-weight:600;">Date of Birth</td><td>14 July 2004 (Age 22)</td></tr>';
+    html += '      <tr><td style="color:var(--muted); font-weight:600;">Gender</td><td>Male</td></tr>';
+    html += '      <tr><td style="color:var(--muted); font-weight:600;">Blood Group</td><td>O+ (Positive)</td></tr>';
+    html += '      <tr><td style="color:var(--muted); font-weight:600;">Admission Quota</td><td><span class="proto-tag green">General Merit (JEE Main AIR 2481)</span></td></tr>';
+    html += '      <tr><td style="color:var(--muted); font-weight:600;">Mobile Phone</td><td>+91 98765 43210 (Verified)</td></tr>';
+    html += '      <tr><td style="color:var(--muted); font-weight:600;">Official Email</td><td>aarav.sharma@dtu.ac.in</td></tr>';
+    html += '      <tr><td style="color:var(--muted); font-weight:600;">Permanent Address</td><td>Sector 14, Rohini, New Delhi 110085, India</td></tr>';
+    html += '    </table>';
+    html += '  </div>';
+
+    html += '  <div style="display:flex; flex-direction:column; gap:20px;">';
+    html += '    <div class="proto-panel">';
+    html += '      <div class="proto-panel-header"><div><h2>Parent & Guardian Records</h2><p>Emergency contact and family background</p></div></div>';
+    html += '      <table class="proto-table">';
+    html += '        <tr><td style="color:var(--muted); font-weight:600;">Father\'s Name</td><td>Rajesh Sharma (Executive Director, PSU)</td></tr>';
+    html += '        <tr><td style="color:var(--muted); font-weight:600;">Mother\'s Name</td><td>Sunita Sharma (Principal, Govt High School)</td></tr>';
+    html += '        <tr><td style="color:var(--muted); font-weight:600;">Emergency Contact</td><td>+91 98111 22334 (Father)</td></tr>';
+    html += '      </table>';
+    html += '    </div>';
+
+    html += '    <div class="proto-panel">';
+    html += '      <div class="proto-panel-header"><div><h2>Verified KYC & Identity Documents</h2><p>Anchored via Aadhaar Vault and DigiLocker</p></div></div>';
+    html += '      <table class="proto-table">';
+    html += '        <tr><td>Aadhaar e-KYC (Vault Token)</td><td><span class="proto-mono">AADHAAR-TKN-***-8419</span></td><td><span class="proto-tag green">✓ Verified</span></td></tr>';
+    html += '        <tr><td>CBSE Class XII Marksheet</td><td>Roll: 11624890 · 96.4%</td><td><span class="proto-tag green">✓ DigiLocker</span></td></tr>';
+    html += '        <tr><td>Delhi Domicile Certificate</td><td>No: DOM/DEL/2022/4412</td><td><span class="proto-tag green">✓ Verified</span></td></tr>';
+    html += '      </table>';
+    html += '    </div>';
+    html += '  </div>';
+    html += '</div>';
+  }
+
+  // SUB-TAB 3: ACADEMICS
+  else if (PROTO_STUDENT_TAB === 'academics') {
+    html += '<div style="display:flex; flex-direction:column; gap:20px;">';
+    html += '  <div class="proto-metric-grid">';
+    html += '    <div class="proto-metric-card" style="--card-accent:#0284c7;">';
+    html += '      <div class="proto-metric-label">Cumulative GPA (CGPA)</div>';
+    html += '      <div class="proto-metric-val" style="color:#0284c7;">8.84 <span style="font-size:14px; color:var(--muted);">/ 10.0</span></div>';
+    html += '      <div class="proto-metric-sub">Rank: Top 5% of B.Tech CSE Class</div>';
+    html += '    </div>';
+    html += '    <div class="proto-metric-card" style="--card-accent:#10b981;">';
+    html += '      <div class="proto-metric-label">Latest Semester SGPA</div>';
+    html += '      <div class="proto-metric-val" style="color:#10b981;">9.12</div>';
+    html += '      <div class="proto-metric-sub">Semester V (Fall 2025)</div>';
+    html += '    </div>';
+    html += '    <div class="proto-metric-card" style="--card-accent:#8b5cf6;">';
+    html += '      <div class="proto-metric-label">Credits Earned</div>';
+    html += '      <div class="proto-metric-val" style="color:#8b5cf6;">112 <span style="font-size:14px; color:var(--muted);">/ 160</span></div>';
+    html += '      <div class="proto-metric-sub">Degree Completion: 70.0%</div>';
+    html += '    </div>';
+    html += '    <div class="proto-metric-card" style="--card-accent:#f59e0b;">';
+    html += '      <div class="proto-metric-label">Overall Attendance</div>';
+    html += '      <div class="proto-metric-val" style="color:#f59e0b;">89.2%</div>';
+    html += '      <div class="proto-metric-sub">Minimum Requirement: 75.0%</div>';
+    html += '    </div>';
+    html += '  </div>';
+
+    html += '  <div class="proto-panel">';
+    html += '    <div class="proto-panel-header"><div><h2>Current Semester Course Ledger (Semester VI - Spring 2026)</h2><p>Faculty-assessed grades and continuous evaluation record</p></div></div>';
+    html += '    <table class="proto-table">';
+    html += '      <thead><tr><th>Course Code</th><th>Course Title</th><th>Credits</th><th>Faculty Instructor</th><th>Attendance</th><th>Grade</th></tr></thead>';
+    html += '      <tbody>';
+    html += '        <tr><td class="proto-mono font-semibold">CS601</td><td>Distributed Systems & Consensus</td><td>4</td><td>Prof. R. K. Mittal</td><td>92.0%</td><td><span class="proto-tag green">O (Outstanding)</span></td></tr>';
+    html += '        <tr><td class="proto-mono font-semibold">CS602</td><td>Cryptographic Protocols & Network Security</td><td>4</td><td>Dr. Vandana Gupta</td><td>88.5%</td><td><span class="proto-tag green">A+ (Excellent)</span></td></tr>';
+    html += '        <tr><td class="proto-mono font-semibold">CS603</td><td>Cloud Infrastructure & Kubernetes</td><td>3</td><td>Prof. Alok Sharma</td><td>85.0%</td><td><span class="proto-tag green">A+ (Excellent)</span></td></tr>';
+    html += '        <tr><td class="proto-mono font-semibold">CS604</td><td>Machine Learning & Intelligent Agents</td><td>4</td><td>Dr. Shweta Singh</td><td>94.0%</td><td><span class="proto-tag green">O (Outstanding)</span></td></tr>';
+    html += '        <tr><td class="proto-mono font-semibold">CS605</td><td>Open Source Capstone Engineering Project</td><td>2</td><td>Prof. R. K. Mittal</td><td>87.0%</td><td><span class="proto-tag green">A+ (Excellent)</span></td></tr>';
+    html += '      </tbody>';
+    html += '    </table>';
+    html += '  </div>';
+    html += '</div>';
+  }
+
+  // SUB-TAB 4: STUDENT SERVICES
+  else if (PROTO_STUDENT_TAB === 'student-services') {
+    html += '<div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">';
+    html += '  <div class="proto-panel">';
+    html += '    <div class="proto-panel-header"><div><h2>Internship & Industry Experience</h2><p>Approved and verified by Dean of Academic Affairs</p></div></div>';
+    html += '    <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:18px; margin-bottom:14px;">';
+    html += '      <div style="display:flex; justify-content:space-between; align-items:flex-start;">';
+    html += '        <div><h3 style="margin:0; font-size:16px;">Tata Consultancy Services - Research & Innovation</h3><p style="margin:4px 0 10px; color:var(--muted); font-size:13px;">Role: Distributed Systems Research Intern (Smart Identity Grid)</p></div>';
+    html += '        <span class="proto-tag green">✓ Verified Completion</span>';
+    html += '      </div>';
+    html += '      <div style="font-size:12.5px; color:#475569; line-height:1.5;">Duration: 8 Weeks (June 2025 - August 2025) · Mentor: Dr. A. Venkat, Chief Scientist · BGV Cleared.</div>';
+    html += '    </div>';
+    html += '    <div style="background:#ecfdf5; border:1px solid #a7f3d0; border-radius:10px; padding:12px; font-size:13px; color:#065f46;">';
+    html += '      🎯 <b>Campus Placement Readiness Score: 92.4 / 100</b> (Eligible for Tier-1 Super Dream Recruitment Drives ₹18–45 LPA)';
+    html += '    </div>';
+    html += '  </div>';
+
+    html += '  <div style="display:flex; flex-direction:column; gap:20px;">';
+    html += '    <div class="proto-panel">';
+    html += '      <div class="proto-panel-header"><div><h2>Institutional No Due Clearances</h2><p>Cross-departmental graduation audit status</p></div></div>';
+    html += '      <table class="proto-table">';
+    html += '        <tr><td>Central University Library</td><td>0 Books Outstanding</td><td><span class="proto-tag green">✓ Cleared</span></td></tr>';
+    html += '        <tr><td>Hostel 4 Administration</td><td>Room 312 Dues Settled</td><td><span class="proto-tag green">✓ Cleared</span></td></tr>';
+    html += '        <tr><td>Computer Science Department Labs</td><td>Hardware Returned & Verified</td><td><span class="proto-tag green">✓ Cleared</span></td></tr>';
+    html += '        <tr><td>Finance & Examination Cell</td><td>Current Sem Fee (₹84,500) Paid</td><td><span class="proto-tag green">✓ Cleared (₹0 Due)</span></td></tr>';
+    html += '      </table>';
+    html += '    </div>';
+    html += '  </div>';
+    html += '</div>';
+  }
+
+  // SUB-TAB 5: APAAR & TRANSFERS
+  else if (PROTO_STUDENT_TAB === 'apaar-transfers') {
+    html += '<div style="display:flex; flex-direction:column; gap:20px;">';
+    html += '  <div style="display:grid; grid-template-columns:1fr 2fr; gap:20px;">';
+    html += '    <div class="proto-panel" style="background:linear-gradient(180deg, #ffffff, #f0fdf4); text-align:center;">';
+    html += '      <div style="width:140px; height:140px; margin:0 auto 16px; background:#fff; border:1px solid #cbd5e1; border-radius:12px; display:grid; place-items:center; box-shadow:var(--shadow-sm);">';
+    html += '        <svg width="110" height="110" viewBox="0 0 24 24" fill="none" stroke="#0f172a" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="9" y="9" width="6" height="6"/></svg>';
+    html += '      </div>';
+    html += '      <h3 style="margin:0; font-size:16px;">Scan to Verify Identity</h3>';
+    html += '      <div class="proto-mono" style="font-size:12px; color:var(--muted); margin:4px 0 12px;">APAAR: 9876-2026-0081</div>';
+    html += '      <span class="proto-tag green">● Live Tamper-Proof QR</span>';
+    html += '    </div>';
+
+    html += '    <div class="proto-panel">';
+    html += '      <div class="proto-panel-header"><div><h2>Inter-Institutional Mobility & Transfer Application</h2><p>National Academic Mobility Framework record</p></div></div>';
+    html += '      <table class="proto-table">';
+    html += '        <tr><td style="color:var(--muted); font-weight:600;">Transfer Case ID</td><td class="proto-mono font-semibold">TRF-2025-0042</td></tr>';
+    html += '        <tr><td style="color:var(--muted); font-weight:600;">Originating Campus</td><td>Delhi Technological University (DTU Delhi)</td></tr>';
+    html += '        <tr><td style="color:var(--muted); font-weight:600;">Target Institution</td><td>PES University, Bengaluru (PESU Karnataka)</td></tr>';
+    html += '        <tr><td style="color:var(--muted); font-weight:600;">Mobility Program</td><td>B.Tech Computer Science & Engineering</td></tr>';
+    html += '        <tr><td style="color:var(--muted); font-weight:600;">Current Stage</td><td><span class="proto-tag green">Stage 6: Completed & Approved (NOC Validated)</span></td></tr>';
+    html += '        <tr><td style="color:var(--muted); font-weight:600;">Accredited Credits</td><td><b>44 Transferable Credits</b> mapped via ABC Registry</td></tr>';
+    html += '        <tr><td style="color:var(--muted); font-weight:600;">Regulatory Clearance</td><td>DOTE Directorate & AICTE Sentinel Approval ID: <b>REG-NOC-889102</b></td></tr>';
+    html += '      </table>';
+    html += '    </div>';
+    html += '  </div>';
+
+    html += '  <div class="proto-panel">';
+    html += '    <div class="proto-panel-header"><div><h2>Cryptographically Signed Digital Credentials</h2><p>Instant verifiable certificate generation</p></div></div>';
+    html += '    <table class="proto-table">';
+    html += '      <thead><tr><th>Certificate Title</th><th>Issuing Authority</th><th>Format</th><th>Digital Signature</th><th>Action</th></tr></thead>';
+    html += '      <tbody>';
+    html += '        <tr><td>Provisional Academic Transcript (Sem I-V)</td><td>DTU Examination Cell</td><td>Signed PDF (SHA-256)</td><td class="proto-mono">0x99f4...28a1</td><td><button onclick="alert(\'Downloading verified Official Transcript PDF...\')" style="padding:6px 12px; background:var(--ink-950); color:#fff; border:none; border-radius:6px; font-size:12px; cursor:pointer;">Download PDF</button></td></tr>';
+    html += '        <tr><td>Bonafide Student Certificate</td><td>Registrar Office, DTU</td><td>DigiLocker Linked</td><td class="proto-mono">0xaa81...bc72</td><td><button onclick="alert(\'Downloading Bonafide Certificate with QR stamp...\')" style="padding:6px 12px; background:var(--ink-950); color:#fff; border:none; border-radius:6px; font-size:12px; cursor:pointer;">Download PDF</button></td></tr>';
+    html += '        <tr><td>Academic Character & Conduct Certificate</td><td>Office of Dean of Students</td><td>Tamper-Evident</td><td class="proto-mono">0x77c2...55e0</td><td><button onclick="alert(\'Downloading Character Certificate...\')" style="padding:6px 12px; background:var(--ink-950); color:#fff; border:none; border-radius:6px; font-size:12px; cursor:pointer;">Download PDF</button></td></tr>';
+    html += '      </tbody>';
+    html += '    </table>';
+    html += '  </div>';
+    html += '</div>';
+  }
+
+  container.innerHTML = html;
+}
+
+// ============================================================================
+// 2. COLLEGE / INSTITUTION DASHBOARD (St. Joseph's College of Engineering)
+// ============================================================================
+function protoRenderCollegeDashboard(container) {
+  var html = '';
+  html += '<div class="proto-page-header">';
+  html += '  <div>';
+  html += '    <div class="proto-eyebrow">INSTITUTION REGISTRAR DASHBOARD</div>';
+  html += '    <h1>St. Joseph\'s College of Engineering (SJCE Chennai)</h1>';
+  html += '    <p>Campus Scope: INST-CHENNAI-SJC · AICTE Approved Institution · Academic Year: 2025-2026</p>';
+  html += '  </div>';
+  html += '  <div style="display:flex; gap:10px;">';
+  html += '    <button onclick="alert(\'Opening Batch CSV Ingestion Simulator below...\')" style="padding:8px 16px; background:#fff; border:1px solid var(--line); border-radius:8px; font-size:13px; font-weight:600; cursor:pointer;">Batch CSV Upload</button>';
+  html += '    <button onclick="alert(\'Displaying all 1,066 Enrolled Students directory...\')" style="padding:8px 16px; background:var(--teal-600); color:#fff; border:none; border-radius:8px; font-size:13px; font-weight:600; cursor:pointer;">Enrolled Students</button>';
+  html += '  </div>';
+  html += '</div>';
+
+  // 4 Metric Cards
+  html += '<div class="proto-metric-grid">';
+  html += '  <div class="proto-metric-card" style="--card-accent:#0284c7;">';
+  html += '    <div class="proto-metric-label">Campus Enrolments</div>';
+  html += '    <div class="proto-metric-val">1,066</div>';
+  html += '    <div class="proto-metric-sub">982 Active · 54 Graduated · 30 Withdrawn</div>';
+  html += '  </div>';
+  html += '  <div class="proto-metric-card" style="--card-accent:#10b981;">';
+  html += '    <div class="proto-metric-label">Intake Utilization</div>';
+  html += '    <div class="proto-metric-val" style="color:#10b981;">96.4%</div>';
+  html += '    <div class="proto-metric-sub">300 admitted of 300 sanctioned seats</div>';
+  html += '  </div>';
+  html += '  <div class="proto-metric-card" style="--card-accent:#f59e0b;">';
+  html += '    <div class="proto-metric-label">Integrity Signals</div>';
+  html += '    <div class="proto-metric-val" style="color:#d97706;">2</div>';
+  html += '    <div class="proto-metric-sub">Open or under-review temporal overlap cases</div>';
+  html += '  </div>';
+  html += '  <div class="proto-metric-card" style="--card-accent:#10b981;">';
+  html += '    <div class="proto-metric-label">BGV Consent Coverage</div>';
+  html += '    <div class="proto-metric-val">842</div>';
+  html += '    <div class="proto-metric-sub">Active third-party background verification authorizations</div>';
+  html += '  </div>';
+  html += '</div>';
+
+  // Sanctioned Capacity & Programme Utilization Table
+  html += '<div class="proto-panel">';
+  html += '  <div class="proto-panel-header"><div><h2>AICTE Sanctioned Capacity & Programme Utilization</h2><p>Campus programmes monitored against AICTE Approval Process Handbook (APH) limits</p></div></div>';
+  html += '  <table class="proto-table">';
+  html += '    <thead><tr><th>Programme Code</th><th>Programme Name</th><th>Sanctioned Seats</th><th>Admitted Students</th><th>Utilization %</th><th>Supernumerary</th><th>NRI Quota</th><th>Compliance State</th></tr></thead>';
+  html += '    <tbody>';
+  html += '      <tr><td class="proto-mono font-semibold">SJC-CSE-01</td><td>B.E. Computer Science & Engineering</td><td>120</td><td>120</td><td>100.0%</td><td>6 / 6</td><td>3 / 6</td><td><span class="proto-tag green">● Fully Compliant</span></td></tr>';
+  html += '      <tr><td class="proto-mono font-semibold">SJC-ECE-02</td><td>B.E. Electronics & Communication</td><td>60</td><td>58</td><td>96.6%</td><td>3 / 3</td><td>2 / 3</td><td><span class="proto-tag green">● Compliant</span></td></tr>';
+  html += '      <tr><td class="proto-mono font-semibold">SJC-IT-03</td><td>B.Tech Information Technology</td><td>60</td><td>60</td><td>100.0%</td><td>3 / 3</td><td>1 / 3</td><td><span class="proto-tag green">● Fully Compliant</span></td></tr>';
+  html += '      <tr><td class="proto-mono font-semibold">SJC-MECH-04</td><td>B.E. Mechanical Engineering</td><td>30</td><td>28</td><td>93.3%</td><td>1 / 2</td><td>0 / 2</td><td><span class="proto-tag green">● Compliant</span></td></tr>';
+  html += '      <tr><td class="proto-mono font-semibold">SJC-CIVIL-05</td><td>B.E. Civil Engineering</td><td>30</td><td>26</td><td>86.6%</td><td>1 / 2</td><td>0 / 2</td><td><span class="proto-tag green">● Compliant</span></td></tr>';
+  html += '    </tbody>';
+  html += '  </table>';
+  html += '</div>';
+
+  // Enrolled Students Live Directory
+  html += '<div class="proto-panel">';
+  html += '  <div class="proto-panel-header">';
+  html += '    <div><h2>Enrolled Student Roster</h2><p>Search across 1,066 validated institutional student records</p></div>';
+  html += '    <input type="text" placeholder="Filter by student name or roll..." oninput="protoFilterTable(this.value)" style="padding:6px 12px; border:1px solid var(--line); border-radius:6px; font-size:13px; width:260px;">';
+  html += '  </div>';
+  html += '  <table class="proto-table" id="college-student-table">';
+  html += '    <thead><tr><th>Student Roll</th><th>Full Name</th><th>APAAR ID</th><th>Programme</th><th>Batch</th><th>Status</th></tr></thead>';
+  html += '    <tbody>';
+  html += '      <tr><td class="proto-mono font-semibold">2022-CSE-001</td><td>Karthik Sundaram</td><td class="proto-mono">9876-2026-0001</td><td>B.E. Computer Science</td><td>2022-2026</td><td><span class="proto-tag green">● Active</span></td></tr>';
+  html += '      <tr><td class="proto-mono font-semibold">2022-CSE-014</td><td>Priya Subramanian</td><td class="proto-mono">9876-2026-0014</td><td>B.E. Computer Science</td><td>2022-2026</td><td><span class="proto-tag green">● Active</span></td></tr>';
+  html += '      <tr><td class="proto-mono font-semibold">2023-ECE-042</td><td>Ananya Venkatesh</td><td class="proto-mono">9876-2026-0042</td><td>B.E. Electronics</td><td>2023-2027</td><td><span class="proto-tag green">● Active</span></td></tr>';
+  html += '      <tr><td class="proto-mono font-semibold">2024-IT-089</td><td>Rahul Ramanathan</td><td class="proto-mono">9876-2026-0089</td><td>B.Tech IT</td><td>2024-2028</td><td><span class="proto-tag green">● Active</span></td></tr>';
+  html += '      <tr><td class="proto-mono font-semibold">2022-CSE-118</td><td>Sneha Narayanan</td><td class="proto-mono">9876-2026-0118</td><td>B.E. Computer Science</td><td>2022-2026</td><td><span class="proto-tag amber">● Transfer In Review</span></td></tr>';
+  html += '    </tbody>';
+  html += '  </table>';
+  html += '</div>';
+
+  container.innerHTML = html;
+}
+
+// ============================================================================
+// 3. AICTE NATIONAL APEX DASHBOARD (Identical to DashboardPage.tsx)
+// ============================================================================
+function protoRenderAicteDashboard(container) {
+  var html = '';
+  html += '<div class="proto-page-header">';
+  html += '  <div>';
+  html += '    <div class="proto-eyebrow">AICTE INSTITUTIONAL GOVERNANCE</div>';
+  html += '    <h1>National Student Enrolment Integrity Console</h1>';
+  html += '    <p>Monitor verified student records, temporal enrolment integrity, capacity compliance, and cryptographic audit trails across India.</p>';
+  html += '  </div>';
+  html += '  <div style="background:#ecfdf5; border:1px solid #a7f3d0; color:#065f46; padding:6px 14px; border-radius:999px; font-size:12px; font-weight:700; display:flex; align-items:center; gap:6px;">';
+  html += '    <span class="proto-live-indicator"></span> LIVE NATIONAL REGISTRY';
+  html += '  </div>';
+  html += '</div>';
+
+  // National KPIs
+  html += '<div class="proto-metric-grid">';
+  html += '  <div class="proto-metric-card" style="--card-accent:#0284c7;">';
+  html += '    <div class="proto-metric-label">National Verified Students</div>';
+  html += '    <div class="proto-metric-val">1,066</div>';
+  html += '    <div class="proto-metric-sub">Across accredited Indian engineering universities</div>';
+  html += '  </div>';
+  html += '  <div class="proto-metric-card" style="--card-accent:#10b981;">';
+  html += '    <div class="proto-metric-label">Accredited Institutions</div>';
+  html += '    <div class="proto-metric-val">142</div>';
+  html += '    <div class="proto-metric-sub">Participating in real-time sentinel sync</div>';
+  html += '  </div>';
+  html += '  <div class="proto-metric-card" style="--card-accent:#ef4444;">';
+  html += '    <div class="proto-metric-label">Flagged Temporal Overlaps</div>';
+  html += '    <div class="proto-metric-val" style="color:#dc2626;">14</div>';
+  html += '    <div class="proto-metric-sub">Identified dual full-time active enrolments</div>';
+  html += '  </div>';
+  html += '  <div class="proto-metric-card" style="--card-accent:#8b5cf6;">';
+  html += '    <div class="proto-metric-label">Tamper-Evident Ledger Integrity</div>';
+  html += '    <div class="proto-metric-val" style="color:#7c3aed;">99.8%</div>';
+  html += '    <div class="proto-metric-sub">SHA-256 chained cryptographic audit trail</div>';
+  html += '  </div>';
+  html += '</div>';
+
+  // Overlap Investigation Queue
+  html += '<div class="proto-panel">';
+  html += '  <div class="proto-panel-header"><div><h2>AICTE Overlap Investigation Queue</h2><p>Flagged records requiring regulatory decision: Human-in-the-loop oversight</p></div></div>';
+  html += '  <table class="proto-table">';
+  html += '    <thead><tr><th>Case ID</th><th>Student Name</th><th>APAAR ID</th><th>Conflicting Institutions</th><th>Overlap Period</th><th>Severity</th><th>Action</th></tr></thead>';
+  html += '    <tbody id="aicte-overlap-tbody">';
+  html += '      <tr><td class="proto-mono font-semibold">OVL-2026-001</td><td>Diya Raman</td><td class="proto-mono">9876-2026-0044</td><td>IIT Madras (B.Tech) & Anna University (B.E.)</td><td>Jul 2024 - Present</td><td><span class="proto-tag red">HIGH CONFLICT</span></td><td><div style="display:flex; gap:6px;"><button onclick="alert(\'Breach Confirmed for Diya Raman. Formal notice dispatched to Anna Univ Registrar.\'); this.closest(\'tr\').style.display=\'none\';" style="padding:4px 10px; background:#dc2626; color:#fff; border:none; border-radius:6px; font-size:12px; cursor:pointer;">Confirm Breach</button><button onclick="alert(\'Case dismissed as authorized credit transfer.\'); this.closest(\'tr\').style.display=\'none\';" style="padding:4px 10px; background:#64748b; color:#fff; border:none; border-radius:6px; font-size:12px; cursor:pointer;">Dismiss</button></div></td></tr>';
+  html += '      <tr><td class="proto-mono font-semibold">OVL-2026-002</td><td>Vikas Malhotra</td><td class="proto-mono">9876-2026-0078</td><td>DTU Delhi & Amity Noida</td><td>Jan 2025 - Present</td><td><span class="proto-tag red">HIGH CONFLICT</span></td><td><div style="display:flex; gap:6px;"><button onclick="alert(\'Breach Confirmed for Vikas Malhotra.\'); this.closest(\'tr\').style.display=\'none\';" style="padding:4px 10px; background:#dc2626; color:#fff; border:none; border-radius:6px; font-size:12px; cursor:pointer;">Confirm Breach</button><button onclick="alert(\'Dismissed.\'); this.closest(\'tr\').style.display=\'none\';" style="padding:4px 10px; background:#64748b; color:#fff; border:none; border-radius:6px; font-size:12px; cursor:pointer;">Dismiss</button></div></td></tr>';
+  html += '      <tr><td class="proto-mono font-semibold">OVL-2026-003</td><td>Meera Nair</td><td class="proto-mono">9876-2026-0102</td><td>COEP Pune & VIT Vellore</td><td>Aug 2024 - Nov 2024</td><td><span class="proto-tag amber">MEDIUM (RESOLVED)</span></td><td><div style="display:flex; gap:6px;"><button onclick="alert(\'Confirmed.\'); this.closest(\'tr\').style.display=\'none\';" style="padding:4px 10px; background:#dc2626; color:#fff; border:none; border-radius:6px; font-size:12px; cursor:pointer;">Confirm Breach</button><button onclick="alert(\'Dismissed.\'); this.closest(\'tr\').style.display=\'none\';" style="padding:4px 10px; background:#64748b; color:#fff; border:none; border-radius:6px; font-size:12px; cursor:pointer;">Dismiss</button></div></td></tr>';
+  html += '    </tbody>';
+  html += '  </table>';
+  html += '</div>';
+
+  container.innerHTML = html;
+}
+
+// ============================================================================
+// 4. STATE DIRECTORATE DASHBOARD (Tamil Nadu DOTE Oversight)
+// ============================================================================
+function protoRenderStateDashboard(container) {
+  var html = '';
+  html += '<div class="proto-page-header">';
+  html += '  <div>';
+  html += '    <div class="proto-eyebrow">STATE DIRECTORATE OF TECHNICAL EDUCATION</div>';
+  html += '    <h1>Tamil Nadu Technical Education Directorate</h1>';
+  html += '    <p>State-level jurisdiction oversight of technical universities, intake seat utilization, and interstate student mobility.</p>';
+  html += '  </div>';
+  html += '  <div style="background:#f1f5f9; border:1px solid var(--line); color:var(--text); padding:6px 14px; border-radius:8px; font-size:12.5px; font-weight:600;">';
+  html += '    State Jurisdiction: <b>TAMIL NADU (DOTE)</b>';
+  html += '  </div>';
+  html += '</div>';
+
+  // State KPIs
+  html += '<div class="proto-metric-grid">';
+  html += '  <div class="proto-metric-card" style="--card-accent:#0284c7;">';
+  html += '    <div class="proto-metric-label">Technical Institutions in State</div>';
+  html += '    <div class="proto-metric-val">142</div>';
+  html += '    <div class="proto-metric-sub">Chennai, Coimbatore, Madurai, Trichy</div>';
+  html += '  </div>';
+  html += '  <div class="proto-metric-card" style="--card-accent:#10b981;">';
+  html += '    <div class="proto-metric-label">Total Verified State Enrolment</div>';
+  html += '    <div class="proto-metric-val">84,210</div>';
+  html += '    <div class="proto-metric-sub">Enrolled in 2025-2026 Academic Session</div>';
+  html += '  </div>';
+  html += '  <div class="proto-metric-card" style="--card-accent:#f59e0b;">';
+  html += '    <div class="proto-metric-label">Intake Utilization</div>';
+  html += '    <div class="proto-metric-val" style="color:#d97706;">94.2%</div>';
+  html += '    <div class="proto-metric-sub">84,210 of 89,400 Sanctioned Seats</div>';
+  html += '  </div>';
+  html += '  <div class="proto-metric-card" style="--card-accent:#10b981;">';
+  html += '    <div class="proto-metric-label">Interstate Transfer NOCs</div>';
+  html += '    <div class="proto-metric-val">18</div>';
+  html += '    <div class="proto-metric-sub">Approved student migrations across state borders</div>';
+  html += '  </div>';
+  html += '</div>';
+
+  // Regional Institutions Table
+  html += '<div class="proto-panel">';
+  html += '  <div class="proto-panel-header"><div><h2>Regional Institutions Jurisdiction Roster</h2><p>Accredited technical colleges under Tamil Nadu Directorate oversight</p></div></div>';
+  html += '  <table class="proto-table">';
+  html += '    <thead><tr><th>Institution Code</th><th>Institution Name</th><th>City</th><th>Approved Intake</th><th>Admitted</th><th>Utilization</th><th>State Status</th></tr></thead>';
+  html += '    <tbody>';
+  html += '      <tr><td class="proto-mono font-semibold">INST-CHENNAI-SJC</td><td>St. Joseph\'s College of Engineering</td><td>Chennai</td><td>300</td><td>292</td><td>97.3%</td><td><span class="proto-tag green">● Fully Approved</span></td></tr>';
+  html += '      <tr><td class="proto-mono font-semibold">INST-TRICHY-NITT</td><td>National Institute of Technology Trichy</td><td>Tiruchirappalli</td><td>940</td><td>938</td><td>99.7%</td><td><span class="proto-tag green">● Centrally Funded</span></td></tr>';
+  html += '      <tr><td class="proto-mono font-semibold">INST-CHENNAI-ANNA</td><td>College of Engineering, Guindy (Anna Univ)</td><td>Chennai</td><td>1,200</td><td>1,194</td><td>99.5%</td><td><span class="proto-tag green">● State Premier</span></td></tr>';
+  html += '      <tr><td class="proto-mono font-semibold">INST-CBE-PSG</td><td>PSG College of Technology</td><td>Coimbatore</td><td>840</td><td>836</td><td>99.5%</td><td><span class="proto-tag green">● Fully Approved</span></td></tr>';
+  html += '    </tbody>';
+  html += '  </table>';
+  html += '</div>';
+
+  container.innerHTML = html;
+}
+
+// Global Search Filter Handler
+function protoGlobalSearch(query) {
+  if (!query) return;
+  var q = query.toLowerCase();
+  if (q.includes('aarav') || q.includes('stu-ind') || q.includes('9876')) {
+    protoSwitchPortal('student');
+  } else if (q.includes('joseph') || q.includes('sjc') || q.includes('chennai')) {
+    protoSwitchPortal('college');
+  } else if (q.includes('aicte') || q.includes('overlap') || q.includes('conflict')) {
+    protoSwitchPortal('aicte');
+  } else if (q.includes('state') || q.includes('tamil') || q.includes('dote')) {
+    protoSwitchPortal('state');
+  }
+}
+
+function protoFilterTable(val) {
+  var table = document.getElementById('college-student-table');
+  if (!table) return;
+  var trs = table.getElementsByTagName('tr');
+  var filter = val.toLowerCase();
+  for (var i = 1; i < trs.length; i++) {
+    var txt = trs[i].textContent.toLowerCase();
+    trs[i].style.display = txt.includes(filter) ? '' : 'none';
+  }
+}
+</script>
+
+</body></html>
