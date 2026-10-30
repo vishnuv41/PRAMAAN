@@ -5,7 +5,7 @@ from app.admission_categories import AdmissionCategory, normalize_admission_cate
 
 class EnrolmentBase(BaseModel):
     student_ref: str
-    apaar_id: str
+    apaar_id: Optional[str] = None
     institution_id: str
     institution_name: Optional[str] = None
     programme_id: str

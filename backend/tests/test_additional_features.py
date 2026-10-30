@@ -1,16 +1,4 @@
-import pytest
-from datetime import date
-from fastapi.testclient import TestClient
-from app.main import app
-from app.database import SessionLocal
-from app.models.student import Student
-from app.models.consent import StudentConsent
-from app.models.verifier import VerifierOrganization
-from app.services.verifier_service import VerifierService
-
-client = TestClient(app)
-
-def test_foreign_national_identity_route():
+def test_foreign_national_identity_route(client):
     """
     Verifies higher-ed foreign national passport route without requiring Aadhaar.
     """
@@ -21,7 +9,7 @@ def test_foreign_national_identity_route():
     assert data["identity_route"] == "PASSPORT_INTERNATIONAL"
     assert "PASS-FRA" in data["passport_ref"]
 
-def test_student_version_history():
+def test_student_version_history(client):
     """
     Verifies that version history preserves previous states.
     """
@@ -31,7 +19,7 @@ def test_student_version_history():
     assert data["total_versions"] >= 1
     assert data["versions"][0]["version_number"] >= 1
 
-def test_consent_module_and_employer_verification():
+def test_consent_module_and_employer_verification(client):
     """
     1. STU-DEMO-001 has active consent -> Verifier gets MATCH_VERIFIED with purpose-limited data.
     2. STU-DEMO-002 has WITHDRAWN consent -> Verifier gets CONSENT_WITHHELD (stops sharing).
@@ -59,7 +47,7 @@ def test_consent_module_and_employer_verification():
     assert data_withdrawn["outcome"] == "CONSENT_WITHHELD"
     assert "withdrawn sharing consent" in data_withdrawn["message"]
 
-def test_anomaly_dismissal_workflow():
+def test_anomaly_dismissal_workflow(client):
     """
     Verifies reviewer can dismiss a legitimate anomaly and record the reason.
     """
@@ -78,7 +66,7 @@ def test_anomaly_dismissal_workflow():
     assert res_dismiss.status_code == 200
     assert res_dismiss.json()["dismissed"] is True
 
-def test_executive_reports():
+def test_executive_reports(client):
     """
     Verifies generation of pendency, excess-intake, duplicates, and regional reports.
     """
@@ -90,7 +78,7 @@ def test_executive_reports():
     assert "duplicate_enrolment_cases" in data
     assert "region_wise_enrolments" in data
 
-def test_institution_and_aicte_dashboard_endpoints():
+def test_institution_and_aicte_dashboard_endpoints(client):
     """
     Verifies both dedicated dashboards return live backend values.
     """

@@ -1,16 +1,11 @@
-from fastapi.testclient import TestClient
-from app.main import app
-
-client = TestClient(app)
-
-def test_health_endpoint():
+def test_health_endpoint(client):
     res = client.get("/health")
     assert res.status_code == 200
     data = res.json()
     assert data["status"] == "healthy"
-    assert "PRAMAAN" in data["service"] or "APAAR Sentinel" in data["service"]
+    assert "APAAR Sentinel" in data["service"]
 
-def test_dashboard_summary():
+def test_dashboard_summary(client):
     res = client.get("/api/v1/dashboard/summary")
     assert res.status_code == 200
     data = res.json()
@@ -18,7 +13,7 @@ def test_dashboard_summary():
     assert "open_alerts" in data
     assert "validation_pass_rate" in data
 
-def test_students_api():
+def test_students_api(client):
     res = client.get("/api/v1/students")
     assert res.status_code == 200
     data = res.json()
@@ -31,7 +26,7 @@ def test_students_api():
     assert res_detail.status_code == 200
     assert "integrity_status" in res_detail.json()
 
-def test_alerts_api():
+def test_alerts_api(client):
     res = client.get("/api/v1/alerts")
     assert res.status_code == 200
     data = res.json()
@@ -52,7 +47,7 @@ def test_alerts_api():
         assert res_rev.status_code == 200
         assert res_rev.json()["decision"] == "CONFIRMED_CONFLICT"
 
-def test_certificate_verification():
+def test_certificate_verification(client):
     res = client.get("/api/v1/certificates/CERT-APAAR-2026-001/verify")
     assert res.status_code == 200
     data = res.json()

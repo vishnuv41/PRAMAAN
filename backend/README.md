@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # APAAR Sentinel Backend
 
 FastAPI prototype for student enrolment integrity, CSV ingestion, anomaly review, consent-aware verifier workflows, certificate checks, and audit history. The existing SQLite database is retained; application startup only calls SQLAlchemy `create_all` for missing tables and does not migrate or reset existing tables.
@@ -117,13 +118,33 @@ Admission categories are exact normalized values: `General`, `SC`, `ST`, `OBC`, 
 
 Approved-intake versions are appended in the existing table; prior seat/source/effective-date values remain queryable. The schema has no expiry date, so results explicitly return `rule_expiration_status=NOT_TRACKED_IN_CURRENT_SCHEMA`. An operator must deactivate a rule that is no longer applicable; the service does not infer regulatory expiry. No official quota values are supplied by the application.
 
-## Tests and Demo Data
+## Tests and Test Database Isolation (Phase 2)
+
+Automated tests run strictly against isolated, temporary SQLite databases. Access to the persistent demo database (`apaar_sentinel.db`) is blocked at the SQLAlchemy engine level via an event listener that aborts any automated test attempting to execute SQL against the demo database.
+
+To run the complete automated test suite (120 tests across 23 test modules):
 
 ```powershell
-.\.venv\Scripts\python.exe -m pytest -q
+$env:PYTHONPATH = "backend"
+python -m pytest backend/tests -v
 ```
 
-Tests use the default application database in several existing modules, so take a backup before running the full legacy suite if its data matters. New CSV, dashboard, CORS, anomaly, and seeding regression tests use isolated databases. Demo seeding is now create-only: `python -m app.seed_data` creates the fictional sample dataset only when the database has no records in the seeded tables, and otherwise leaves all existing data untouched. It no longer drops tables or clears rows.
+All tests create fresh schemas from SQLAlchemy models in an isolated temporary database, seed the demo fixtures required for baseline testing, and clean up automatically. The persistent demo database remains 100% untouched.
+
+## CSV Import Pipeline (Phase 2 Enhancements)
+
+The CSV ingestion pipeline supports:
+1. **File Validation**: Enforces a 10 MB limit, 10,000-row limit, UTF-8 and UTF-8 BOM parsing, and structural checks. Missing mandatory columns (`student_ref`, `institution_id`, `programme_id`, `academic_year`, `enrolment_start`, `enrolment_status`) are rejected immediately with HTTP 400.
+2. **Row Validation**: Evaluates required fields, date formats (ISO 8601), chronological sanity (end >= start), valid enrolment statuses (`Active`, `Completed`, `Withdrawn`, `Suspended`), academic-year span syntax, and 12-digit APAAR format rules (`VAL-APAAR-FMT-001`).
+3. **Duplicate & Collision Detection**:
+   - In-batch duplicate tuples (`student_ref`, `institution_id`, `programme_id`, `start_date`) are rejected under `VAL-DUP-001`.
+   - In-batch APAAR collisions (different student references sharing the same APAAR ID) are rejected under `VAL-APAAR-COLLISION`.
+   - Database identity conflicts (an existing student reference registered with a differing APAAR ID) are rejected under `VAL-ID-CONFLICT`.
+   - Registered APAAR collisions against other students in the database are rejected under `VAL-APAAR-COLLISION`.
+   - Student name discrepancies between uploaded records and existing database records generate `VAL-ID-NAME-MISMATCH` warnings without silent merges.
+4. **Preview / Dry-Run Mode**: Passing `preview=true` or `dry_run=true` to `POST /api/v1/students/upload-csv` validates all rows, creates an `ImportJob` with status `PREVIEW` and individual `ImportRowResult` entries for review, while committing zero changes to `students` or `enrolments`.
+5. **Transactional Integrity & Rollback**: All inserts are committed transactionally. An unexpected failure rolls back all entity writes, marks the `ImportJob` as `FAILED`, and records safe error logs without exposing sensitive student identifiers.
+6. **Repeat Upload Safety**: Submitting identical records or resubmitting previously accepted enrolments prevents duplicate records and tracks linkages via `previous_job_id`.
 
 Database migration workflow: after installing requirements, run `alembic upgrade head`. The initial migration only adds `alert_review_events`; it preserves existing alert rows. Application startup also uses `create_all` for missing tables for backward-compatible local development, but Alembic should be used to record schema version for deployments.
 
@@ -140,3 +161,11 @@ Database migration workflow: after installing requirements, run `alembic upgrade
 - CORS is restricted to localhost Vite origins by default; set the exact allowed origins for the deployment.
 - No CatBoost or other trained ML model is present. Anomaly rules are deterministic statistical/demo rules only.
 - No official APAAR, ABC, UDISE+, DigiLocker, or AICTE system integration is configured.
+
+## Database migrations
+
+Before starting the updated application, run `python -m alembic upgrade head` from the backend directory. This records migration history and creates the composite index used for efficient duplicate-enrolment lookups. The migration is safe to run on an existing database and does not delete existing rows.
+=======
+# PRAMAAN
+PRAMAAN is an AI-assisted APAAR student data management platform featuring CSV validation, enrolment anomaly detection, compliance monitoring, secure verification, academic transfers, and role-based institutional dashboards.
+>>>>>>> origin/main

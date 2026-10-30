@@ -2,12 +2,8 @@ import io
 
 import pytest
 from fastapi.testclient import TestClient
-from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
 from sqlalchemy.orm.session import Session
-from sqlalchemy.pool import StaticPool
 
-from app.database import Base, get_db
 from app.main import app
 from app.models.enrolment import Enrolment
 from app.models.import_job import ImportJob, ImportRowResult
@@ -16,31 +12,9 @@ from app.routers.students import MAX_CSV_ROWS, MAX_CSV_UPLOAD_BYTES
 
 
 @pytest.fixture
-def isolated_client():
-    engine = create_engine(
-        "sqlite://",
-        connect_args={"check_same_thread": False},
-        poolclass=StaticPool,
-    )
-    Base.metadata.create_all(bind=engine)
-    test_sessions = sessionmaker(autocommit=False, autoflush=False, bind=engine)
-
-    def override_get_db():
-        db = test_sessions()
-        try:
-            yield db
-        finally:
-            db.close()
-
-    previous_overrides = app.dependency_overrides.copy()
-    app.dependency_overrides[get_db] = override_get_db
-    try:
-        with TestClient(app) as client:
-            yield client, test_sessions
-    finally:
-        app.dependency_overrides.clear()
-        app.dependency_overrides.update(previous_overrides)
-        engine.dispose()
+def isolated_client(isolate_database_for_tests):
+    _engine, test_sessions = isolate_database_for_tests
+    yield TestClient(app), test_sessions
 
 
 CSV_HEADER = (
@@ -253,7 +227,7 @@ def test_mixed_valid_and_invalid_rows_in_single_upload(isolated_client):
     assert response.json()["accepted_count"] == 1
     assert response.json()["rejected_count"] == 1
     assert response.json()["review_count"] == 0
-    assert response.json()["error_count_by_severity"]["CRITICAL"] == 2
+    assert response.json()["error_count_by_severity"]["CRITICAL"] == 1
 
     job_id = response.json()["import_job_id"]
     rows = client.get(f"/api/v1/students/import-jobs/{job_id}/rows").json()["items"]

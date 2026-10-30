@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends, HTTPException, Query
+from fastapi import APIRouter, Depends, HTTPException, Query, Response
 from sqlalchemy.orm import Session
 from typing import Optional, List, Dict, Any
 from datetime import datetime
@@ -16,16 +16,20 @@ from app.schemas.alert import (
 )
 from app.services.integrity_engine import TemporalIntegrityEngine
 from app.services.audit_service import AuditService
+from app.services.export_service import ExportService
 from app.security import Principal, get_current_principal, mask_identifier, mask_sensitive_payload
+from app.rate_limiter import rate_limit_reevaluation
 
 router = APIRouter(prefix="/alerts", tags=["Alerts & Enrolment Integrity"])
 
 ALLOWED_STATUS_TRANSITIONS = {
-    "OPEN": {"UNDER_REVIEW", "AWAITING_CLARIFICATION", "ESCALATED", "RESOLVED"},
-    "UNDER_REVIEW": {"OPEN", "AWAITING_CLARIFICATION", "ESCALATED", "RESOLVED"},
-    "AWAITING_CLARIFICATION": {"UNDER_REVIEW", "ESCALATED", "RESOLVED"},
-    "ESCALATED": {"UNDER_REVIEW", "AWAITING_CLARIFICATION", "RESOLVED"},
-    "RESOLVED": set(),
+    "OPEN": {"UNDER_REVIEW", "AWAITING_INFORMATION", "AWAITING_CLARIFICATION", "ESCALATED", "RESOLVED", "DISMISSED"},
+    "UNDER_REVIEW": {"OPEN", "AWAITING_INFORMATION", "AWAITING_CLARIFICATION", "ESCALATED", "RESOLVED", "DISMISSED"},
+    "AWAITING_INFORMATION": {"UNDER_REVIEW", "ESCALATED", "RESOLVED", "DISMISSED"},
+    "AWAITING_CLARIFICATION": {"UNDER_REVIEW", "ESCALATED", "RESOLVED", "DISMISSED"},
+    "ESCALATED": {"UNDER_REVIEW", "AWAITING_INFORMATION", "AWAITING_CLARIFICATION", "RESOLVED", "DISMISSED"},
+    "RESOLVED": {"UNDER_REVIEW"},
+    "DISMISSED": {"UNDER_REVIEW"},
 }
 
 
@@ -45,7 +49,7 @@ def _append_case_event(
     previous_status = alert.status
     if new_status is not None:
         explicit_reopen = action == "REOPENED" and previous_status == "RESOLVED" and new_status == "UNDER_REVIEW"
-        if not explicit_reopen and new_status not in ALLOWED_STATUS_TRANSITIONS.get(previous_status, set()):
+        if not explicit_reopen and new_status != previous_status and new_status not in ALLOWED_STATUS_TRANSITIONS.get(previous_status, set()):
             raise HTTPException(
                 status_code=409,
                 detail=f"Cannot transition alert from {previous_status} to {new_status}.",
@@ -100,6 +104,7 @@ def _current_assignment(history: List[AlertReviewEvent]) -> Optional[str]:
     return assignment.assigned_to if assignment else None
 
 @router.get("", response_model=Dict[str, Any])
+@router.get("/investigation-cases", response_model=Dict[str, Any])
 def list_alerts(
     status: Optional[str] = Query(None, description="OPEN, UNDER_REVIEW, RESOLVED"),
     severity: Optional[str] = Query(None, description="HIGH, MEDIUM, LOW, INFORMATIONAL"),
@@ -167,6 +172,93 @@ def list_alerts(
         ]
     }
 
+
+@router.get("/export-csv")
+def export_alerts_csv(
+    status: Optional[str] = Query(None),
+    severity: Optional[str] = Query(None),
+    alert_type: Optional[str] = Query(None),
+    db: Session = Depends(get_db),
+    principal: Principal = Depends(get_current_principal),
+):
+    """Export investigation cases and integrity alerts as CSV."""
+    query = db.query(Alert)
+    if principal.role == "institution_officer":
+        inst_students = db.query(Enrolment.student_ref).filter(
+            Enrolment.institution_id == principal.institution_id
+        ).distinct().subquery()
+        query = query.filter(Alert.student_ref.in_(inst_students))
+    if status:
+        query = query.filter(Alert.status == status)
+    if severity:
+        query = query.filter(Alert.severity == severity)
+    if alert_type:
+        query = query.filter(Alert.alert_type == alert_type)
+
+    alerts = query.order_by(Alert.created_at.desc()).limit(1000).all()
+    headers = [
+        "Case ID", "Student Ref", "APAAR ID", "Case Type", "Severity",
+        "Status", "Title", "Explanation", "Confidence Score", "Reviewed By", "Created At"
+    ]
+    rows = [
+        [
+            a.id, a.student_ref, a.apaar_id or "", a.alert_type, a.severity,
+            a.status, a.title, a.explanation, a.confidence_score or "",
+            a.reviewed_by or "", a.created_at.strftime("%Y-%m-%d %H:%M") if a.created_at else "",
+        ]
+        for a in alerts
+    ]
+    csv_data = ExportService.generate_csv(headers, rows)
+    return Response(
+        content=csv_data,
+        media_type="text/csv",
+        headers={"Content-Disposition": 'attachment; filename="investigation_cases.csv"'},
+    )
+
+
+@router.get("/export-excel")
+def export_alerts_excel(
+    status: Optional[str] = Query(None),
+    severity: Optional[str] = Query(None),
+    alert_type: Optional[str] = Query(None),
+    db: Session = Depends(get_db),
+    principal: Principal = Depends(get_current_principal),
+):
+    """Export investigation cases and integrity alerts as Excel (.xlsx)."""
+    query = db.query(Alert)
+    if principal.role == "institution_officer":
+        inst_students = db.query(Enrolment.student_ref).filter(
+            Enrolment.institution_id == principal.institution_id
+        ).distinct().subquery()
+        query = query.filter(Alert.student_ref.in_(inst_students))
+    if status:
+        query = query.filter(Alert.status == status)
+    if severity:
+        query = query.filter(Alert.severity == severity)
+    if alert_type:
+        query = query.filter(Alert.alert_type == alert_type)
+
+    alerts = query.order_by(Alert.created_at.desc()).limit(1000).all()
+    headers = [
+        "Case ID", "Student Ref", "APAAR ID", "Case Type", "Severity",
+        "Status", "Title", "Explanation", "Confidence Score", "Reviewed By", "Created At"
+    ]
+    rows = [
+        [
+            a.id, a.student_ref, a.apaar_id or "", a.alert_type, a.severity,
+            a.status, a.title, a.explanation, a.confidence_score or "",
+            a.reviewed_by or "", a.created_at.strftime("%Y-%m-%d %H:%M") if a.created_at else "",
+        ]
+        for a in alerts
+    ]
+    xlsx_bytes = ExportService.generate_excel("Investigations", headers, rows)
+    return Response(
+        content=xlsx_bytes,
+        media_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        headers={"Content-Disposition": 'attachment; filename="investigation_cases.xlsx"'},
+    )
+
+
 @router.get("/{alert_id}")
 def get_alert_detail(
     alert_id: str,
@@ -176,6 +268,16 @@ def get_alert_detail(
     alert = db.query(Alert).filter(Alert.id == alert_id).first()
     if not alert:
         raise HTTPException(status_code=404, detail="Alert not found.")
+
+    if principal.role == "institution_officer":
+        if not alert.supporting_record_ids:
+            raise HTTPException(status_code=404, detail="Alert not found.")
+        visible_count = db.query(Enrolment.id).filter(
+            Enrolment.id.in_(alert.supporting_record_ids),
+            Enrolment.institution_id == principal.institution_id,
+        ).count()
+        if visible_count != len(set(alert.supporting_record_ids)):
+            raise HTTPException(status_code=404, detail="Alert not found.")
 
     # Fetch supporting enrolment records
     supporting_enrolments = []
@@ -259,6 +361,20 @@ def get_alert_detail(
         ]
     }
 
+def _enforce_alert_mutation_access(alert: Alert, principal: Principal, db: Session):
+    if principal.role in {"read_only_auditor", "external_verifier"}:
+        raise HTTPException(status_code=403, detail="Your role is not authorized to modify alert records.")
+    if principal.role == "institution_officer":
+        if not alert.supporting_record_ids:
+            raise HTTPException(status_code=404, detail="Alert not found.")
+        visible_count = db.query(Enrolment.id).filter(
+            Enrolment.id.in_(alert.supporting_record_ids),
+            Enrolment.institution_id == principal.institution_id,
+        ).count()
+        if visible_count != len(set(alert.supporting_record_ids)):
+            raise HTTPException(status_code=404, detail="Alert not found.")
+
+
 @router.patch("/{alert_id}/review")
 def review_alert(
     alert_id: str,
@@ -276,6 +392,8 @@ def review_alert(
     alert = db.query(Alert).filter(Alert.id == alert_id).first()
     if not alert:
         raise HTTPException(status_code=404, detail="Alert not found.")
+
+    _enforce_alert_mutation_access(alert, principal, db)
 
     if not payload.note.strip():
         raise HTTPException(status_code=422, detail="Reviewer note cannot be blank.")
@@ -316,10 +434,25 @@ def review_alert(
 
 
 @router.get("/{alert_id}/history")
-def get_alert_review_history(alert_id: str, db: Session = Depends(get_db)):
+def get_alert_review_history(
+    alert_id: str,
+    db: Session = Depends(get_db),
+    principal: Principal = Depends(get_current_principal),
+):
     alert = db.query(Alert).filter(Alert.id == alert_id).first()
     if not alert:
         raise HTTPException(status_code=404, detail="Alert not found.")
+
+    if principal.role == "institution_officer":
+        if not alert.supporting_record_ids:
+            raise HTTPException(status_code=404, detail="Alert not found.")
+        visible_count = db.query(Enrolment.id).filter(
+            Enrolment.id.in_(alert.supporting_record_ids),
+            Enrolment.institution_id == principal.institution_id,
+        ).count()
+        if visible_count != len(set(alert.supporting_record_ids)):
+            raise HTTPException(status_code=404, detail="Alert not found.")
+
     history = _case_history(db, alert.id)
     return {
         "alert_id": alert.id,
@@ -353,6 +486,7 @@ def assign_alert(
     alert = db.query(Alert).filter(Alert.id == alert_id).first()
     if not alert:
         raise HTTPException(status_code=404, detail="Alert not found.")
+    _enforce_alert_mutation_access(alert, principal, db)
     assigned_to = payload.assigned_to.strip() if payload.assigned_to else None
     actor = payload.actor.strip() if principal.role == "prototype_admin" else principal.subject
     event = _append_case_event(
@@ -372,6 +506,7 @@ def request_alert_clarification(
     alert = db.query(Alert).filter(Alert.id == alert_id).first()
     if not alert:
         raise HTTPException(status_code=404, detail="Alert not found.")
+    _enforce_alert_mutation_access(alert, principal, db)
     if alert.status == "RESOLVED":
         raise HTTPException(status_code=409, detail="Reopen the resolved case before requesting clarification.")
     if not payload.note.strip():
@@ -395,6 +530,7 @@ def add_alert_note(
     alert = db.query(Alert).filter(Alert.id == alert_id).first()
     if not alert:
         raise HTTPException(status_code=404, detail="Alert not found.")
+    _enforce_alert_mutation_access(alert, principal, db)
     actor = payload.actor.strip() if principal.role == "prototype_admin" else principal.subject
     event = _append_case_event(
         db, alert, "NOTE_ADDED", actor, note=payload.note,
@@ -413,6 +549,7 @@ def reopen_alert(
     alert = db.query(Alert).filter(Alert.id == alert_id).first()
     if not alert:
         raise HTTPException(status_code=404, detail="Alert not found.")
+    _enforce_alert_mutation_access(alert, principal, db)
     if alert.status != "RESOLVED":
         raise HTTPException(status_code=409, detail="Only resolved alerts can be reopened.")
     actor = payload.actor.strip() if principal.role == "prototype_admin" else principal.subject
@@ -422,7 +559,7 @@ def reopen_alert(
     )
     return {"success": True, "alert_id": alert.id, "status": alert.status, "event_id": event.id}
 
-@router.post("/re-evaluate")
+@router.post("/re-evaluate", dependencies=[Depends(rate_limit_reevaluation)])
 def trigger_reevaluation(db: Session = Depends(get_db)):
     engine_svc = TemporalIntegrityEngine(db)
     count = engine_svc.evaluate_all()

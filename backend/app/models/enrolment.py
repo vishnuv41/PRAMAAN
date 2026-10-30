@@ -7,7 +7,7 @@ class Enrolment(Base):
 
     id = Column(Integer, primary_key=True, autoincrement=True)
     student_ref = Column(String(64), ForeignKey("students.student_ref"), nullable=False, index=True)
-    apaar_id = Column(String(32), nullable=False, index=True)
+    apaar_id = Column(String(32), nullable=True, index=True)
     institution_id = Column(String(64), nullable=False, index=True)
     institution_name = Column(String(128), nullable=True)
     programme_id = Column(String(64), nullable=False, index=True)
@@ -25,4 +25,5 @@ class Enrolment(Base):
 
     __table_args__ = (
         Index("idx_enrolment_temporal", "student_ref", "enrolment_start", "enrolment_end", "enrolment_status"),
+        Index("idx_enrolment_duplicate_lookup", "student_ref", "institution_id", "programme_id", "enrolment_start"),
     )

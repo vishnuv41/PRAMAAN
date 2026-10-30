@@ -3,9 +3,10 @@ from sqlalchemy.orm import Session
 from typing import Optional, List, Dict, Any
 from app.database import get_db
 from app.models.enrolment import Enrolment
+from app.models.alert import Alert
 from app.schemas.enrolment import EnrolmentCreate, EnrolmentResponse
 from app.services.integrity_engine import TemporalIntegrityEngine
-from app.security import Principal, enforce_institution_scope, mask_identifier, get_current_principal
+from app.security import Principal, enforce_institution_scope, mask_identifier, mask_sensitive_payload, get_current_principal
 
 router = APIRouter(prefix="/enrolments", tags=["Enrolments"])
 
@@ -65,6 +66,75 @@ def list_enrolments(
         "page": page,
         "limit": limit
     }
+
+
+@router.get("/conflicts", response_model=Dict[str, Any])
+def list_enrolment_conflicts(
+    institution_id: Optional[str] = Query(None),
+    programme_id: Optional[str] = Query(None),
+    academic_year: Optional[str] = Query(None),
+    conflict_type: Optional[str] = Query(None, description="DUPLICATE_SUBMISSION, CONCURRENT_ENROLMENT, EXCEPTION_REVIEW_REQUIRED"),
+    page: int = Query(1, ge=1),
+    limit: int = Query(20, ge=1, le=100),
+    db: Session = Depends(get_db),
+    principal: Principal = Depends(get_current_principal),
+):
+    scoped_inst = enforce_institution_scope(principal, institution_id)
+    query = db.query(Alert).filter(Alert.status != "RESOLVED")
+
+    if conflict_type:
+        query = query.filter(Alert.alert_type == conflict_type)
+
+    alerts = query.order_by(Alert.created_at.desc()).all()
+    matching_alerts = []
+
+    for alert in alerts:
+        records = []
+        if alert.supporting_record_ids:
+            records = db.query(Enrolment).filter(Enrolment.id.in_(alert.supporting_record_ids)).all()
+
+        # Institution scoping
+        if scoped_inst:
+            if not any(r.institution_id == scoped_inst for r in records):
+                continue
+            if principal.role == "institution_officer":
+                # Only show if all records belong to the scoped institution or mask accordingly
+                record_insts = {r.institution_id for r in records}
+                if not record_insts.issubset({scoped_inst}):
+                    continue
+
+        if programme_id and not any(r.programme_id == programme_id for r in records):
+            continue
+        if academic_year and not any(r.academic_year == academic_year for r in records):
+            continue
+
+        evidence = alert.evidence_summary
+        if principal.role not in {"administrator", "prototype_admin"}:
+            evidence = mask_sensitive_payload(evidence)
+
+        matching_alerts.append({
+            "alert_id": alert.id,
+            "conflict_type": alert.alert_type,
+            "severity": alert.severity,
+            "title": alert.title,
+            "explanation": alert.explanation,
+            "student_ref": alert.student_ref,
+            "confidence_score": alert.confidence_score,
+            "evidence_summary": evidence,
+            "supporting_record_ids": alert.supporting_record_ids or [],
+            "status": alert.status,
+            "created_at": alert.created_at.isoformat() if alert.created_at else None,
+        })
+
+    total = len(matching_alerts)
+    paginated = matching_alerts[(page - 1) * limit : page * limit]
+    return {
+        "items": paginated,
+        "total": total,
+        "page": page,
+        "limit": limit,
+    }
+
 
 @router.post("", response_model=EnrolmentResponse, status_code=201)
 def create_enrolment(

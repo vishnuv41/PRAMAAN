@@ -24,6 +24,60 @@ def get_intake_compliance(
         "reports": reports
     }
 
+
+@router.get("/findings")
+def get_intake_compliance_findings(
+    institution_id: Optional[str] = Query(None),
+    programme_id: Optional[str] = Query(None),
+    academic_year: Optional[str] = Query(None),
+    compliance_status: Optional[str] = Query(None),
+    db: Session = Depends(get_db),
+    principal: Principal = Depends(get_current_principal),
+):
+    scoped_inst = enforce_institution_scope(principal, institution_id)
+    svc = IntakeComplianceService(db)
+    reports = svc.get_all_compliance_reports()
+
+    if scoped_inst:
+        reports = [r for r in reports if r["institution_id"] == scoped_inst]
+    if programme_id:
+        reports = [r for r in reports if r["programme_id"] == programme_id]
+    if academic_year:
+        reports = [r for r in reports if r["academic_year"] == academic_year]
+    if compliance_status:
+        reports = [r for r in reports if r["compliance_status"] == compliance_status]
+
+    findings = []
+    for r in reports:
+        findings.append({
+            "rule_id": r.get("rule_id", "UNCONFIGURED"),
+            "rule_source": r.get("rule_source"),
+            "effective_date": r.get("effective_date"),
+            "institution_id": r["institution_id"],
+            "institution_name": r.get("institution_name", r["institution_id"]),
+            "programme_id": r["programme_id"],
+            "programme_name": r.get("programme_name", r["programme_id"]),
+            "academic_year": r["academic_year"],
+            "admission_cycle": r.get("admission_cycle"),
+            "compliance_status": r["compliance_status"],
+            "approved_intake": r.get("approved_intake"),
+            "new_admissions_count": r.get("new_admissions_count"),
+            "regular_admitted": r.get("regular_admitted"),
+            "supernumerary_admitted": r.get("supernumerary_admitted"),
+            "nri_admitted": r.get("nri_admitted"),
+            "oci_admitted": r.get("oci_admitted"),
+            "foreign_national_admitted": r.get("foreign_national_admitted"),
+            "explanation": r.get("explanation"),
+            "summary": r.get("summary"),
+            "review_recommended": r["compliance_status"] in {"NON_COMPLIANT_OVER_ADMISSION", "QUOTA_DISCREPANCY", "NEEDS_REVIEW", "AMBIGUOUS_RULE"},
+        })
+
+    return {
+        "total_findings": len(findings),
+        "findings": findings
+    }
+
+
 @router.get("/{institution_id}/{programme_id}")
 def get_programme_intake_detail(
     institution_id: str,
@@ -88,6 +142,14 @@ def configure_intake_rule(
     db: Session = Depends(get_db),
     principal: Principal = Depends(get_current_principal),
 ):
+    if principal.role in {"read_only_auditor", "external_verifier"}:
+        raise HTTPException(
+            status_code=403,
+            detail="Your role is not authorized to configure intake compliance rules.",
+        )
+    if principal.role == "institution_officer":
+        enforce_institution_scope(principal, payload.institution_id)
+
     scope = db.query(ApprovedIntake).filter(
         ApprovedIntake.institution_id == payload.institution_id,
         ApprovedIntake.programme_id == payload.programme_id,

@@ -6,7 +6,12 @@ from app.database import get_db
 from app.models.consent import StudentConsent
 from app.models.student import Student
 from app.services.audit_service import AuditService
-from app.security import Principal, get_current_principal, mask_identifier
+from app.security import (
+    Principal,
+    get_current_principal,
+    mask_identifier,
+    require_student_institution,
+)
 
 router = APIRouter(prefix="/consent", tags=["Consent Module"])
 
@@ -16,10 +21,20 @@ def get_student_consent(
     db: Session = Depends(get_db),
     principal: Principal = Depends(get_current_principal),
 ):
-    consents = db.query(StudentConsent).filter(StudentConsent.student_ref == student_ref).all()
+    if principal.role == "external_verifier":
+        raise HTTPException(
+            status_code=403,
+            detail="External verifiers cannot browse student consent profiles directly.",
+        )
+
+    institution_scope = principal.institution_id if principal.role == "institution_officer" else None
+    require_student_institution(db, student_ref, institution_scope)
+
     student = db.query(Student).filter(Student.student_ref == student_ref).first()
     if not student:
         raise HTTPException(status_code=404, detail="Student not found.")
+
+    consents = db.query(StudentConsent).filter(StudentConsent.student_ref == student_ref).all()
 
     return {
         "student_ref": student.student_ref,
@@ -43,11 +58,21 @@ def get_student_consent(
 def toggle_consent_status(
     consent_id: int,
     payload: Dict[str, Any] = Body(...),
-    db: Session = Depends(get_db)
+    db: Session = Depends(get_db),
+    principal: Principal = Depends(get_current_principal),
 ):
+    if principal.role in {"read_only_auditor", "external_verifier"}:
+        raise HTTPException(
+            status_code=403,
+            detail="Your role is not authorized to modify student consent records.",
+        )
+
     consent = db.query(StudentConsent).filter(StudentConsent.id == consent_id).first()
     if not consent:
         raise HTTPException(status_code=404, detail="Consent record not found.")
+
+    if principal.role == "institution_officer":
+        require_student_institution(db, consent.student_ref, principal.institution_id)
 
     granted = payload.get("consent_granted", not consent.consent_granted)
     consent.consent_granted = granted
@@ -60,12 +85,13 @@ def toggle_consent_status(
     db.commit()
     db.refresh(consent)
 
+    actor = principal.subject if principal.subject != "local-prototype" else "Student Web Consent Portal"
     AuditService.log_event(
         db=db,
         entity_type="CONSENT",
         entity_id=str(consent.id),
         action="CONSENT_TOGGLE",
-        performed_by="Student Web Consent Portal",
+        performed_by=actor,
         details={
             "student_ref": consent.student_ref,
             "purpose": consent.purpose,
@@ -85,9 +111,22 @@ def toggle_consent_status(
 @router.post("", status_code=201)
 def create_consent_record(
     payload: Dict[str, Any],
-    db: Session = Depends(get_db)
+    db: Session = Depends(get_db),
+    principal: Principal = Depends(get_current_principal),
 ):
+    if principal.role in {"read_only_auditor", "external_verifier"}:
+        raise HTTPException(
+            status_code=403,
+            detail="Your role is not authorized to create student consent records.",
+        )
+
     s_ref = payload.get("student_ref")
+    if not s_ref:
+        raise HTTPException(status_code=400, detail="Missing required field 'student_ref'.")
+
+    if principal.role == "institution_officer":
+        require_student_institution(db, s_ref, principal.institution_id)
+
     student = db.query(Student).filter(Student.student_ref == s_ref).first()
     if not student:
         raise HTTPException(status_code=404, detail="Student not found.")

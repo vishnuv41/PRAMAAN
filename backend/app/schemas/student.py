@@ -4,9 +4,11 @@ from datetime import datetime, date
 
 class StudentBase(BaseModel):
     student_ref: str
-    apaar_id: str
+    apaar_id: Optional[str] = None
     full_name: str
     primary_institution_id: Optional[str] = None
+    identity_status: Optional[str] = "APAAR_VERIFIED"
+    identity_route: Optional[str] = "AADHAAR_APAAR"
 
 class StudentCreate(StudentBase):
     pass

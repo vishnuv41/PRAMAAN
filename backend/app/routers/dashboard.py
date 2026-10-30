@@ -8,8 +8,10 @@ from app.models.enrolment import Enrolment
 from app.models.alert import Alert
 from app.models.audit import AuditLog
 from app.models.intake import ApprovedIntake
+from app.models.certificate import Certificate
+from app.models.import_job import ImportJob
 from app.schemas.dashboard import DashboardSummaryResponse
-from app.security import Principal, get_current_principal, mask_sensitive_payload
+from app.security import Principal, get_current_principal, mask_sensitive_payload, enforce_institution_scope
 
 router = APIRouter(prefix="/dashboard", tags=["Dashboard"])
 
@@ -20,17 +22,29 @@ def get_dashboard_summary(
     db: Session = Depends(get_db),
     principal: Principal = Depends(get_current_principal),
 ):
-    student_query = db.query(Student)
+    if principal.role == "institution_officer":
+        institution_id = enforce_institution_scope(principal, institution_id)
+
     enrolment_query = db.query(Enrolment)
     alert_query = db.query(Alert)
 
-    if institution_id:
-        enrolment_query = enrolment_query.filter(Enrolment.institution_id == institution_id)
-    if academic_year:
-        enrolment_query = enrolment_query.filter(Enrolment.academic_year == academic_year)
+    inst_id_val = institution_id if isinstance(institution_id, str) and institution_id.strip() else None
+    acad_yr_val = academic_year if isinstance(academic_year, str) and academic_year.strip() else None
 
-    total_students = student_query.count()
-    distinct_institutions = db.query(Enrolment.institution_id).distinct().count()
+    if inst_id_val:
+        enrolment_query = enrolment_query.filter(Enrolment.institution_id == inst_id_val)
+    if acad_yr_val:
+        enrolment_query = enrolment_query.filter(Enrolment.academic_year == acad_yr_val)
+
+    if inst_id_val:
+        total_students = db.query(func.count(func.distinct(Enrolment.student_ref))).filter(
+            Enrolment.institution_id == inst_id_val
+        ).scalar() or 0
+        distinct_institutions = 1
+    else:
+        total_students = db.query(func.count(Student.student_ref)).scalar() or 0
+        # AICTE approved institution directory or distinct enrolled institutions
+        distinct_institutions = db.query(ApprovedIntake.institution_id).distinct().count() or db.query(Enrolment.institution_id).distinct().count()
 
     open_alerts = alert_query.filter(Alert.status.in_(["OPEN", "UNDER_REVIEW"])).count()
     records_requiring_review = alert_query.filter(Alert.reviewer_decision == None).count()
@@ -43,6 +57,12 @@ def get_dashboard_summary(
         if s in severities:
             severities[s] = c
 
+    # Certificate count
+    if inst_id_val:
+        total_certificates = db.query(Certificate).filter(Certificate.institution_id == inst_id_val).count()
+    else:
+        total_certificates = db.query(Certificate).count()
+
     total_enrolments = enrolment_query.count()
     valid_enrolments = enrolment_query.filter(
         func.trim(Enrolment.student_ref) != "",
@@ -54,7 +74,19 @@ def get_dashboard_summary(
         Enrolment.enrolment_status.in_(["Active", "Completed", "Withdrawn", "Suspended"]),
         or_(Enrolment.enrolment_end.is_(None), Enrolment.enrolment_end >= Enrolment.enrolment_start)
     ).count()
-    if total_enrolments > 0:
+
+    # Dynamic validation pass rate reflecting import jobs when available, or enrolled records
+    import_jobs_query = db.query(
+        func.sum(ImportJob.total_rows),
+        func.sum(ImportJob.accepted_rows),
+    )
+    if inst_id_val:
+        import_jobs_query = import_jobs_query.filter(ImportJob.institution_id == inst_id_val)
+    job_rows = import_jobs_query.first()
+
+    if job_rows and job_rows[0] and job_rows[0] > 0:
+        validation_pass_rate = round((float(job_rows[1] or 0) / float(job_rows[0])) * 100, 1)
+    elif total_enrolments > 0:
         validation_pass_rate = round((valid_enrolments / total_enrolments) * 100, 1)
     else:
         validation_pass_rate = 100.0
@@ -117,10 +149,23 @@ def get_dashboard_summary(
     response = {
         "total_students": total_students,
         "total_institutions": distinct_institutions,
+        "total_enrolments": total_enrolments,
         "open_alerts": open_alerts,
         "records_requiring_review": records_requiring_review,
         "validation_pass_rate": validation_pass_rate,
         "potential_conflicts_count": potential_conflicts_count,
+        "total_conflicts": potential_conflicts_count,
+        "total_certificates": total_certificates,
+        "total_alerts": open_alerts,
+        "stats": {
+            "total_students": total_students,
+            "total_institutions": distinct_institutions,
+            "total_enrolments": total_enrolments,
+            "total_conflicts": potential_conflicts_count,
+            "total_certificates": total_certificates,
+            "total_alerts": open_alerts,
+            "validation_pass_rate": validation_pass_rate,
+        },
         "alert_severity_distribution": severities,
         "enrolment_trends": enrolment_trends,
         "recent_activity": recent_activity,

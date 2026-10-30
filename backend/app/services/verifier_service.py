@@ -147,5 +147,9 @@ class VerifierService:
             verification_outcome=outcome,
             limited_response_json=payload
         )
-        self.db.add(log)
-        self.db.commit()
+        try:
+            self.db.add(log)
+            self.db.commit()
+        except Exception:
+            self.db.rollback()
+            raise

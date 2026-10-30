@@ -11,6 +11,7 @@ from app.models.verifier import VerifierOrganization, VerificationRequestLog
 from app.models.versioning import EnrolmentVersion
 from app.services.integrity_engine import TemporalIntegrityEngine
 from app.services.certificate_service import CertificateService
+from app.services.auth_service import AuthService
 from app.services.audit_service import AuditService
 
 def init_db_and_seed():
@@ -33,6 +34,7 @@ def init_db_and_seed():
     )
     if any(db.query(model).first() is not None for model in seeded_models):
         print("Database already contains records; leaving existing data unchanged.")
+        AuthService.seed_demo_users(db)
         db.close()
         return
 
@@ -291,6 +293,7 @@ def init_db_and_seed():
     all_students = [s1, s2, s3, s4, s5, s11] + more_students
     all_enrolments = [e1_1, e1_2, e2_1, e2_2, e3_1, e3_2, e4_1, e4_2, e5_1, e5_2, e11] + more_enrolments
     db.add_all(all_students)
+    db.flush()
     db.add_all(all_enrolments)
     db.commit()
 
@@ -492,6 +495,14 @@ def init_db_and_seed():
         performed_by="System Initializer",
         details={"synthetic_records": 11, "consents": 6, "verifiers": 3, "intakes_configured": 4}
     )
+
+    AuthService.seed_demo_users(db)
+
+    try:
+        from seed_sjce_population import seed_sjce
+        seed_sjce(db)
+    except Exception as e:
+        print(f"Notice during seed_sjce: {e}")
 
     print("Seed complete successfully!")
     db.close()

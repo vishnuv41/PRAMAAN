@@ -11,7 +11,11 @@ config = context.config
 if config.config_file_name is not None:
     fileConfig(config.config_file_name)
 
-config.set_main_option("sqlalchemy.url", settings.DATABASE_URL.replace("%", "%%"))
+# Allow caller or alembic config to provide custom sqlalchemy.url for isolated/disposable DB testing
+target_url = config.get_main_option("sqlalchemy.url")
+if not target_url or "apaar_sentinel.db" in target_url:
+    target_url = settings.DATABASE_URL
+config.set_main_option("sqlalchemy.url", target_url.replace("%", "%%"))
 target_metadata = Base.metadata
 
 

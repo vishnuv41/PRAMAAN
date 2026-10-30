@@ -37,3 +37,4 @@ desktop.ini
 *.db-wal
 !backend/apaar_sentinel.db
 !backend/pramaan_india_demo.db
+*.backup*

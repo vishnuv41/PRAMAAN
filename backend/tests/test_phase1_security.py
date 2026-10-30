@@ -230,9 +230,10 @@ def test_auditor_is_read_only_and_empty_required_registry_fails_startup(phase1_c
     environment = os.environ.copy()
     environment["AUTH_REQUIRED"] = "true"
     environment["API_TOKEN_PRINCIPALS_JSON"] = "{}"
+    environment["PYTHONPATH"] = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    backend_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     result = subprocess.run(
-        [sys.executable, "-c", "import app.security"],
-        env=environment,
+        [sys.executable, "-c", "import app.security"], cwd=backend_dir, env=environment,
         capture_output=True,
         text=True,
         check=False,

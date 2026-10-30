@@ -3,6 +3,8 @@ from typing import List, Dict, Any, Tuple, Optional
 from sqlalchemy.orm import Session
 from app.models.enrolment import Enrolment
 from app.models.alert import Alert
+from app.models.transfer import TransferRequest, TransferStatus
+from app.config import settings
 
 # Canonical end date assumption for ongoing active enrolment when end date is unspecified (e.g. 4-year limit or current academic window)
 FAR_FUTURE_DATE = date(2099, 12, 31)
@@ -176,6 +178,110 @@ class TemporalIntegrityEngine:
                 )
 
                 if is_overlap:
+                    # Check 2b: Cross-institution transfer request and grace period check
+                    transfer = None
+                    if rec1.institution_id != rec2.institution_id:
+                        transfer = self.db.query(TransferRequest).filter(
+                            TransferRequest.student_ref == student_ref,
+                            (
+                                ((TransferRequest.source_institution_id == rec1.institution_id) & (TransferRequest.destination_institution_id == rec2.institution_id)) |
+                                ((TransferRequest.source_institution_id == rec2.institution_id) & (TransferRequest.destination_institution_id == rec1.institution_id))
+                            )
+                        ).order_by(TransferRequest.created_at.desc()).first()
+
+                    if transfer and transfer.status in (TransferStatus.RELEASED, TransferStatus.PENDING_ADMISSION, TransferStatus.COMPLETED):
+                        overlap_days = (o_end - o_start).days if (o_end and o_end != FAR_FUTURE_DATE and o_start) else (
+                            (date.today() - o_start).days if o_start else 0
+                        )
+                        grace_period = getattr(settings, "TRANSFER_GRACE_PERIOD_DAYS", 30)
+                        if overlap_days <= grace_period:
+                            alerts_to_upsert.append({
+                                "id": f"ALT-TRF-GRACE-{min(rec1.id, rec2.id)}-{max(rec1.id, rec2.id)}",
+                                "student_ref": student_ref,
+                                "apaar_id": apaar_id,
+                                "alert_type": "TRANSFER_GRACE_PERIOD_NOTICE",
+                                "severity": "LOW",
+                                "title": f"Transfer Transition Within Grace Period: {rec1.institution_id} & {rec2.institution_id}",
+                                "explanation": (
+                                    f"Temporary enrolment overlap of {overlap_days} days detected between {rec1.institution_name or rec1.institution_id} "
+                                    f"and {rec2.institution_name or rec2.institution_id}. This is within the permitted {grace_period}-day transfer "
+                                    f"grace period under Transfer Request '{transfer.id}' (Status: {transfer.status}). Legitimate migration transition."
+                                ),
+                                "evidence_summary": {
+                                    "scenario": "TRANSFER_WITHIN_GRACE_PERIOD",
+                                    "rule_id": TEMPORAL_OVERLAP_RULE_ID,
+                                    "rule_version": INTEGRITY_RULE_VERSION,
+                                    "severity": "LOW",
+                                    "recommended_action": "Verify source institution records final exit closure during normal reconciliation.",
+                                    "transfer_id": transfer.id,
+                                    "transfer_status": transfer.status,
+                                    "overlap_days": overlap_days,
+                                    "grace_period_days": grace_period,
+                                    "overlap_period": f"{o_start} to {'Ongoing' if o_end == FAR_FUTURE_DATE else str(o_end)}",
+                                },
+                                "confidence_score": 0.95,
+                                "supporting_record_ids": [rec1.id, rec2.id],
+                                "exception_ref": f"TRF-{transfer.id}",
+                            })
+                            continue
+                        else:
+                            alerts_to_upsert.append({
+                                "id": f"ALT-TRF-EXP-{min(rec1.id, rec2.id)}-{max(rec1.id, rec2.id)}",
+                                "student_ref": student_ref,
+                                "apaar_id": apaar_id,
+                                "alert_type": "TRANSFER_OVERLAP_EXCEEDED_GRACE_PERIOD",
+                                "severity": "MEDIUM",
+                                "title": f"Transfer Overlap Exceeded Grace Period: {rec1.institution_id} & {rec2.institution_id}",
+                                "explanation": (
+                                    f"Active enrolment overlap between {rec1.institution_name or rec1.institution_id} and "
+                                    f"{rec2.institution_name or rec2.institution_id} ({overlap_days} days) exceeds the permitted {grace_period}-day "
+                                    f"transfer grace period under Transfer Request '{transfer.id}'. Source system update may be delayed or concurrent active seats persist."
+                                ),
+                                "evidence_summary": {
+                                    "scenario": "TRANSFER_EXCEEDED_GRACE_PERIOD",
+                                    "rule_id": TEMPORAL_OVERLAP_RULE_ID,
+                                    "rule_version": INTEGRITY_RULE_VERSION,
+                                    "severity": "MEDIUM",
+                                    "recommended_action": "Contact source institution to confirm release and exit date reconciliation.",
+                                    "transfer_id": transfer.id,
+                                    "transfer_status": transfer.status,
+                                    "overlap_days": overlap_days,
+                                    "grace_period_days": grace_period,
+                                    "overlap_period": f"{o_start} to {'Ongoing' if o_end == FAR_FUTURE_DATE else str(o_end)}",
+                                },
+                                "confidence_score": 0.85,
+                                "supporting_record_ids": [rec1.id, rec2.id],
+                                "exception_ref": f"TRF-{transfer.id}",
+                            })
+                            continue
+                    elif transfer and transfer.status == TransferStatus.PENDING_RELEASE:
+                        alerts_to_upsert.append({
+                            "id": f"ALT-TRF-PEND-{min(rec1.id, rec2.id)}-{max(rec1.id, rec2.id)}",
+                            "student_ref": student_ref,
+                            "apaar_id": apaar_id,
+                            "alert_type": "TRANSFER_PENDING_RELEASE_REVIEW",
+                            "severity": "MEDIUM",
+                            "title": f"Pending Transfer Overlap: {rec1.institution_id} & {rec2.institution_id}",
+                            "explanation": (
+                                f"Concurrent active enrolments found while Transfer Request '{transfer.id}' is pending source release. "
+                                f"Receiving institution has recorded enrolment before source institution has officially released the student."
+                            ),
+                            "evidence_summary": {
+                                "scenario": "TRANSFER_PENDING_RELEASE",
+                                "rule_id": TEMPORAL_OVERLAP_RULE_ID,
+                                "rule_version": INTEGRITY_RULE_VERSION,
+                                "severity": "MEDIUM",
+                                "recommended_action": "Awaiting source institution release action before completing transfer.",
+                                "transfer_id": transfer.id,
+                                "transfer_status": transfer.status,
+                                "overlap_period": f"{o_start} to {'Ongoing' if o_end == FAR_FUTURE_DATE else str(o_end)}",
+                            },
+                            "confidence_score": 0.80,
+                            "supporting_record_ids": [rec1.id, rec2.id],
+                            "exception_ref": f"TRF-{transfer.id}",
+                        })
+                        continue
+
                     # Check 3: Is there a documented permitted exception reference?
                     has_exception = bool(rec1.exception_ref or rec2.exception_ref)
                     exc_ref = rec1.exception_ref or rec2.exception_ref

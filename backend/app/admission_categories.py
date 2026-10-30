@@ -27,13 +27,34 @@ UNCONFIGURED_LIMIT_CATEGORIES = frozenset({
     AdmissionCategory.FOREIGN_NATIONAL.value,
 })
 
+# Primary lookup: canonical hyphenated key (e.g. "foreign-national")
 _CATEGORY_BY_CASEFOLD = {category.value.casefold(): category for category in AdmissionCategory}
+
+# Secondary lookup: with spaces instead of hyphens (e.g. "foreign national", "supernumerary tfw")
+_CATEGORY_BY_SPACE = {key.replace("-", " "): cat for key, cat in _CATEGORY_BY_CASEFOLD.items()}
+
+# Tertiary lookup: with underscores (e.g. "foreign_national")
+_CATEGORY_BY_UNDERSCORE = {key.replace("-", "_"): cat for key, cat in _CATEGORY_BY_CASEFOLD.items()}
 
 
 def normalize_admission_category(value: object) -> Optional[str]:
+    """Return the canonical AdmissionCategory value string for *value*, or None.
+
+    Accepts the canonical hyphenated form ("Foreign-National"), space-separated
+    ("Foreign National"), and underscore-separated ("Foreign_National"),
+    all case-insensitively.
+    """
     if not isinstance(value, str):
         return None
-    category = _CATEGORY_BY_CASEFOLD.get(value.strip().casefold())
+    stripped = value.strip()
+    if not stripped:
+        return None
+    casefolded = stripped.casefold()
+    category = (
+        _CATEGORY_BY_CASEFOLD.get(casefolded)
+        or _CATEGORY_BY_SPACE.get(casefolded)
+        or _CATEGORY_BY_UNDERSCORE.get(casefolded)
+    )
     return category.value if category else None
 
 

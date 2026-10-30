@@ -1,16 +1,23 @@
-.env
-.venv/
-venv/
+# Python
 __pycache__/
 *.py[cod]
-.pytest_cache/
+.venv/
+venv/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Databases and private data
 *.db
-*.db-shm
-*.db-wal
-!apaar_sentinel.db
-!pramaan_india_demo.db
-uploads/
-frontend/node_modules/
-frontend/dist/
-frontend/.env
-frontend/.env.local
+*.sqlite
+*.sqlite3
+
+# Logs
+*.log
+
+# Test artifacts
+.pytest_cache/
+.coverage
+htmlcov/

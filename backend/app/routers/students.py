@@ -1,7 +1,7 @@
 import csv
 import io
 import uuid
-from fastapi import APIRouter, Depends, HTTPException, Query, UploadFile, File, Form
+from fastapi import APIRouter, Depends, HTTPException, Query, UploadFile, File, Form, Response
 from sqlalchemy.orm import Session
 from typing import Optional, List, Dict, Any
 from datetime import datetime, date
@@ -13,8 +13,10 @@ from app.models.enrolment import Enrolment
 from app.models.alert import Alert
 from app.models.versioning import EnrolmentVersion
 from app.models.import_job import ImportJob, ImportRowResult
+from app.models.erp import StudentProfile
 from app.schemas.student import StudentCreate, StudentResponse
 from app.schemas.enrolment import EnrolmentResponse
+from app.services.export_service import ExportService
 from app.services.integrity_engine import (
     FAR_FUTURE_DATE,
     INTEGRITY_RULE_VERSION,
@@ -23,18 +25,20 @@ from app.services.integrity_engine import (
     intervals_overlap,
 )
 from app.services.validation_service import ValidationService
+from app.services.identity_service import IdentityLifecycleService, IdentityStatus
 from app.services.audit_service import AuditService
 from app.services.csv_import_service import StudentCsvImportService, safe_filename
 from app.security import (
     Principal,
-    canonical_institution_id,
+    canonicalize_institution_id,
     enforce_institution_scope,
     get_current_principal,
-    get_institution_aliases,
     mask_identifier,
     mask_sensitive_payload,
     require_student_institution,
 )
+from app.rate_limiter import rate_limit_csv_upload
+from app.services.state_service import KNOWN_INSTITUTION_STATES
 
 router = APIRouter(prefix="/students", tags=["Students"])
 MAX_CSV_UPLOAD_BYTES = 10 * 1024 * 1024
@@ -44,11 +48,13 @@ MAX_CSV_ROWS = 10_000
 def list_students(
     search: Optional[str] = Query(None, description="Search by student_ref, apaar_id, or name"),
     institution_id: Optional[str] = Query(None),
+    state: Optional[str] = Query(None, description="Filter by state code"),
     programme_id: Optional[str] = Query(None),
     academic_year: Optional[str] = Query(None),
     enrolment_status: Optional[str] = Query(None),
+    identity_status: Optional[str] = Query(None),
     page: int = Query(1, ge=1),
-    limit: int = Query(50, ge=1, le=2000),
+    limit: int = Query(50, ge=1, le=100),
     db: Session = Depends(get_db),
     principal: Principal = Depends(get_current_principal),
 ):
@@ -63,11 +69,22 @@ def list_students(
             (Student.full_name.ilike(s))
         )
 
-    if institution_id or programme_id or academic_year or enrolment_status:
+    if identity_status:
+        query = query.filter(Student.identity_status == identity_status)
+
+    target_state = principal.state if principal.role == "state_officer" else state
+
+    if institution_id or programme_id or academic_year or enrolment_status or target_state:
         enrol_filters = []
         if institution_id:
-            aliases = get_institution_aliases(institution_id)
-            enrol_filters.append(Enrolment.institution_id.in_(aliases))
+            enrol_filters.append(Enrolment.institution_id == institution_id)
+        if target_state:
+            st_clean = target_state.upper().replace(" ", "_")
+            state_inst_ids = [
+                i_id for i_id, st in KNOWN_INSTITUTION_STATES.items()
+                if st.upper().replace(" ", "_") == st_clean
+            ]
+            enrol_filters.append(Enrolment.institution_id.in_(state_inst_ids))
         if programme_id:
             enrol_filters.append(Enrolment.programme_id == programme_id)
         if academic_year:
@@ -75,7 +92,7 @@ def list_students(
         if enrolment_status:
             enrol_filters.append(Enrolment.enrolment_status == enrolment_status)
 
-        matching_refs = db.query(Enrolment.student_ref).filter(*enrol_filters).distinct().subquery()
+        matching_refs = db.query(Enrolment.student_ref).filter(*enrol_filters).distinct().scalar_subquery()
         query = query.filter(Student.student_ref.in_(matching_refs))
 
     total = query.count()
@@ -111,6 +128,7 @@ def list_students(
             "full_name": s.full_name,
             "primary_institution_id": institution_id if principal.role == "institution_officer" else s.primary_institution_id,
             "identity_route": s.identity_route,
+            "identity_status": s.identity_status,
             "nationality": s.nationality,
             "is_foreign_national": s.is_foreign_national,
             "is_nri": s.is_nri,
@@ -142,8 +160,7 @@ def list_import_jobs(
     institution_id = enforce_institution_scope(principal, institution_id)
     query = db.query(ImportJob)
     if institution_id:
-        aliases = get_institution_aliases(institution_id)
-        query = query.filter(ImportJob.institution_id.in_(aliases))
+        query = query.filter(ImportJob.institution_id == institution_id)
     if status:
         query = query.filter(ImportJob.status == status)
     total = query.count()
@@ -242,23 +259,189 @@ def get_import_job_rows(
     }
 
 
+@router.get("/export-csv")
+def export_students_csv(
+    institution_id: Optional[str] = Query(None, description="Filter by institution code"),
+    programme_id: Optional[str] = Query(None, description="Filter by programme"),
+    search: Optional[str] = Query(None, description="Search by name, student_ref or apaar_id"),
+    db: Session = Depends(get_db),
+    principal: Principal = Depends(get_current_principal),
+):
+    """
+    Export authorized student roster as CSV.
+    Enforces institutional tenant isolation for college officers.
+    """
+    effective_inst = enforce_institution_scope(principal, institution_id)
+    query = db.query(Student, StudentProfile, Enrolment).outerjoin(
+        StudentProfile, StudentProfile.student_ref == Student.student_ref
+    ).outerjoin(
+        Enrolment, Enrolment.student_ref == Student.student_ref
+    )
+    if effective_inst:
+        query = query.filter(Student.primary_institution_id == effective_inst)
+    if programme_id:
+        query = query.filter(Enrolment.programme_id == programme_id)
+    if search:
+        s = f"%{search.strip()}%"
+        query = query.filter(
+            (Student.full_name.ilike(s)) | (Student.student_ref.ilike(s)) | (Student.apaar_id.ilike(s))
+        )
+
+    results = query.order_by(Student.student_ref.asc()).limit(2000).all()
+    headers = [
+        "Student Ref", "Full Name", "APAAR ID", "Primary Institution", "Programme",
+        "Department", "Roll Number", "Batch Year", "Semester", "Section",
+        "Identity Status", "Admission Category", "Email", "Phone"
+    ]
+    rows = []
+    seen_refs = set()
+    for s, p, e in results:
+        if s.student_ref in seen_refs:
+            continue
+        seen_refs.add(s.student_ref)
+        rows.append([
+            s.student_ref,
+            s.full_name or "",
+            s.apaar_id or "",
+            s.primary_institution_id or "",
+            (e.programme_name or e.programme_id if e else (p.department if p else "")) or "",
+            (p.department if p else "") or "",
+            (p.roll_number if p else "") or "",
+            (p.batch_year if p else "") or "",
+            (p.current_semester if p else "") or "",
+            (p.section if p else "") or "",
+            s.identity_status or "",
+            (p.admission_category if p else "") or "",
+            (p.college_email or p.personal_email if p else "") or "",
+            (p.phone_number if p else "") or "",
+        ])
+
+    csv_data = ExportService.generate_csv(headers, rows)
+    return Response(
+        content=csv_data,
+        media_type="text/csv",
+        headers={"Content-Disposition": 'attachment; filename="students_roster.csv"'},
+    )
+
+
+@router.get("/export-excel")
+def export_students_excel(
+    institution_id: Optional[str] = Query(None, description="Filter by institution code"),
+    programme_id: Optional[str] = Query(None, description="Filter by programme"),
+    search: Optional[str] = Query(None, description="Search by name, student_ref or apaar_id"),
+    db: Session = Depends(get_db),
+    principal: Principal = Depends(get_current_principal),
+):
+    """
+    Export authorized student roster as professional Excel (.xlsx) workbook.
+    """
+    effective_inst = enforce_institution_scope(principal, institution_id)
+    query = db.query(Student, StudentProfile, Enrolment).outerjoin(
+        StudentProfile, StudentProfile.student_ref == Student.student_ref
+    ).outerjoin(
+        Enrolment, Enrolment.student_ref == Student.student_ref
+    )
+    if effective_inst:
+        query = query.filter(Student.primary_institution_id == effective_inst)
+    if programme_id:
+        query = query.filter(Enrolment.programme_id == programme_id)
+    if search:
+        s = f"%{search.strip()}%"
+        query = query.filter(
+            (Student.full_name.ilike(s)) | (Student.student_ref.ilike(s)) | (Student.apaar_id.ilike(s))
+        )
+
+    results = query.order_by(Student.student_ref.asc()).limit(2000).all()
+    headers = [
+        "Student Ref", "Full Name", "APAAR ID", "Primary Institution", "Programme",
+        "Department", "Roll Number", "Batch Year", "Semester", "Section",
+        "Identity Status", "Admission Category", "Email", "Phone"
+    ]
+    rows = []
+    seen_refs = set()
+    for s, p, e in results:
+        if s.student_ref in seen_refs:
+            continue
+        seen_refs.add(s.student_ref)
+        rows.append([
+            s.student_ref,
+            s.full_name or "",
+            s.apaar_id or "",
+            s.primary_institution_id or "",
+            (e.programme_name or e.programme_id if e else (p.department if p else "")) or "",
+            (p.department if p else "") or "",
+            (p.roll_number if p else "") or "",
+            (p.batch_year if p else "") or "",
+            (p.current_semester if p else "") or "",
+            (p.section if p else "") or "",
+            s.identity_status or "",
+            (p.admission_category if p else "") or "",
+            (p.college_email or p.personal_email if p else "") or "",
+            (p.phone_number if p else "") or "",
+        ])
+
+    xlsx_bytes = ExportService.generate_excel("Student Roster", headers, rows)
+    return Response(
+        content=xlsx_bytes,
+        media_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        headers={"Content-Disposition": 'attachment; filename="students_roster.xlsx"'},
+    )
+
+
+@router.get("/import-errors/{job_id}")
+def download_import_errors_csv(
+    job_id: str,
+    db: Session = Depends(get_db),
+    principal: Principal = Depends(get_current_principal),
+):
+    """
+    Download CSV error report for rows that failed import validation in a specific job.
+    Includes row numbers, record references, and specific validation explanations.
+    """
+    job = db.query(ImportJob).filter(ImportJob.id == job_id).first()
+    if not job:
+        raise HTTPException(status_code=404, detail="Import job not found.")
+    if principal.role == "institution_officer" and job.institution_id != principal.institution_id:
+        raise HTTPException(status_code=404, detail="Import job not found.")
+
+    failed_rows = db.query(ImportRowResult).filter(
+        ImportRowResult.import_job_id == job_id,
+        ImportRowResult.outcome != "ACCEPTED",
+    ).order_by(ImportRowResult.row_number.asc()).all()
+
+    headers = ["Row Number", "Student Reference", "Outcome", "Issue Codes", "Validation Details"]
+    rows = []
+    for r in failed_rows:
+        msgs_list = []
+        if isinstance(r.validation_messages, list):
+            for m in r.validation_messages:
+                if isinstance(m, dict):
+                    fld = f"[{m.get('field', 'General')}] " if m.get('field') else ""
+                    msgs_list.append(f"{fld}{m.get('message') or m.get('explanation') or m.get('code')}")
+                else:
+                    msgs_list.append(str(m))
+            msgs = "; ".join(msgs_list)
+        else:
+            msgs = str(r.validation_messages or "")
+        codes = ", ".join(r.issue_codes or []) if isinstance(r.issue_codes, list) else str(r.issue_codes or "")
+        rows.append([r.row_number, r.record_reference or "", r.outcome, codes, msgs])
+
+    csv_data = ExportService.generate_csv(headers, rows)
+    return Response(
+        content=csv_data,
+        media_type="text/csv",
+        headers={"Content-Disposition": f'attachment; filename="import_errors_{job_id[:8]}.csv"'},
+    )
+
+
 @router.get("/{student_ref}")
 def get_student_detail(
     student_ref: str,
     db: Session = Depends(get_db),
     principal: Principal = Depends(get_current_principal),
 ):
-    if student_ref == "me":
-        if principal.role != "student" or not principal.student_ref:
-            raise HTTPException(status_code=400, detail="Authenticated principal does not have an associated student profile.")
-        student_ref = principal.student_ref
-    elif principal.role == "student":
-        if principal.student_ref != student_ref:
-            raise HTTPException(status_code=403, detail="Access denied: Students can only view their own student record.")
-
     institution_scope = principal.institution_id if principal.role == "institution_officer" else None
-    if principal.role != "student":
-        require_student_institution(db, student_ref, institution_scope)
+    require_student_institution(db, student_ref, institution_scope)
     student = db.query(Student).filter(Student.student_ref == student_ref).first()
     if not student:
         raise HTTPException(status_code=404, detail="Student not found.")
@@ -306,6 +489,7 @@ def get_student_detail(
             "full_name": student.full_name,
             "primary_institution_id": institution_scope or student.primary_institution_id,
             "identity_route": student.identity_route,
+            "identity_status": student.identity_status,
             "nationality": student.nationality,
             "passport_ref": student.passport_ref if principal.role in {"administrator", "prototype_admin"} else None,
             "is_foreign_national": student.is_foreign_national,
@@ -368,6 +552,44 @@ def get_student_detail(
             for v in versions
         ]
     }
+
+
+@router.patch("/{student_ref}/identity-status")
+def update_student_identity_status(
+    student_ref: str,
+    payload: Dict[str, Any],
+    db: Session = Depends(get_db),
+    principal: Principal = Depends(get_current_principal),
+):
+    institution_scope = principal.institution_id if principal.role == "institution_officer" else None
+    require_student_institution(db, student_ref, institution_scope)
+    student = db.query(Student).filter(Student.student_ref == student_ref).first()
+    if not student:
+        raise HTTPException(status_code=404, detail="Student not found.")
+
+    new_status = payload.get("new_status")
+    reason = payload.get("reason")
+    if not new_status or not reason:
+        raise HTTPException(status_code=400, detail="Missing required fields 'new_status' or 'reason'.")
+
+    evidence_reference = payload.get("evidence_reference")
+    new_apaar_id = payload.get("new_apaar_id")
+    is_privileged = principal.role in {"administrator", "prototype_admin"}
+
+    try:
+        result = IdentityLifecycleService.update_student_identity(
+            db=db,
+            student=student,
+            new_status=new_status,
+            reason=reason,
+            actor=principal.subject,
+            evidence_reference=evidence_reference,
+            new_apaar_id=new_apaar_id,
+            is_privileged=is_privileged,
+        )
+        return {"success": True, **result}
+    except ValueError as e:
+        raise HTTPException(status_code=422, detail=str(e))
 
 @router.get("/{student_ref}/versions")
 def get_student_version_history(
@@ -532,13 +754,20 @@ def create_student_with_enrolment(
         category = normalize_admission_category(payload.get("seat_category", "General")) or "General"
         category_flags = student_flags_for_admission_category(category)
         is_fn = bool(payload.get("is_foreign_national", category_flags["is_foreign_national"]))
+        init_status, init_route, init_nat = IdentityLifecycleService.derive_initial_identity(
+            apaar_id=apaar_id,
+            is_foreign_national=is_fn,
+            is_historical=bool(payload.get("is_historical", False)),
+            passport_ref=payload.get("passport_ref"),
+        )
         student = Student(
             student_ref=student_ref,
             apaar_id=apaar_id,
             full_name=full_name,
             primary_institution_id=payload.get("institution_id"),
-            identity_route=payload.get("identity_route", "PASSPORT_INTERNATIONAL" if is_fn else "AADHAAR_APAAR"),
-            nationality=payload.get("nationality", "Indian" if not is_fn else "International"),
+            identity_route=payload.get("identity_route", init_route),
+            identity_status=payload.get("identity_status", init_status),
+            nationality=payload.get("nationality", init_nat),
             passport_ref=payload.get("passport_ref"),
             is_foreign_national=is_fn,
             is_nri=bool(payload.get("is_nri", category_flags["is_nri"])),
@@ -635,14 +864,18 @@ def _finalize_failed_import(db: Session, job_id: str, total_rows: int, safe_erro
     db.commit()
 
 
-@router.post("/upload-csv")
+@router.post("/upload", dependencies=[Depends(rate_limit_csv_upload)])
+@router.post("/upload-csv", dependencies=[Depends(rate_limit_csv_upload)])
 async def upload_students_csv(
     file: UploadFile = File(...),
     previous_job_id: Optional[str] = Form(None),
+    preview: Optional[bool] = Form(False),
+    dry_run: Optional[bool] = Form(False),
     db: Session = Depends(get_db),
     principal: Principal = Depends(get_current_principal),
 ):
     filename = safe_filename(file.filename)
+    is_preview = bool(preview or dry_run)
     previous_job = None
     if previous_job_id:
         previous_job = db.query(ImportJob).filter(ImportJob.id == previous_job_id).first()
@@ -673,15 +906,22 @@ async def upload_students_csv(
         if len(content) > MAX_CSV_UPLOAD_BYTES:
             raise HTTPException(status_code=413, detail="CSV upload exceeds the 10 MB limit.")
         try:
-            text_stream = io.StringIO(content.decode("utf-8-sig"))
+            try:
+                decoded = content.decode("utf-8-sig")
+            except UnicodeDecodeError:
+                decoded = content.decode("utf-8")
+            text_stream = io.StringIO(decoded)
             reader = csv.DictReader(text_stream)
             headers = reader.fieldnames or []
             if any(not isinstance(header, str) for header in headers):
                 raise HTTPException(status_code=400, detail="CSV contains invalid column headers.")
-            normalized_headers = [header.strip().lower() for header in headers]
+            normalized_headers = [header.strip().lstrip("\ufeff").lower() for header in headers]
             if len(normalized_headers) != len(set(normalized_headers)):
                 raise HTTPException(status_code=400, detail="CSV contains duplicate or ambiguous column headers.")
-            records = [row for row in reader]
+            records = [
+                {(k.lstrip("\ufeff") if isinstance(k, str) else k): v for k, v in row.items()}
+                for row in reader
+            ]
         except HTTPException:
             raise
         except (UnicodeDecodeError, csv.Error, ValueError):
@@ -704,39 +944,77 @@ async def upload_students_csv(
                 "pass_rate_percent": 100.0,
                 "error_count_by_severity": {},
                 "field_errors": [],
+                "dry_run": is_preview,
+                "preview": is_preview,
                 "message": "CSV file was empty.",
             }
 
-        if principal.role == "institution_officer":
-            canon_principal = canonical_institution_id(principal.institution_id)
-            for row in records:
-                row_inst = str(row.get("institution_id", "")).strip()
-                if row_inst and canonical_institution_id(row_inst) != canon_principal:
-                    raise HTTPException(status_code=403, detail="CSV contains rows outside the assigned institution.")
+        # Check required columns with alias support and optional institution inference
+        allow_inferred = bool(principal.role == "institution_officer" and principal.institution_id)
+        valid_headers, missing = ValidationService.validate_headers(headers, allow_inferred_institution=allow_inferred)
+        if not valid_headers:
+            raise HTTPException(status_code=400, detail=f"CSV missing mandatory column(s): {', '.join(missing)}.")
 
-        institution_ids = {str(row.get("institution_id", "")).strip() for row in records if str(row.get("institution_id", "")).strip()}
+        # Batch submission ID for provenance tracking
+        batch_submission_id = f"BATCH-{job_id[:8].upper()}-{datetime.utcnow().year}"
+
+        # Map each row's aliases to canonical fields and apply default institution if appropriate
+        default_inst = principal.institution_id if principal.role == "institution_officer" else None
+        mapped_records = [
+            ValidationService.map_csv_row(
+                row,
+                default_institution_id=default_inst,
+                default_submission_id=batch_submission_id,
+            )
+            for row in records
+        ]
+
+        if principal.role == "institution_officer" and any(
+            str(row.get("institution_id", "")).strip()
+            and canonicalize_institution_id(str(row.get("institution_id", "")).strip()) != canonicalize_institution_id(principal.institution_id)
+            for row in mapped_records
+        ):
+            raise HTTPException(status_code=403, detail="CSV contains rows outside the assigned institution.")
+
+        institution_ids = {str(row.get("institution_id", "")).strip() for row in mapped_records if str(row.get("institution_id", "")).strip()}
         if principal.role != "institution_officer" and len(institution_ids) == 1:
             job.institution_id = next(iter(institution_ids))
 
-        result = StudentCsvImportService(db).process(job, records, previous_job)
+        result = StudentCsvImportService(db).process(job, mapped_records, previous_job, dry_run=is_preview)
         rejected_count = result["rejected_count"]
         status_text = job.status
-        message = (
-            f"Successfully ingested {result['accepted_count']} valid rows with version tracking. "
-            f"{rejected_count} rows were not imported."
-        )
+        if is_preview:
+            message = (
+                f"Preview completed: {result['accepted_count']} rows valid. "
+                f"{rejected_count} rows invalid or flagged. No database changes were applied."
+            )
+        else:
+            message = (
+                f"Successfully ingested {result['accepted_count']} valid rows with version tracking. "
+                f"{rejected_count} rows were not imported."
+            )
         return {
             "filename": filename,
             "import_job_id": job_id,
+            "job_id": job_id,
             "previous_job_id": job.previous_job_id,
             "status": status_text,
             "total_rows": result["total_rows"],
+            "rows_received": result["total_rows"],
+            "valid_rows": result.get("valid_rows", result["accepted_count"]),
             "accepted_count": result["accepted_count"],
+            "rows_imported": result.get("rows_imported", result["accepted_count"] if not is_preview else 0),
+            "updated_count": result.get("updated_count", 0),
+            "duplicate_count": result.get("duplicate_count", 0),
             "rejected_count": rejected_count,
+            "rows_rejected": rejected_count,
+            "unprocessed_count": 0,
             "review_count": result["review_count"],
             "pass_rate_percent": result["pass_rate_percent"],
             "error_count_by_severity": result["error_count_by_severity"],
             "field_errors": result["field_errors"],
+            "dry_run": is_preview,
+            "preview": is_preview,
             "message": message,
         }
     except HTTPException as exc:

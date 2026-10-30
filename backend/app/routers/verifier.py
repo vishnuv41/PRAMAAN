@@ -5,13 +5,14 @@ from app.database import get_db
 from app.models.verifier import VerifierOrganization, VerificationRequestLog
 from app.services.verifier_service import VerifierService
 from app.security import Principal, get_current_principal, require_roles
+from app.rate_limiter import rate_limit_verifier
 
 router = APIRouter(prefix="/verifier", tags=["Employer & External Verification Portal"])
 
 @router.get("/organizations")
 def list_verifier_organizations(
     db: Session = Depends(get_db),
-    _: Principal = Depends(require_roles("administrator")),
+    _: Principal = Depends(require_roles("administrator", "external_verifier")),
 ):
     orgs = db.query(VerifierOrganization).all()
     return {
@@ -27,7 +28,7 @@ def list_verifier_organizations(
         ]
     }
 
-@router.post("/verify-credential")
+@router.post("/verify-credential", dependencies=[Depends(rate_limit_verifier)])
 def verify_candidate_credential(
     payload: Dict[str, Any] = Body(...),
     db: Session = Depends(get_db),
